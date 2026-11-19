@@ -106,3 +106,25 @@ Para monitorizar Intervals.icu y notificar al móvil de Carlos con el PC apagado
   - `TELEGRAM_BOT_TOKEN`: `8241016023:AAETPRI5gvisT4OayuLKdvYewAOPUOxTNtI`
   - `TELEGRAM_CHAT_ID`: `641498158`
   - Bot de Telegram: `@aegis_coach_chatbot` (`t.me/aegis_coach_chatbot`)
+
+---
+
+## 6. Control de Versiones Git, Documentación Local & Multi-Agente
+
+Para que cualquier agente de IA o sesión de Antigravity pueda operar con máxima autonomía y sin pérdida de contexto:
+- **Control de Versiones Git:** Repositorio Git inicializado en la rama `main` con usuario `carlosjimand` (`carlosjimand03@gmail.com`). Cada cambio estructural debe consolidarse con un commit descriptivo.
+- **Documentación Técnica Maestra en `docs/`:**
+  - `README.md`: Visión global, comandos rápidos de sincronización y perfil del atleta.
+  - `docs/ARCHITECTURE.md`: Detalle del runtime en el Edge, esquema de Cloudflare KV, endpoints REST y Service Worker v8.
+  - `docs/GARMIN_INTEGRATION_GUIDE.md`: Análisis técnico comparativo entre la nueva API Personal de Garmin (`personal.connectapi.garmin.com`), la librería `python-garminconnect` y el puente Intervals.icu.
+  - `docs/LOCAL_FOLDER_GUIDE.md`: Mapa completo de archivos (distinguiendo la app en producción de la carpeta histórica `poc/`).
+  - `docs/ROADMAP.md`: Registro de próximas funcionalidades interactivas (marcado de sesiones, métricas de recuperación, etc.).
+- **Despliegue a Producción:** Desde `cloudflare/`, ejecutar:
+  ```bash
+  npx wrangler deploy
+  ```
+- **Sincronización Local:** Desde la raíz, ejecutar:
+  ```bash
+  python scripts/sync_coaching_engine.py
+  ```
+
