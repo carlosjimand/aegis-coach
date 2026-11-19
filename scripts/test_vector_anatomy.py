@@ -1,0 +1,138 @@
+import os
+from playwright.sync_api import sync_playwright
+
+def create_sample_hip_thrust_svg():
+    # Hip Thrust 2D Vector Illustration using organic bezier curves
+    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" class="w-full h-full">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#181928"/>
+      <stop offset="100%" stop-color="#12131D"/>
+    </linearGradient>
+    <linearGradient id="glowGlute" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF5E80"/>
+      <stop offset="100%" stop-color="#FF4B72"/>
+    </linearGradient>
+    <filter id="neonFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="240" rx="16" fill="url(#bgGrad)" stroke="#2D2F45" stroke-width="1"/>
+
+  <!-- Divider & labels -->
+  <line x1="300" y1="20" x2="300" y2="220" stroke="#2D2F45" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="300" cy="120" r="14" fill="#242638" stroke="#2D2F45"/>
+  <path d="M296 120 L304 120 M301 116 L305 120 L301 124" stroke="#FF5E80" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Phase labels -->
+  <text x="30" y="32" fill="#8E8FA3" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" letter-spacing="1">FASE 1 · INICIO (DESCENSO)</text>
+  <text x="330" y="32" fill="#FF5E80" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" letter-spacing="1">FASE 2 · BLOQUEO GLÚTEO</text>
+
+  <!-- ==================== FASE 1: DESCENT ==================== -->
+  <g transform="translate(10, 10)">
+    <!-- Floor line -->
+    <line x1="20" y1="195" x2="260" y2="195" stroke="#2D2F45" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Gym Bench -->
+    <rect x="40" y="115" width="45" height="60" rx="4" fill="#242638" stroke="#3E4259" stroke-width="1.5"/>
+    <rect x="40" y="175" width="45" height="20" fill="#1A1B28"/>
+    <rect x="36" y="108" width="53" height="12" rx="4" fill="#2E3147" stroke="#4F5370" stroke-width="1.5"/>
+
+    <!-- Athlete Silhouette (Down Position) -->
+    <!-- Head -->
+    <circle cx="82" cy="98" r="11" fill="#DE9E78"/>
+    <path d="M73 98 C73 88 88 88 92 98 Z" fill="#1C1917"/>
+
+    <!-- Torso leaning on bench -->
+    <path d="M80 110 C92 118 108 135 120 152 C115 156 108 158 102 153 C92 140 82 125 76 116 Z" fill="#242638"/>
+    <!-- Sports Top -->
+    <path d="M80 110 C88 116 100 128 108 140 C103 143 97 144 92 140 C85 130 78 120 76 116 Z" fill="#7B88FF"/>
+
+    <!-- Arm resting on bench -->
+    <path d="M82 114 C78 112 65 110 52 110 C50 112 50 116 54 116 C66 116 75 118 80 120 Z" fill="#DE9E78"/>
+
+    <!-- Thigh (angle down towards knee) -->
+    <path d="M120 152 C132 140 148 130 162 132 C165 136 163 142 158 146 C144 146 130 152 120 160 Z" fill="#1A1B28"/>
+
+    <!-- Calf & Foot (bent knee ~90 deg) -->
+    <path d="M162 132 C164 148 165 170 166 190 C162 192 156 192 156 190 C155 172 154 150 154 140 Z" fill="#DE9E78"/>
+    <path d="M152 188 C152 184 172 184 174 190 C174 194 152 195 152 188 Z" fill="#FF5E80"/>
+
+    <!-- Barbell on hips -->
+    <circle cx="120" cy="148" r="18" fill="#1A1B28" stroke="#7B88FF" stroke-width="3"/>
+    <circle cx="120" cy="148" r="9" fill="#2E3147" stroke="#8E8FA3" stroke-width="1.5"/>
+    <line x1="120" y1="120" x2="120" y2="176" stroke="#8E8FA3" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- ==================== FASE 2: FULL EXTENSION ==================== -->
+  <g transform="translate(310, 10)">
+    <!-- Floor line -->
+    <line x1="20" y1="195" x2="260" y2="195" stroke="#2D2F45" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Gym Bench -->
+    <rect x="40" y="115" width="45" height="60" rx="4" fill="#242638" stroke="#3E4259" stroke-width="1.5"/>
+    <rect x="40" y="175" width="45" height="20" fill="#1A1B28"/>
+    <rect x="36" y="108" width="53" height="12" rx="4" fill="#2E3147" stroke="#4F5370" stroke-width="1.5"/>
+
+    <!-- Head -->
+    <circle cx="75" cy="100" r="11" fill="#DE9E78"/>
+    <path d="M66 100 C66 90 81 90 85 100 Z" fill="#1C1917"/>
+
+    <!-- Torso (Horizontal 180 deg) -->
+    <path d="M78 112 C95 112 118 113 140 114 C140 124 135 128 118 127 C98 126 80 124 74 122 Z" fill="#242638"/>
+    <!-- Sports Top -->
+    <path d="M78 112 C90 112 108 113 120 114 C120 122 110 125 98 125 C88 125 80 123 76 120 Z" fill="#7B88FF"/>
+
+    <!-- Arm resting on bench -->
+    <path d="M78 114 C72 112 60 110 48 110 C46 112 46 116 50 116 C62 116 72 118 78 120 Z" fill="#DE9E78"/>
+
+    <!-- GLUTE LOCKOUT (HIGHLIGHTED IN NEON PINK GLOW!) -->
+    <path d="M125 114 C145 114 158 115 168 116 C168 126 155 134 135 132 C125 130 122 122 125 114 Z" fill="url(#glowGlute)" filter="url(#neonFilter)"/>
+
+    <!-- Thigh (Horizontal from hips to knee) -->
+    <path d="M140 114 C165 114 190 115 204 116 C206 124 198 132 182 131 C165 130 148 128 138 127 Z" fill="#1A1B28"/>
+
+    <!-- Shin & Foot (Strictly Vertical 90 deg!) -->
+    <path d="M204 116 C205 138 206 166 206 190 C200 192 194 192 194 190 C194 168 194 140 194 126 Z" fill="#DE9E78"/>
+    <path d="M190 188 C190 184 212 184 214 190 C214 194 190 195 190 188 Z" fill="#FF5E80"/>
+
+    <!-- Barbell on pelvis locked at top -->
+    <circle cx="138" cy="112" r="22" fill="#1A1B28" stroke="#FF5E80" stroke-width="3.5" filter="url(#neonFilter)"/>
+    <circle cx="138" cy="112" r="11" fill="#2E3147" stroke="#FFF" stroke-width="1.5"/>
+    <text x="138" y="116" fill="#FFF" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="800" text-anchor="middle">140kg</text>
+    <line x1="138" y1="80" x2="138" y2="144" stroke="#FFF" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+</svg>"""
+
+html = f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {{ margin: 0; padding: 20px; background: #0D0E15; display: flex; justify-content: center; align-items: center; min-height: 100vh; }}
+  .box {{ width: 600px; height: 240px; }}
+</style>
+</head>
+<body>
+<div class="box">
+{create_sample_hip_thrust_svg()}
+</div>
+</body>
+</html>"""
+
+with open('cloudflare/test_vector.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page(viewport={"width": 640, "height": 300})
+    page.goto('file:///' + os.path.abspath('cloudflare/test_vector.html').replace('\\', '/'))
+    page.screenshot(path='cloudflare/screenshot_test_vector_hipthrust.png')
+    browser.close()
+
+print("Screenshot captured to cloudflare/screenshot_test_vector_hipthrust.png")

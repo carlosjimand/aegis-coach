@@ -1,0 +1,13 @@
+name = "aegis-intervals-sync"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+
+[triggers]
+crons = ["0 */4 * * *"] # Ejecuta cada 4 horas automáticamente
+
+[[kv_namespaces]]
+binding = "AEGIS_KV"
+id = "2df7fe02551a4ae29074519b8206a301"
+
+[vars]
+ATHLETE_ID = "i690671"

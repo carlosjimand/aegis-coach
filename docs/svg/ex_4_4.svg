@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05161A"/>
+      <stop offset="100%" stop-color="#072E33"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F969C"/>
+      <stop offset="100%" stop-color="#0C7075"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8D3B8"/>
+      <stop offset="100%" stop-color="#E8B490"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DE9E78"/>
+      <stop offset="100%" stop-color="#C6835F"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="barChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TARJETA BASE -->
+  <rect width="800" height="380" rx="18" fill="url(#bgGrad)" stroke="#294D61" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- SUELO Y CUADRÍCULA SUTIL -->
+  <line x1="30" y1="330" x2="770" y2="330" stroke="#294D61" stroke-width="2" stroke-dasharray="6 4" stroke-opacity="0.4"/>
+  <rect x="30" y="331" width="740" height="1" fill="#0F969C" fill-opacity="0.2"/>
+
+  <!-- DIVISOR CENTRAL CON CHEVRON -->
+  <line x1="400" y1="45" x2="400" y2="330" stroke="#294D61" stroke-width="1" stroke-dasharray="4 6" stroke-opacity="0.3"/>
+  <g transform="translate(400, 185)">
+    <circle cx="0" cy="0" r="17" fill="#05161A" stroke="#0F969C" stroke-width="1.8" filter="url(#glow)"/>
+    <path d="M-6 0 H6 M2 -4 L6 0 L2 4" stroke="#0F969C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- BADGES SUPERIORES -->
+  <g transform="translate(35, 24)">
+    <rect width="145" height="26" rx="6" fill="#05161A" stroke="#294D61" stroke-width="1.2"/>
+    <text x="72" y="17" fill="#6DA5C0" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 1 · INICIAL A LOS COSTADOS</text>
+  </g>
+  <g transform="translate(425, 24)">
+    <rect width="160" height="26" rx="6" fill="#0C7075" fill-opacity="0.25" stroke="#0F969C" stroke-width="1.2"/>
+    <circle cx="15" cy="13" r="3.5" fill="#0F969C" filter="url(#glow)"/>
+    <text x="90" y="17" fill="#0F969C" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 2 · ELEVACIÓN EN T A HOMBROS</text>
+  </g>
+
+  <!-- PIE DE TARJETA CON DIANA MUSCULAR -->
+  <g transform="translate(400, 360)">
+    <rect x="-210" y="-14" width="420" height="24" rx="12" fill="#05161A" fill-opacity="0.8" stroke="#294D61" stroke-width="1"/>
+    <circle cx="-190" cy="-2" r="3" fill="#0F969C" filter="url(#glow)"/>
+    <text x="0" y="2" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+      ELEVACIONES LATERALES CON MANCUERNAS &bull; FOCO: <tspan fill="#0F969C" font-weight="700">DELTOIDES LATERAL (AMPLITUD DE HOMBROS EN T)</tspan>
+    </text>
+  </g>
+
+  <!-- CONTENIDO FASE 1 -->
+  <g id="phase1-group">
+    
+    <!-- Atleta de Pie Erguido Sólido (Fase 1: Brazos a los Costados) -->
+    <circle cx="195" cy="85" r="12" fill="#F5CBA7"/>
+    <path d="M 189 75 C 197 73 205 79 205 88 C 205 95 197 98 190 96 Z" fill="#1C1917"/>
+    <rect x="191" y="95" width="8" height="15" fill="#F5CBA7"/>
+    
+    <path d="M 185 110 L 205 110 L 202 185 L 188 185 Z" fill="#0F969C"/>
+    <rect x="185" y="180" width="20" height="35" rx="3" fill="#05161A"/>
+    
+    <!-- Piernas -->
+    <path d="M 188 215 L 202 215 L 202 325 L 188 325 Z" fill="#F5CBA7"/>
+    <rect x="186" y="322" width="24" height="8" rx="2" fill="#1E293B"/>
+    
+    <!-- Brazos colgando a los lados -->
+    <line x1="185" y1="125" x2="170" y2="200" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round"/>
+    <rect x="162" y="195" width="16" height="12" rx="2" fill="#1E293B" stroke="#0F969C" stroke-width="1.2"/>
+    
+  </g>
+
+  <!-- CONTENIDO FASE 2 -->
+  <g id="phase2-group">
+    
+    <!-- Atleta de Pie (Fase 2: Brazos en T) -->
+    <circle cx="595" cy="85" r="12" fill="#F5CBA7"/>
+    <path d="M 589 75 C 597 73 605 79 605 88 C 605 95 597 98 590 96 Z" fill="#1C1917"/>
+    <rect x="591" y="95" width="8" height="15" fill="#F5CBA7"/>
+    
+    <path d="M 585 110 L 605 110 L 602 185 L 588 185 Z" fill="#0F969C"/>
+    <rect x="585" y="180" width="20" height="35" rx="3" fill="#05161A"/>
+    
+    <!-- FOCO NEUROMUSCULAR: DELTOIDES LATERAL EN CONTRACCIÓN PICO -->
+    <circle cx="580" cy="122" r="14" fill="#0F969C" fill-opacity="0.5" filter="url(#glow)"/>
+    <circle cx="610" cy="122" r="14" fill="#0F969C" fill-opacity="0.5" filter="url(#glow)"/>
+    <path d="M 575 118 C 580 115 586 118 584 125" stroke="#6DA5C0" stroke-width="2.5" fill="none"/>
+    
+    <!-- Brazos ELEVADOS EN FORMA DE T A LA ALTURA DE HOMBROS -->
+    <line x1="585" y1="125" x2="530" y2="135" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="605" y1="125" x2="660" y2="135" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round"/>
+    <rect x="518" y="130" width="14" height="18" rx="2" fill="#1E293B" stroke="#0F969C" stroke-width="2" filter="url(#glow)"/>
+    <rect x="658" y="130" width="14" height="18" rx="2" fill="#1E293B" stroke="#0F969C" stroke-width="2" filter="url(#glow)"/>
+    
+    <!-- Piernas -->
+    <path d="M 588 215 L 602 215 L 602 325 L 588 325 Z" fill="#F5CBA7"/>
+    <rect x="586" y="322" width="24" height="8" rx="2" fill="#1E293B"/>
+    
+  </g>
+</svg>

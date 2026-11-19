@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="c4_carbon" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="35%" stop-color="#7B88FF"/>
+      <stop offset="70%" stop-color="#E040FB"/>
+      <stop offset="100%" stop-color="#FF5E80"/>
+    </linearGradient>
+    <linearGradient id="c4_apexTip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FF5E80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Carbon Foil -->
+  <path d="M 28 82
+           C 20 74, 16 58, 20 42
+           C 24 26, 36 15, 48 11
+           C 50 10, 51 11, 50 13
+           C 40 19, 31 31, 28 44
+           C 25 58, 29 70, 35 78
+           C 36 80, 34 82, 32 82
+           C 30 82, 29 82, 28 82
+           Z" 
+        fill="url(#c4_carbon)"/>
+
+  <!-- Right Carbon Foil -->
+  <path d="M 52 11
+           C 64 15, 76 26, 80 42
+           C 84 58, 80 74, 72 82
+           C 71 82, 70 82, 68 82
+           C 66 82, 64 80, 65 78
+           C 71 70, 75 58, 72 44
+           C 69 31, 60 19, 50 13
+           C 49 11, 50 10, 52 11
+           Z" 
+        fill="url(#c4_carbon)"/>
+
+  <!-- Central Dynamic Apex Blade -->
+  <path d="M 50 24
+           C 51 24, 57 41, 61 52
+           C 62 55, 59 57, 56 56
+           L 52 55
+           C 51 58, 49 58, 48 55
+           L 44 56
+           C 41 57, 38 55, 39 52
+           C 43 41, 49 24, 50 24
+           Z" 
+        fill="url(#c4_apexTip)"/>
+
+  <!-- Ground Diffuser -->
+  <path d="M 37 77
+           C 45 73, 55 73, 63 77
+           C 59 81, 41 81, 37 77
+           Z" 
+        fill="#FF5E80"/>
+</svg>

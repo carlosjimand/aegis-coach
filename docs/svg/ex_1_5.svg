@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05161A"/>
+      <stop offset="100%" stop-color="#072E33"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F969C"/>
+      <stop offset="100%" stop-color="#0C7075"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8D3B8"/>
+      <stop offset="100%" stop-color="#E8B490"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DE9E78"/>
+      <stop offset="100%" stop-color="#C6835F"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="barChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TARJETA BASE -->
+  <rect width="800" height="380" rx="18" fill="url(#bgGrad)" stroke="#294D61" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- SUELO Y CUADRÍCULA SUTIL -->
+  <line x1="30" y1="330" x2="770" y2="330" stroke="#294D61" stroke-width="2" stroke-dasharray="6 4" stroke-opacity="0.4"/>
+  <rect x="30" y="331" width="740" height="1" fill="#0F969C" fill-opacity="0.2"/>
+
+  <!-- DIVISOR CENTRAL CON CHEVRON -->
+  <line x1="400" y1="45" x2="400" y2="330" stroke="#294D61" stroke-width="1" stroke-dasharray="4 6" stroke-opacity="0.3"/>
+  <g transform="translate(400, 185)">
+    <circle cx="0" cy="0" r="17" fill="#05161A" stroke="#0F969C" stroke-width="1.8" filter="url(#glow)"/>
+    <path d="M-6 0 H6 M2 -4 L6 0 L2 4" stroke="#0F969C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- BADGES SUPERIORES -->
+  <g transform="translate(35, 24)">
+    <rect width="145" height="26" rx="6" fill="#05161A" stroke="#294D61" stroke-width="1.2"/>
+    <text x="72" y="17" fill="#6DA5C0" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 1 · INICIAL ERGUIDO</text>
+  </g>
+  <g transform="translate(425, 24)">
+    <rect width="160" height="26" rx="6" fill="#0C7075" fill-opacity="0.25" stroke="#0F969C" stroke-width="1.2"/>
+    <circle cx="15" cy="13" r="3.5" fill="#0F969C" filter="url(#glow)"/>
+    <text x="90" y="17" fill="#0F969C" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 2 · ISOMETRÍA 90° VERTICAL</text>
+  </g>
+
+  <!-- PIE DE TARJETA CON DIANA MUSCULAR -->
+  <g transform="translate(400, 360)">
+    <rect x="-210" y="-14" width="420" height="24" rx="12" fill="#05161A" fill-opacity="0.8" stroke="#294D61" stroke-width="1"/>
+    <circle cx="-190" cy="-2" r="3" fill="#0F969C" filter="url(#glow)"/>
+    <text x="0" y="2" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+      SPANISH SQUAT CON BANDA ISOMÉTRICA &bull; FOCO: <tspan fill="#0F969C" font-weight="700">CUÁDRICEPS &amp; BLINDAJE ROTULIANO (TIBIA 90°)</tspan>
+    </text>
+  </g>
+
+  <!-- CONTENIDO FASE 1 -->
+  <g id="phase1-group">
+    
+    <!-- Poste de Jaula -->
+    <rect x="60" y="80" width="12" height="250" rx="2" fill="#1E293B" stroke="#294D61" stroke-width="1.5"/>
+    <!-- Banda Elástica Anclada -->
+    <line x1="72" y1="260" x2="190" y2="260" stroke="#0F969C" stroke-width="5" stroke-dasharray="8 2"/>
+    
+    <!-- Atleta de Pie Erguido Sólido -->
+    <circle cx="195" cy="95" r="12" fill="#F5CBA7"/>
+    <path d="M 189 85 C 197 83, 205 89, 205 98 C 205 105, 197 108, 190 106 Z" fill="#1C1917"/>
+    <rect x="191" y="105" width="8" height="15" fill="#F5CBA7"/>
+    
+    <!-- Torso Teal -->
+    <path d="M 185 120 L 205 120 L 202 185 L 188 185 Z" fill="#0F969C"/>
+    <rect x="185" y="185" width="20" height="35" rx="3" fill="#05161A"/>
+    
+    <!-- Piernas Erguidas -->
+    <path d="M 188 220 L 202 220 L 202 325 L 188 325 Z" fill="#F5CBA7"/>
+    <rect x="186" y="322" width="24" height="8" rx="2" fill="#1E293B"/>
+    
+  </g>
+
+  <!-- CONTENIDO FASE 2 -->
+  <g id="phase2-group">
+    
+    <!-- Poste de Jaula -->
+    <rect x="460" y="80" width="12" height="250" rx="2" fill="#1E293B" stroke="#294D61" stroke-width="1.5"/>
+    <!-- Banda Elástica Soportando el Peso -->
+    <line x1="472" y1="260" x2="575" y2="260" stroke="#0F969C" stroke-width="7" filter="url(#glow)"/>
+    
+    <!-- Atleta Sentado Atrás con Tibias Rigurosamente Verticales -->
+    <circle cx="545" cy="135" r="12" fill="#F5CBA7"/>
+    <path d="M 539 125 C 547 123, 555 129, 555 138 C 555 145, 547 148, 540 146 Z" fill="#1C1917"/>
+    <rect x="541" y="145" width="8" height="15" fill="#F5CBA7"/>
+    
+    <!-- Torso Erguido Teal -->
+    <path d="M 535 160 L 555 160 L 555 215 L 535 215 Z" fill="#0F969C"/>
+    <rect x="530" y="215" width="25" height="20" rx="3" fill="#05161A"/>
+    
+    <!-- Brazos al frente para equilibrio -->
+    <line x1="550" y1="165" x2="515" y2="165" stroke="#F5CBA7" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Muslo horizontal hacia atrás -->
+    <path d="M 535 215 L 575 215 L 575 228 L 535 228 Z" fill="#F5CBA7"/>
+    <!-- FOCO: VASTO MEDIAL & TENDÓN ROTULIANO (BLINDAJE ISOMÉTRICO) -->
+    <ellipse cx="555" cy="220" rx="25" ry="14" fill="#0F969C" fill-opacity="0.5" filter="url(#glow)"/>
+    <line x1="540" y1="220" x2="570" y2="220" stroke="#6DA5C0" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- TIBIA RIGUROSAMENTE VERTICAL A 90° -->
+    <path d="M 568 215 L 582 215 L 582 325 L 568 325 Z" fill="#F5CBA7"/>
+    <rect x="566" y="322" width="24" height="8" rx="2" fill="#1E293B"/>
+    
+  </g>
+</svg>

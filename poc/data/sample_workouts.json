@@ -1,0 +1,115 @@
+[
+  {
+    "workout_id": "wo_track_800m_001",
+    "title": "800m Race Pace Specific Interval Simulation",
+    "activity_type": "TRACK_INTERVALS",
+    "discipline": "TRACK_800M",
+    "target_phase": "PERFORMANCE",
+    "structure": {
+      "warmup": "15 min easy jogging (Zone 2) + dynamic mobility + 4x60m progressive build-up strides",
+      "main_set": "2 sets of (400m at 800m target pace [57s] + 60s rest + 300m at 800m pace [42s] + 45s rest + 200m all-out [27s]), 8 min active walking recovery between sets",
+      "cooldown": "10 min easy jog + barefoot grass mobility"
+    },
+    "duration_minutes": 65.0,
+    "target_rpe": 9,
+    "intensity_zone": "Zone 5 (Anaerobic Capacity)",
+    "contraindications": ["acute_hamstring_tear", "patellar_tendon_flare", "autonomic_exhaustion_crash"],
+    "trimp_estimate": 145.0
+  },
+  {
+    "workout_id": "wo_trail_vert_001",
+    "title": "Mountain Trail Aerobic Base & Technical Elevation",
+    "activity_type": "TRAIL_RUN",
+    "discipline": "TRAIL_RUNNING",
+    "target_phase": "BASE_BUILDING",
+    "structure": {
+      "warmup": "10 min flat mobilization walking/jogging",
+      "main_set": "14 km mountain trail run with 650m positive elevation gain. Uphill power hiking at Zone 2/3 (HR < 155 bpm), cadence-controlled downhill running with relaxed knee flexion",
+      "cooldown": "5 min gentle walking + calf stretches against incline"
+    },
+    "duration_minutes": 85.0,
+    "target_rpe": 7,
+    "intensity_zone": "Zone 2 (Aerobic Endurance)",
+    "contraindications": ["acute_achilles_tendinopathy", "acute_plantar_fasciitis", "severe_knee_effusion"],
+    "trimp_estimate": 120.0
+  },
+  {
+    "workout_id": "wo_rehab_hamstring_hsr_001",
+    "title": "Subacute Hamstring Heavy Slow Resistance & Isometrics",
+    "activity_type": "STRENGTH_HSR",
+    "discipline": "TRACK_800M",
+    "target_phase": "SUBACUTE_REHAB",
+    "structure": {
+      "warmup": "8 min stationary bike (cadence > 90 rpm, low resistance) + 2x15 bodyweight glute bridges",
+      "main_set": [
+        "1. Prone Isometric Knee Flexion Hold at 30 deg: 5 sets x 45 sec holds (70% MVC, 60s rest)",
+        "2. High-Bench Single-Leg Hip Thrust: 3 sets x 8 reps per side (3s concentric, 3s eccentric, RPE 7)",
+        "3. Seated Leg Curl HSR: 3 sets x 6 reps at 75% 1RM (3s up, 3s down, zero explosive momentum)",
+        "4. Askling 'The Diver': 3 sets x 6 reps per leg (focus on pelvic neutral stability)"
+      ],
+      "cooldown": "5 min light bike spin + gentle diaphragmatic breathing (no aggressive static stretching)"
+    },
+    "duration_minutes": 45.0,
+    "target_rpe": 6,
+    "intensity_zone": "Strength & Neuromuscular Rehabilitation",
+    "contraindications": ["maximal_sprints", "ballistic_kicking", "end_range_hamstring_stretch"],
+    "trimp_estimate": 40.0
+  },
+  {
+    "workout_id": "wo_rehab_mcgill_spine_001",
+    "title": "Spine-Sparing Neutral McGill Big 3 & Glute Drive",
+    "activity_type": "MOBILITY_REHAB",
+    "discipline": "STRENGTH_CROSSFIT",
+    "target_phase": "SPINE_REHAB",
+    "structure": {
+      "warmup": "Cat-Camel gentle spinal mobilization (no end-range forcing, 6 slow cycles)",
+      "main_set": [
+        "1. McGill Modified Curl-Up: 3 sets x (6, 4, 2 descending pyramid) of 8s holds per side",
+        "2. McGill Side Plank from knees or feet: 3 sets x 8s holds (descending pyramid 6-4-2)",
+        "3. McGill Quadruped Bird-Dog with abdominal brace: 3 sets x 8s holds (descending pyramid 6-4-2)",
+        "4. High-Handle Trap Bar Deadlift: 4 sets x 6 reps at 60% 1RM (strict neutral spine, 0 lumbar flexion)",
+        "5. Barbell Glute Hip Thrust on Bench: 3 sets x 10 reps (pause 2s at top glute contraction)"
+      ],
+      "cooldown": "Walking 10 minutes at brisk pace to restore neutral disc hydration"
+    },
+    "duration_minutes": 40.0,
+    "target_rpe": 5,
+    "intensity_zone": "Core Stability & Joint Protection",
+    "contraindications": ["conventional_deadlift_1rm", "loaded_spinal_flexion", "box_jump_rebounds", "crunches"],
+    "trimp_estimate": 35.0
+  },
+  {
+    "workout_id": "wo_active_recovery_bike_001",
+    "title": "Autonomic Reset & Parasympathetic Recovery Spin",
+    "activity_type": "CYCLING",
+    "discipline": "GENERAL_ENDURANCE",
+    "target_phase": "FATIGUE_OVERRIDE",
+    "structure": {
+      "warmup": "5 min light spin at 80 rpm",
+      "main_set": "35 min continuous low-resistance cycling strictly capped at Heart Rate Zone 1 (< 120 bpm, RPE 3/10, nasal breathing only)",
+      "cooldown": "5 min cool spin + 10 min full-body floor mobility and guided parasympathetic breathing (4s inhale, 7s hold, 8s exhale)"
+    },
+    "duration_minutes": 45.0,
+    "target_rpe": 3,
+    "intensity_zone": "Zone 1 (Active Recovery & Bloodflow)",
+    "contraindications": ["anaerobic_intervals", "high_torque_cadence_grinding"],
+    "trimp_estimate": 22.0
+  },
+  {
+    "workout_id": "wo_marathon_threshold_001",
+    "title": "Polarized Marathon Lactate Threshold Tempo",
+    "activity_type": "ROAD_RUN",
+    "discipline": "MARATHON",
+    "target_phase": "SPECIFIC_PREPARATION",
+    "structure": {
+      "warmup": "15 min Zone 2 easy running + 4x100m progressive strides",
+      "main_set": "3 x 3000m at Marathon Race Pace (e.g. 3:55/km) with 2 min easy float recovery jogging (4:45/km)",
+      "cooldown": "10 min easy jog"
+    },
+    "duration_minutes": 60.0,
+    "target_rpe": 7,
+    "intensity_zone": "Zone 3 / Threshold (Aerobic Power)",
+    "contraindications": ["active_patellar_tendon_flare", "high_temperature_heat_exhaustion"],
+    "trimp_estimate": 95.0
+  }
+]

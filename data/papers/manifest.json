@@ -1,0 +1,557 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-08-26T23:49:52.164524+00:00",
+  "total_papers": 11,
+  "domains": {
+    "polarized_training": 3,
+    "hamstring_rehabilitation": 2,
+    "tendinopathy_pain_monitoring": 3,
+    "workload_fatigue_biomechanics": 3
+  },
+  "papers": [
+    {
+      "id": "stoggl_sperlich_2014_polarized",
+      "pdf_path": "data/papers/pdfs/stoggl_sperlich_2014_polarized.pdf",
+      "raw_md_path": "data/papers/raw_markdown/stoggl_sperlich_2014_polarized.raw.md",
+      "clean_md_path": "data/papers/markdown/stoggl_sperlich_2014_polarized.md",
+      "title": "Polarized training has greater impact on key endurance variables than threshold, high intensity, or high volume training",
+      "authors": [
+        "Thomas Stöggl",
+        "Billy Sperlich"
+      ],
+      "year": 2014,
+      "journal": "Frontiers in Physiology",
+      "doi": "10.3389/fphys.2014.00033",
+      "pmid": "24550842",
+      "pmcid": "PMC3912323",
+      "domain": "polarized_training",
+      "topics": [
+        "polarized_training",
+        "vo2max_development",
+        "endurance_distribution",
+        "training_intensity_distribution",
+        "lactate_threshold"
+      ],
+      "target_anatomy": [
+        "cardiovascular",
+        "aerobic_system",
+        "mitochondrial_network"
+      ],
+      "key_protocols": [
+        "80/20 intensity distribution (approx. 68% Zone 1 <LT1, 6% Zone 2 LT1-LT2, 26% Zone 3 >LT2)",
+        "Zone 1: <2 mmol/L blood lactate, Zone 2: 2-4 mmol/L, Zone 3: >4 mmol/L",
+        "Polarized training produced superior VO2max (+11.7%) and peak velocity/power (+5.1%) compared to threshold or high volume"
+      ],
+      "rehab_phase": null,
+      "contraindications": [
+        "excessive_zone_2_threshold_rut",
+        "unmonitored_high_volume_without_recovery"
+      ],
+      "evidence_level": "Level 1 (Randomized Controlled Trial)",
+      "summary": "Demonstrates that a 9-week polarized training intensity distribution yields significantly greater improvements in VO2max, time to exhaustion, and peak velocity compared to threshold, HIIT, or high-volume training in well-trained endurance athletes.",
+      "pdf_size_bytes": 597433,
+      "clean_md_chars": 48381,
+      "status": "ready"
+    },
+    {
+      "id": "seiler_tonnessen_2009_polarized",
+      "pdf_path": "data/papers/pdfs/seiler_tonnessen_2009_polarized.pdf",
+      "raw_md_path": "data/papers/raw_markdown/seiler_tonnessen_2009_polarized.raw.md",
+      "clean_md_path": "data/papers/markdown/seiler_tonnessen_2009_polarized.md",
+      "title": "Intervals, Thresholds, and Long Slow Distance: the Role of Intensity and Duration in Endurance Training",
+      "authors": [
+        "Stephen Seiler",
+        "Espen Tønnessen"
+      ],
+      "year": 2009,
+      "journal": "Sportscience",
+      "doi": "10.5281/zenodo.10827",
+      "pmid": null,
+      "pmcid": null,
+      "domain": "polarized_training",
+      "topics": [
+        "polarized_training",
+        "3_zone_intensity_model",
+        "autonomic_recovery",
+        "interval_prescription",
+        "hrv_suppression"
+      ],
+      "target_anatomy": [
+        "cardiovascular",
+        "autonomic_nervous_system",
+        "parasympathetic_regulation"
+      ],
+      "key_protocols": [
+        "3-Zone Physiological Model: Zone 1 (<VT1, <2.0 mM La, <80% HRmax), Zone 2 (VT1-VT2, 2.0-4.0 mM La, 82-88% HRmax), Zone 3 (>VT2, >4.0 mM La, >88-92% HRmax)",
+        "Session allocation rule: ~80% of sessions in Zone 1, <10% in Zone 2, 15-20% in Zone 3",
+        "Optimal interval prescription: 4 x 8 min @ 90-92% HRmax with 2 min active recovery",
+        "Autonomic recovery: Zone 1 restores HRV within <24h; Zone 2/3 suppresses HRV for 48-72h"
+      ],
+      "rehab_phase": null,
+      "contraindications": [
+        "back_to_back_high_intensity_sessions",
+        "ignoring_autonomic_hrv_suppression"
+      ],
+      "evidence_level": "Expert Consensus / Narrative Review",
+      "summary": "Establishes the foundational 3-zone physiological framework and empirical evidence for 80/20 polarized training distribution and 4x8min interval dosing in endurance athletes.",
+      "pdf_size_bytes": 410524,
+      "clean_md_chars": 99740,
+      "status": "ready"
+    },
+    {
+      "id": "haugen_2022_polarized",
+      "pdf_path": "data/papers/pdfs/haugen_2022_polarized.pdf",
+      "raw_md_path": "data/papers/raw_markdown/haugen_2022_polarized.raw.md",
+      "clean_md_path": "data/papers/markdown/haugen_2022_polarized.md",
+      "title": "The Training Characteristics of World-Class Distance Runners: An Integration of Scientific Literature and Results-Proven Practice",
+      "authors": [
+        "Thomas Haugen",
+        "Øyvind Sandbakk",
+        "Stephen Seiler",
+        "Espen Tønnessen"
+      ],
+      "year": 2022,
+      "journal": "Sports Medicine - Open",
+      "doi": "10.1186/s40798-022-00438-7",
+      "pmid": "35368190",
+      "pmcid": "PMC8975965",
+      "domain": "polarized_training",
+      "topics": [
+        "distance_running",
+        "periodization",
+        "training_volume",
+        "tapering",
+        "altitude_training",
+        "running_economy"
+      ],
+      "target_anatomy": [
+        "aerobic_system",
+        "musculoskeletal",
+        "neuromuscular_coordination"
+      ],
+      "key_protocols": [
+        "Weekly volume norms: 130-190 km/week (5000m/10000m), 160-220 km/week (Marathon) over 11-14 sessions/week",
+        "Intensity distribution: >=80% low-intensity volume across annual cycle",
+        "Tapering protocol: 7-10 days exponential volume reduction (40-60% decrease) while maintaining frequency and interval intensity",
+        "Altitude training: 2000-2500m for 3-4 week blocks with 72h initial acclimatization buffer"
+      ],
+      "rehab_phase": null,
+      "contraindications": [
+        "intensity_reduction_during_taper",
+        "premature_speedwork_at_altitude"
+      ],
+      "evidence_level": "Systematic Review & Expert Synthesis",
+      "summary": "Comprehensive synthesis of training characteristics, weekly volume benchmarks, periodization, tapering, and altitude strategies from 59 world-leading distance runners and Olympic coaches.",
+      "pdf_size_bytes": 1216253,
+      "clean_md_chars": 108361,
+      "status": "ready"
+    },
+    {
+      "id": "askling_2013_l_protocol",
+      "pdf_path": "data/papers/pdfs/askling_2013_l_protocol.pdf",
+      "raw_md_path": "data/papers/raw_markdown/askling_2013_l_protocol.raw.md",
+      "clean_md_path": "data/papers/markdown/askling_2013_l_protocol.md",
+      "title": "Acute hamstring injuries in Swedish elite football: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
+      "authors": [
+        "Carl M. Askling",
+        "Jerker Nilsson",
+        "Alf Thorstensson"
+      ],
+      "year": 2013,
+      "journal": "British Journal of Sports Medicine",
+      "doi": "10.1136/bjsports-2013-092165",
+      "pmid": "23446648",
+      "pmcid": null,
+      "domain": "hamstring_rehabilitation",
+      "topics": [
+        "hamstring_strain",
+        "lengthening_exercises",
+        "l_protocol",
+        "return_to_play",
+        "askling_h_test",
+        "eccentric_overload"
+      ],
+      "target_anatomy": [
+        "hamstrings",
+        "biceps_femoris_long_head",
+        "semitendinosus",
+        "semimembranosus"
+      ],
+      "key_protocols": [
+        "L-Protocol 3-Exercise Suite: The Extender (3x12 twice daily), The Diver (3x6 every 3rd day), The Glider (3x4 every 3rd day)",
+        "Return to play significantly shortened: 28 days (L-Protocol) vs 51 days (Conventional Protocol)",
+        "RTP Clearance Criteria: Full active range of motion, zero palpation pain, maximum isometric strength parity >=95%, and Askling H-Test negative (0/10 pain and 0/10 insecurity during dynamic straight leg swing)"
+      ],
+      "rehab_phase": [
+        "acute",
+        "subacute",
+        "return_to_sport"
+      ],
+      "contraindications": [
+        "acute_passive_stretching_first_48h",
+        "high_speed_sprinting_before_h_test_clearance"
+      ],
+      "evidence_level": "Level 1b (Randomized Controlled Trial)",
+      "summary": "Randomized clinical trial demonstrating that lengthening exercises targeting eccentric contractions at elongated muscle lengths reduce return-to-play time by 45% and prevent hamstring re-injuries in elite football players.",
+      "pdf_size_bytes": 506262,
+      "clean_md_chars": 39652,
+      "status": "ready"
+    },
+    {
+      "id": "askling_2014_l_protocol_acute",
+      "pdf_path": "data/papers/pdfs/askling_2014_l_protocol_acute.pdf",
+      "raw_md_path": "data/papers/raw_markdown/askling_2014_l_protocol_acute.raw.md",
+      "clean_md_path": "data/papers/markdown/askling_2014_l_protocol_acute.md",
+      "title": "Acute hamstring injuries in Swedish elite sprinters and jumpers: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
+      "authors": [
+        "Carl M. Askling",
+        "Magnus Tengvar",
+        "Olga Tarassova",
+        "Alf Thorstensson"
+      ],
+      "year": 2014,
+      "journal": "British Journal of Sports Medicine",
+      "doi": "10.1136/bjsports-2013-093214",
+      "pmid": "24620041",
+      "pmcid": null,
+      "domain": "hamstring_rehabilitation",
+      "topics": [
+        "sprint_injuries",
+        "hamstring_strain",
+        "l_protocol",
+        "biceps_femoris_long_head",
+        "stretch_type_injury",
+        "proximal_free_tendon"
+      ],
+      "target_anatomy": [
+        "hamstrings",
+        "biceps_femoris_long_head",
+        "semimembranosus_proximal_tendon",
+        "ischial_tuberosity",
+        "posterior_chain"
+      ],
+      "key_protocols": [
+        "L-Protocol application in track and field sprinting/jumping athletes",
+        "RTP achieved in 49 days (L-Protocol) vs 86 days (Conventional Protocol)",
+        "Injury mechanism differentiation: High-speed sprinting injuries (biceps femoris) recover faster than stretch-type injuries (semimembranosus / proximal free tendon), which require extended remodeling"
+      ],
+      "rehab_phase": [
+        "acute",
+        "subacute",
+        "return_to_sport"
+      ],
+      "contraindications": [
+        "ignoring_proximal_tendon_involvement",
+        "premature_maximal_acceleration"
+      ],
+      "evidence_level": "Level 1b (Randomized Controlled Trial)",
+      "summary": "Validates the effectiveness of lengthening exercises in track and field sprinters and jumpers, demonstrating superior return-to-sport speed (49 vs 86 days) and establishing injury-type specific recovery trajectories.",
+      "pdf_size_bytes": 127661,
+      "clean_md_chars": 10369,
+      "status": "ready"
+    },
+    {
+      "id": "silbernagel_2007_pain_monitoring",
+      "pdf_path": "data/papers/pdfs/silbernagel_2007_pain_monitoring.pdf",
+      "raw_md_path": "data/papers/raw_markdown/silbernagel_2007_pain_monitoring.raw.md",
+      "clean_md_path": "data/papers/markdown/silbernagel_2007_pain_monitoring.md",
+      "title": "Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study",
+      "authors": [
+        "Karin Grävare Silbernagel",
+        "Roland Thomeé",
+        "Bengt I. Eriksson",
+        "Jón Karlsson"
+      ],
+      "year": 2007,
+      "journal": "The American Journal of Sports Medicine",
+      "doi": "10.1177/0363546506298279",
+      "pmid": "17307888",
+      "pmcid": null,
+      "domain": "tendinopathy_pain_monitoring",
+      "topics": [
+        "achilles_tendinopathy",
+        "pain_monitoring_model",
+        "continued_loading",
+        "vas_pain_scale",
+        "24h_recovery_rule"
+      ],
+      "target_anatomy": [
+        "achilles_tendon",
+        "gastrocnemius",
+        "soleus",
+        "triceps_surae"
+      ],
+      "key_protocols": [
+        "VAS 0-10 Pain-Monitoring Decision Rules: 0-2 safe zone, 2-5 acceptable zone during/post activity, >5 unacceptable zone requiring immediate load reduction",
+        "24-Hour Recovery Rule: Pain and morning stiffness the day following tendon loading MUST return to pre-activity baseline",
+        "Continued sports loading under pain-monitoring model does NOT impair recovery compared to complete rest"
+      ],
+      "rehab_phase": [
+        "symptom_reduction",
+        "load_tolerance",
+        "return_to_sport"
+      ],
+      "contraindications": [
+        "complete_immobilization_or_prolonged_rest",
+        "ignoring_next_morning_stiffness_elevation"
+      ],
+      "evidence_level": "Level 1b (Randomized Controlled Trial)",
+      "summary": "Pioneering RCT establishing that continuing tendon loading under a structured pain-monitoring model (VAS <= 5 with 24h morning recovery) achieves equivalent clinical outcomes to rest while preserving athletic conditioning.",
+      "pdf_size_bytes": 128151,
+      "clean_md_chars": 10949,
+      "status": "ready"
+    },
+    {
+      "id": "silbernagel_2015_achilles_rehab",
+      "pdf_path": "data/papers/pdfs/silbernagel_2015_achilles_rehab.pdf",
+      "raw_md_path": "data/papers/raw_markdown/silbernagel_2015_achilles_rehab.raw.md",
+      "clean_md_path": "data/papers/markdown/silbernagel_2015_achilles_rehab.md",
+      "title": "A Proposed Return-to-Sport Program for Patients With Midportion Achilles Tendinopathy: Rationale and Implementation",
+      "authors": [
+        "Karin Grävare Silbernagel",
+        "Kay M. Crossley"
+      ],
+      "year": 2015,
+      "journal": "Journal of Orthopaedic & Sports Physical Therapy",
+      "doi": "10.2519/jospt.2015.5887",
+      "pmid": "26446884",
+      "pmcid": null,
+      "domain": "tendinopathy_pain_monitoring",
+      "topics": [
+        "achilles_tendinopathy",
+        "return_to_sport_progression",
+        "heavy_slow_resistance",
+        "plyometrics",
+        "4_phase_rehab"
+      ],
+      "target_anatomy": [
+        "achilles_tendon_midportion",
+        "triceps_surae_complex",
+        "plantar_flexors"
+      ],
+      "key_protocols": [
+        "Phase 1: Symptom Reduction & Low-Load Activation (Isometrics, double/single leg heel raises on flat ground)",
+        "Phase 2: Strength & Heavy Slow Resistance (Single-leg heel raises over ledge with added load, 3x15 progressing to 3x6-8 heavy)",
+        "Phase 3: Energy Storage & Plyometric Loading (Quick hops, skipping, jumping, eccentric-concentric stretch-shortening cycle)",
+        "Phase 4: Return to Full Sport / Trail Running (Sport-specific drills, hill running, uncontrolled terrain)",
+        "Minimum 12-week progression before high-speed competition clearance"
+      ],
+      "rehab_phase": [
+        "phase_1_activation",
+        "phase_2_strength_hsr",
+        "phase_3_plyometrics",
+        "phase_4_sport_return"
+      ],
+      "contraindications": [
+        "progressing_to_plyometrics_before_hsr_strength_symmetry",
+        "heel_drops_below_horizontal_in_insertional_cases"
+      ],
+      "evidence_level": "Level 5 (Clinical Commentary & Guideline)",
+      "summary": "Authoritative 4-phase clinical roadmap for midportion Achilles tendinopathy rehabilitation, integrating heavy slow resistance, progressive plyometric energy storage, and sport-specific clearance tests.",
+      "pdf_size_bytes": 128661,
+      "clean_md_chars": 11721,
+      "status": "ready"
+    },
+    {
+      "id": "cook_2016_tendon_continuum",
+      "pdf_path": "data/papers/pdfs/cook_2016_tendon_continuum.pdf",
+      "raw_md_path": "data/papers/raw_markdown/cook_2016_tendon_continuum.raw.md",
+      "clean_md_path": "data/papers/markdown/cook_2016_tendon_continuum.md",
+      "title": "Revisiting the continuum model of tendon pathology: what is its merit in clinical practice and research?",
+      "authors": [
+        "Jill L. Cook",
+        "Ebonie Rio",
+        "Craig R. Purdam",
+        "Sean I. Docking"
+      ],
+      "year": 2016,
+      "journal": "British Journal of Sports Medicine",
+      "doi": "10.1136/bjsports-2015-095422",
+      "pmid": "27127294",
+      "pmcid": "PMC5118437",
+      "domain": "tendinopathy_pain_monitoring",
+      "topics": [
+        "tendon_pathology_continuum",
+        "reactive_tendinopathy",
+        "tendon_disrepair",
+        "degenerative_tendinopathy",
+        "isometric_loading",
+        "mechanobiology"
+      ],
+      "target_anatomy": [
+        "patellar_tendon",
+        "achilles_tendon",
+        "rotator_cuff",
+        "proximal_hamstring_origin"
+      ],
+      "key_protocols": [
+        "Tendon Continuum Tri-Phasic Model: Reactive Tendinopathy vs Tendon Disrepair vs Degenerative Tendinopathy",
+        "Reactive stage management: Deload fast energy storage/release, introduce heavy isometric holds (5 x 45s @ 70% MVC) for cortical analgesia and cell calming",
+        "Tendon disrepair / degenerative management: Progressive Heavy Slow Resistance (HSR) targeting collagen remodeling; load adjacent healthy tendon tissue",
+        "Avoid compressive loading at tendon insertion during reactive irritability"
+      ],
+      "rehab_phase": [
+        "reactive_unloading",
+        "matrix_remodeling",
+        "energy_storage_restoration"
+      ],
+      "contraindications": [
+        "high_velocity_plyometrics_during_reactive_flare",
+        "compressive_stretching_over_bony_insertions"
+      ],
+      "evidence_level": "Narrative Review / Clinical Model",
+      "summary": "Refines the widely adopted Tendon Continuum Model, categorizing tendinopathy into reactive, disrepair, and degenerative stages with stage-matched exercise interventions (isometrics vs HSR vs energy storage).",
+      "pdf_size_bytes": 751154,
+      "clean_md_chars": 40835,
+      "status": "ready"
+    },
+    {
+      "id": "gabbett_2016_acwr",
+      "pdf_path": "data/papers/pdfs/gabbett_2016_acwr.pdf",
+      "raw_md_path": "data/papers/raw_markdown/gabbett_2016_acwr.raw.md",
+      "clean_md_path": "data/papers/markdown/gabbett_2016_acwr.md",
+      "title": "The training—injury prevention paradox: should athletes be training smarter and harder?",
+      "authors": [
+        "Tim J. Gabbett"
+      ],
+      "year": 2016,
+      "journal": "British Journal of Sports Medicine",
+      "doi": "10.1136/bjsports-2015-095788",
+      "pmid": "26758673",
+      "pmcid": "PMC4789704",
+      "domain": "workload_fatigue_biomechanics",
+      "topics": [
+        "acwr",
+        "acute_chronic_workload_ratio",
+        "injury_prevention",
+        "training_load_monitoring",
+        "sweet_spot",
+        "workload_progression"
+      ],
+      "target_anatomy": [
+        "systemic_neuromusculoskeletal",
+        "soft_tissue",
+        "tendons_and_ligaments"
+      ],
+      "key_protocols": [
+        "ACWR Mathematical Formula: Acute Workload (past 7 days) / Chronic Workload (past 28 days average)",
+        "Clinical Risk Zones: <0.8 (Under-training zone, elevated relative risk), 0.8-1.3 (The Sweet Spot, lowest injury risk <10%), 1.3-1.5 (Elevated risk / Caution zone), >1.5 (The Danger Zone, 2x to 4x injury risk spike)",
+        "Maximum safe weekly load expansion: <=10% to 15%"
+      ],
+      "rehab_phase": null,
+      "contraindications": [
+        "acute_workload_spikes_exceeding_15_percent_weekly",
+        "rapid_return_to_high_load_following_layoff"
+      ],
+      "evidence_level": "Level 2a (Systematic Review / Conceptual Framework)",
+      "summary": "Establishes the Acute:Chronic Workload Ratio (ACWR) framework, showing that high chronic training loads build physical resilience while acute spikes (>1.5) exponentially increase soft-tissue injury risk.",
+      "pdf_size_bytes": 794216,
+      "clean_md_chars": 51177,
+      "status": "ready"
+    },
+    {
+      "id": "millet_2011_ultra_trail_fatigue",
+      "pdf_path": "data/papers/pdfs/millet_2011_ultra_trail_fatigue.pdf",
+      "raw_md_path": "data/papers/raw_markdown/millet_2011_ultra_trail_fatigue.raw.md",
+      "clean_md_path": "data/papers/markdown/millet_2011_ultra_trail_fatigue.md",
+      "title": "Neuromuscular Consequences of an Extreme Mountain Ultra-Marathon",
+      "authors": [
+        "Guillaume Y. Millet",
+        "Kirsty Tomazin",
+        "Samuel Verges",
+        "Christian Fonte",
+        "Jérôme Verney",
+        "Léonard Vincent",
+        "Luc Féasson",
+        "Denis Degache"
+      ],
+      "year": 2011,
+      "journal": "PLoS ONE",
+      "doi": "10.1371/journal.pone.0017059",
+      "pmid": "21359187",
+      "pmcid": "PMC3043077",
+      "domain": "workload_fatigue_biomechanics",
+      "topics": [
+        "ultra_trail_running",
+        "neuromuscular_fatigue",
+        "central_fatigue",
+        "peripheral_fatigue",
+        "muscle_damage_recovery",
+        "downhill_running"
+      ],
+      "target_anatomy": [
+        "knee_extensors",
+        "quadriceps",
+        "plantar_flexors",
+        "central_nervous_system"
+      ],
+      "key_protocols": [
+        "Post-ultra neuromuscular deficits: Knee extensors MVC dropped by -35%, plantar flexors MVC dropped by -39%",
+        "Dual fatigue etiology: Central activation failure combined with excitation-contraction uncoupling from severe eccentric downhill muscle damage",
+        "Biological recovery window: 9 to 16 days required for voluntary force and blood biomarkers (CK, myoglobin) restoration",
+        "Mandatory 14-16 day post-ultra prohibition of downhill running, speedwork, and eccentric resistance loading"
+      ],
+      "rehab_phase": [
+        "phase_1_active_recovery_days_1_5",
+        "phase_2_flat_zone1_days_6_10",
+        "phase_3_full_return_days_11_16"
+      ],
+      "contraindications": [
+        "downhill_running_during_first_14_days_post_ultra",
+        "heavy_eccentric_resistance_training_during_acute_recovery"
+      ],
+      "evidence_level": "Level 2b (Prospective Observational Cohort Study)",
+      "summary": "Investigates extreme mountain ultramarathon fatigue (166km, +9500m), quantifying central activation deficits and peripheral eccentric muscle damage, and defining the mandatory 9-16 day multi-stage recovery window.",
+      "pdf_size_bytes": 633944,
+      "clean_md_chars": 61900,
+      "status": "ready"
+    },
+    {
+      "id": "blagrove_2018_strength_runners",
+      "pdf_path": "data/papers/pdfs/blagrove_2018_strength_runners.pdf",
+      "raw_md_path": "data/papers/raw_markdown/blagrove_2018_strength_runners.raw.md",
+      "clean_md_path": "data/papers/markdown/blagrove_2018_strength_runners.md",
+      "title": "Effects of Strength Training on the Physiological Determinants of Middle- and Long-Distance Running Performance: A Systematic Review",
+      "authors": [
+        "Richard C. Blagrove",
+        "Glyn Howatson",
+        "Philip R. Hayes"
+      ],
+      "year": 2018,
+      "journal": "Sports Medicine",
+      "doi": "10.1007/s40279-017-0835-7",
+      "pmid": "29249083",
+      "pmcid": "PMC5889786",
+      "domain": "workload_fatigue_biomechanics",
+      "topics": [
+        "strength_training",
+        "running_economy",
+        "heavy_resistance_training",
+        "plyometrics",
+        "musculotendinous_stiffness",
+        "motor_unit_recruitment"
+      ],
+      "target_anatomy": [
+        "lower_limb_musculature",
+        "plantar_flexors",
+        "knee_extensors",
+        "achilles_and_patellar_tendons"
+      ],
+      "key_protocols": [
+        "Heavy resistance training (>=80% 1RM) or plyometric training 2-3 times per week for >=8 weeks",
+        "Improves Running Economy (RE) by 2% to 8% and enhances time-trial performance without muscle hypertrophy or VO2max penalty",
+        "Mechanisms: Enhanced musculotendinous stiffness, improved motor unit recruitment efficiency, and reduced metabolic cost of ground contact force"
+      ],
+      "rehab_phase": null,
+      "contraindications": [
+        "concurrent_heavy_strength_and_intervals_without_6h_buffer",
+        "excessive_high_rep_hypertrophy_training"
+      ],
+      "evidence_level": "Level 1a (Systematic Review)",
+      "summary": "Definitive systematic review demonstrating that incorporating heavy resistance training or plyometrics 2-3x/week directly improves running economy by 2-8% and time-trial performance in distance runners without unwanted hypertrophy.",
+      "pdf_size_bytes": 860954,
+      "clean_md_chars": 151364,
+      "status": "ready"
+    }
+  ]
+}

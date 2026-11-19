@@ -1,0 +1,1305 @@
+{
+  "activities": [
+    {
+      "id": "i180041185",
+      "fecha": "2026-08-22",
+      "hora": "15:34",
+      "tipo": "Hike",
+      "nombre": "Navalonguilla Hiking",
+      "dist_km": 28.63,
+      "tiempo_min": 463.3,
+      "ritmo": "-",
+      "fc_media": 119,
+      "fc_max": 170,
+      "desnivel": 1675,
+      "load": 157,
+      "notas": ""
+    },
+    {
+      "id": "i181425247",
+      "fecha": "2026-08-29",
+      "hora": "15:53",
+      "tipo": "Hike",
+      "nombre": "San Juan de Gredos Hiking",
+      "dist_km": 24.12,
+      "tiempo_min": 354.0,
+      "ritmo": "-",
+      "fc_media": 122,
+      "fc_max": 174,
+      "desnivel": 1455,
+      "load": 135,
+      "notas": ""
+    },
+    {
+      "id": "i190469158",
+      "fecha": "2026-09-17",
+      "hora": "18:49",
+      "tipo": "Ride",
+      "nombre": "\u00c1vila Cycling",
+      "dist_km": 15.68,
+      "tiempo_min": 59.1,
+      "ritmo": "-",
+      "fc_media": 137,
+      "fc_max": 168,
+      "desnivel": 214,
+      "load": 39,
+      "notas": ""
+    },
+    {
+      "id": "i190918795",
+      "fecha": "2026-09-26",
+      "hora": "12:19",
+      "tipo": "Hike",
+      "nombre": "Nava del Barco Hiking",
+      "dist_km": 30.01,
+      "tiempo_min": 441.5,
+      "ritmo": "-",
+      "fc_media": 120,
+      "fc_max": 171,
+      "desnivel": 1752,
+      "load": 175,
+      "notas": ""
+    },
+    {
+      "id": "i192371017",
+      "fecha": "2026-09-28",
+      "hora": "20:46",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 6.72,
+      "tiempo_min": 30.4,
+      "ritmo": "4:31/km",
+      "fc_media": 168,
+      "fc_max": 189,
+      "desnivel": 35.5,
+      "load": 40,
+      "notas": ""
+    },
+    {
+      "id": "i194695717",
+      "fecha": "2026-10-01",
+      "hora": "20:58",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 6.73,
+      "tiempo_min": 34.8,
+      "ritmo": "5:10/km",
+      "fc_media": 162,
+      "fc_max": 185,
+      "desnivel": 36,
+      "load": 40,
+      "notas": ""
+    },
+    {
+      "id": "i194695883",
+      "fecha": "2026-10-06",
+      "hora": "20:56",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 9.04,
+      "tiempo_min": 40.3,
+      "ritmo": "4:27/km",
+      "fc_media": 169,
+      "fc_max": 193,
+      "desnivel": 31.4,
+      "load": 59,
+      "notas": ""
+    },
+    {
+      "id": "i196598090",
+      "fecha": "2026-10-08",
+      "hora": "20:14",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 10.2,
+      "tiempo_min": 49.4,
+      "ritmo": "4:50/km",
+      "fc_media": 173,
+      "fc_max": 184,
+      "desnivel": 41.8,
+      "load": 68,
+      "notas": ""
+    },
+    {
+      "id": "i196598202",
+      "fecha": "2026-10-12",
+      "hora": "19:44",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 5.14,
+      "tiempo_min": 28.4,
+      "ritmo": "5:31/km",
+      "fc_media": 151,
+      "fc_max": 173,
+      "desnivel": 7.9,
+      "load": 21,
+      "notas": ""
+    },
+    {
+      "id": "i196598320",
+      "fecha": "2026-10-12",
+      "hora": "20:32",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 4.75,
+      "tiempo_min": 21.7,
+      "ritmo": "4:34/km",
+      "fc_media": 168,
+      "fc_max": 193,
+      "desnivel": 22.1,
+      "load": 30,
+      "notas": ""
+    },
+    {
+      "id": "i198649221",
+      "fecha": "2026-10-15",
+      "hora": "20:28",
+      "tipo": "Run",
+      "nombre": "\u00c1vila Running",
+      "dist_km": 6.58,
+      "tiempo_min": 40.3,
+      "ritmo": "6:07/km",
+      "fc_media": 142,
+      "fc_max": 167,
+      "desnivel": 43.8,
+      "load": 22,
+      "notas": ""
+    },
+    {
+      "id": "i199897823",
+      "fecha": "2026-10-19",
+      "hora": "19:57",
+      "tipo": "Run",
+      "nombre": "Rodaje Regenerativo 30' - \u00c1vila Running",
+      "dist_km": 6.01,
+      "tiempo_min": 30.6,
+      "ritmo": "5:05/km",
+      "fc_media": 150,
+      "fc_max": 182,
+      "desnivel": 36.2,
+      "load": 31,
+      "notas": "C\u00f3modo, sin esfuerzo"
+    },
+    {
+      "id": "i199898121",
+      "fecha": "2026-10-19",
+      "hora": "21:21",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza Pierna 1",
+      "dist_km": 0.0,
+      "tiempo_min": 56.5,
+      "ritmo": "-",
+      "fc_media": 99,
+      "fc_max": 129,
+      "desnivel": 0,
+      "load": 15,
+      "notas": "- SENTADILLA CON BARRA - 1rep (60kg) + 3x6reps (90kg)\n- PRENSA DE PIERNAS 45\u00b0 - 3x8reps (40kg/lado)\n- LEG EXTENSION EN M\u00c1QUINA - 3x8reps (66kg)\n- CURL FEMORAL TUMBADO - 3x8reps (42kg)\n- GEMELOS DE PIE CON BARRA - 4x12reps (80kg)\n- RUEDA ABDOMINAL (CORE) - 3x8reps (autocarga)"
+    },
+    {
+      "id": "i199898158",
+      "fecha": "2026-10-20",
+      "hora": "21:05",
+      "tipo": "Run",
+      "nombre": "Calentamiento 15' - \u00c1vila Running",
+      "dist_km": 2.9,
+      "tiempo_min": 14.1,
+      "ritmo": "4:51/km",
+      "fc_media": 133,
+      "fc_max": 172,
+      "desnivel": 1.2,
+      "load": 9,
+      "notas": ""
+    },
+    {
+      "id": "i199898391",
+      "fecha": "2026-10-20",
+      "hora": "21:30",
+      "tipo": "Run",
+      "nombre": "4x1500m (2' 30\" rec) - \u00c1vila Running",
+      "dist_km": 6.59,
+      "tiempo_min": 30.2,
+      "ritmo": "4:35/km",
+      "fc_media": 168,
+      "fc_max": 188,
+      "desnivel": 0,
+      "load": 40,
+      "notas": "Realizado en pista de 200m, fiarse de tiempos y vueltas antes que de ritmo del GPS.\n\nBuenas sensaciones a ritmo de 4min/km, pens\u00e9 que me costar\u00eda m\u00e1s, creo que podr\u00eda haber hecho otra aunque mentalmente me costase."
+    },
+    {
+      "id": "i199898348",
+      "fecha": "2026-10-20",
+      "hora": "22:23",
+      "tipo": "Run",
+      "nombre": "Enfriamiento - \u00c1vila Running",
+      "dist_km": 1.85,
+      "tiempo_min": 12.2,
+      "ritmo": "6:33/km",
+      "fc_media": 154,
+      "fc_max": 167,
+      "desnivel": 22,
+      "load": 12,
+      "notas": ""
+    },
+    {
+      "id": "i200171689",
+      "fecha": "2026-10-21",
+      "hora": "22:06",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza",
+      "dist_km": 0.0,
+      "tiempo_min": 49.0,
+      "ritmo": "-",
+      "fc_media": 95,
+      "fc_max": 122,
+      "desnivel": 0,
+      "load": 6,
+      "notas": ""
+    },
+    {
+      "id": "i201394668",
+      "fecha": "2026-10-22",
+      "hora": "21:17",
+      "tipo": "Run",
+      "nombre": "35' Z2 - \u00c1vila Running",
+      "dist_km": 8.04,
+      "tiempo_min": 37.4,
+      "ritmo": "4:39/km",
+      "fc_media": 146,
+      "fc_max": 157,
+      "desnivel": 66.1,
+      "load": 29,
+      "notas": ""
+    },
+    {
+      "id": "i201394798",
+      "fecha": "2026-10-23",
+      "hora": "20:53",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza Pierna 2",
+      "dist_km": 0.0,
+      "tiempo_min": 62.4,
+      "ritmo": "-",
+      "fc_media": 99,
+      "fc_max": 131,
+      "desnivel": 0,
+      "load": 7,
+      "notas": ""
+    },
+    {
+      "id": "i202337891",
+      "fecha": "2026-10-25",
+      "hora": "13:12",
+      "tipo": "Hike",
+      "nombre": "Ruta 5 lagunas de Pe\u00f1alara",
+      "dist_km": 12.14,
+      "tiempo_min": 184.4,
+      "ritmo": "-",
+      "fc_media": 104,
+      "fc_max": 144,
+      "desnivel": 732,
+      "load": 47,
+      "notas": ""
+    },
+    {
+      "id": "i203756915",
+      "fecha": "2026-10-27",
+      "hora": "20:33",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza Torso Empuje",
+      "dist_km": 0.0,
+      "tiempo_min": 78.7,
+      "ritmo": "-",
+      "fc_media": 90,
+      "fc_max": 115,
+      "desnivel": 0,
+      "load": 14,
+      "notas": "TORSO EMPUJE \n* PRESS INCLINADO MANCUERNA 4x6-8 (cambio a primero 4x3 en este ejercicio para la primera medio calentar en vez de press banca plano porq estaba ocupado)\n10x14KG\n7x16kg\n8x16kg\n8x16kg\n* ELEVACIONES LATERALES 4x8-10\n10x8kg (kg por cada mano)\n10x6kg\n10x6kg\n10x6kg\n* PRESS DE BANCA PLANO (maquina) 3x4-6\n10x25kg (kg por cada mano)\n10x40kg\n10x40kg\n* TR\u00cdCEPS POLEA CON CUERDA 3x8-10\n10x5kg (10 por cada brazo)\n10x5kg\n10x5kg\n* PEC DEC / APERTURAS 3x8-10\n10x52kg\n7x59kg\n6x59kg\n* PRESS FRANC\u00c9S BARRA Z 3x6-8 (lo he hecho con mancuerna)\n10x12kg\n6x16kg\n6x16kg"
+    },
+    {
+      "id": "i203756949",
+      "fecha": "2026-10-27",
+      "hora": "22:09",
+      "tipo": "VirtualRun",
+      "nombre": "35' Z2 Cinta de correr",
+      "dist_km": 6.44,
+      "tiempo_min": 35.0,
+      "ritmo": "5:26/km",
+      "fc_media": 156,
+      "fc_max": 173,
+      "desnivel": 0,
+      "load": 37,
+      "notas": "35 minutos en cinta de correr a 12,6km/h (4:45 min/km). No fiarse del ritmo que marca el reloj."
+    },
+    {
+      "id": "i203757013",
+      "fecha": "2026-10-28",
+      "hora": "22:17",
+      "tipo": "Run",
+      "nombre": "Calentamiento 15'",
+      "dist_km": 2.87,
+      "tiempo_min": 13.5,
+      "ritmo": "4:41/km",
+      "fc_media": 143,
+      "fc_max": 178,
+      "desnivel": 1.3,
+      "load": 12,
+      "notas": ""
+    },
+    {
+      "id": "i203757063",
+      "fecha": "2026-10-28",
+      "hora": "22:46",
+      "tipo": "Run",
+      "nombre": "3x2000m 3' rec",
+      "dist_km": 6.3,
+      "tiempo_min": 25.3,
+      "ritmo": "4:00/km",
+      "fc_media": 163,
+      "fc_max": 188,
+      "desnivel": 0,
+      "load": 30,
+      "notas": "Buenas sensaciones, me vi con fuerza\nRealizado en pista de 200m con zapatillas con placa\nTiempos reales de pasos del km en pista (el GPS del reloj no es exacto con las vueltas de 200m):\n* 1a serie de 2000m:\n1km (5 vueltas): 3:51\nTiempo final 2km: 7:42 (2o km a 3:51)\n3 min desc parado\n\n* 2a serie de 2000m:\n1km (5 vueltas): 3:46\nTiempo final 2km: 7:36 (2o km a 3:50)\n3 mindesc parado\n\n* 3a serie de 2000m:\n1km (5 vueltas): 3:39\nTiempo final 2km: 7:17 (2o km a 3:38)\n"
+    },
+    {
+      "id": "i203757099",
+      "fecha": "2026-10-28",
+      "hora": "23:29",
+      "tipo": "Run",
+      "nombre": "Enfriamiento ",
+      "dist_km": 1.83,
+      "tiempo_min": 10.8,
+      "ritmo": "5:52/km",
+      "fc_media": 156,
+      "fc_max": 177,
+      "desnivel": 7.9,
+      "load": 12,
+      "notas": ""
+    },
+    {
+      "id": "i203757152",
+      "fecha": "2026-10-29",
+      "hora": "22:06",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza Pierna 1",
+      "dist_km": 0.0,
+      "tiempo_min": 49.8,
+      "ritmo": "-",
+      "fc_media": 104,
+      "fc_max": 140,
+      "desnivel": 0,
+      "load": 14,
+      "notas": "29/10/2026 - FUERZA PIERNA 1\n* SENTADILLA CON BARRA 4x6 @90kg costaba, podia hacer 1-2 m\u00e1s coml mucho en cada serie, piernas un poco cansadas de ayer yo creo)\n6x60kg\n6x90kg\n6x90kg\n6x90kg\n* PRENSA DE PIERNAS 45\u00b0 3x8 @90kg\n8x80kg\n8x90kg\n8x90kg\n* LEG EXTENSION EN MAQUINA 3X8 @66kg (alternando con leg curl)\n8x66kg\n8x66kg\n8x66kg\n* LEG CURL (femoral maquina tumbado) 3x80 @55kg (alternando con leg extension)\n8x50kg\n8x50kg\n8x50kg\n* GEMELO EN BARRA 3X10kg @90kg\n10x90kg\n10x90kg\n10x90kg"
+    },
+    {
+      "id": "i203757172",
+      "fecha": "2026-10-30",
+      "hora": "22:20",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza Torso Tracci\u00f3n ",
+      "dist_km": 0.0,
+      "tiempo_min": 32.9,
+      "ritmo": "-",
+      "fc_media": 92,
+      "fc_max": 107,
+      "desnivel": 0,
+      "load": 3,
+      "notas": "30/10/2026 - TORSO TRACCI\u00d3N \nse me olvido las dominadas, y me confund\u00ed e hice flexiones \nNo hice rodaje, no me di\u00f3 tiempo, fui tarde al gimnasio y al dia siguiente iba. hacer ruta de monta\u00f1a dura\n* JAL\u00d3N AGARRE CERRADO V 4x6-8 @54kg\n8x45kg\n8x54kg\n8x54kg\n8x54kg\n* REMO DORIAN UNILATERAL 3x6-8 @35kg/brazo\n8x35kg/brazo\n8x35kg/brazo\n8x35kg/brazo\n* CURL BICEPS INCLINADO 45\u00b0 3x6-8 @10-12kg\n8x10kg\n8x10kg\n8x10kg\n* B\u00cdCEPS EN M\u00c1QUINA / SCOTT 2x8-10 @27kg\n8x27kg\n10x27kg\n* FLEXIONES @PESO PROPIO\n3x15"
+    },
+    {
+      "id": "i204607663",
+      "fecha": "2026-10-31",
+      "hora": "08:05",
+      "tipo": "Hike",
+      "nombre": "Pico Almanzor 2591M - Por la Laguna Grande y la Portilla del Cramp\u00f3n ",
+      "dist_km": 19.07,
+      "tiempo_min": 279.1,
+      "ritmo": "-",
+      "fc_media": 116,
+      "fc_max": 172,
+      "desnivel": 1530,
+      "load": 68,
+      "notas": ""
+    },
+    {
+      "id": "i204607667",
+      "fecha": "2026-11-01",
+      "hora": "19:16",
+      "tipo": "Run",
+      "nombre": "Tirada 50' (35' Z2 + 15' ritmo competici\u00f3n + 5' Z1)",
+      "dist_km": 1.06,
+      "tiempo_min": 5.0,
+      "ritmo": "4:47/km",
+      "fc_media": 109,
+      "fc_max": 122,
+      "desnivel": 1.2,
+      "load": 1,
+      "notas": "2 actividades porq ten\u00eda desactivado el autolap de 1km y par\u00e9 la actividad en el 1er km para activarlo. \n35' un poco m\u00e1s r\u00e1pido de lo previsto pero estaba motivado, descans\u00e9 2-3 mins aprox y contin\u00fae con los 15' r\u00e1pidos intentando ir sobre 4:00 min/km, me fue costando, los \u00faltimos 500m fueron medio en cuesta y me costaron bastante. Controlado con laps el cambio de los 35' a los 15' y \u00f1uego a los 5' finales (aunq fueron 3/4 solo y andar). "
+    },
+    {
+      "id": "i204607685",
+      "fecha": "2026-11-01",
+      "hora": "19:22",
+      "tipo": "Run",
+      "nombre": "Tirada 50' (35' Z2 + 15' ritmo competici\u00f3n + 5' Z1)",
+      "dist_km": 10.68,
+      "tiempo_min": 48.0,
+      "ritmo": "4:29/km",
+      "fc_media": 159,
+      "fc_max": 182,
+      "desnivel": 37.2,
+      "load": 48,
+      "notas": "2 actividades porq ten\u00eda desactivado el autolap de 1km y par\u00e9 la actividad en el 1er km para activarlo. \n35' un poco m\u00e1s r\u00e1pido de lo previsto pero estaba motivado, descans\u00e9 2-3 mins aprox y contin\u00fae con los 15' r\u00e1pidos intentando ir sobre 4:00 min/km, me fue costando, los \u00faltimos 500m fueron medio en cuesta y me costaron bastante. Controlado con laps el cambio de los 35' a los 15' y \u00f1uego a los 5' finales (aunq fueron 3/4 solo y andar). "
+    },
+    {
+      "id": "i207451959",
+      "fecha": "2026-11-04",
+      "hora": "20:55",
+      "tipo": "Run",
+      "nombre": "Calentamiento",
+      "dist_km": 3.02,
+      "tiempo_min": 14.8,
+      "ritmo": "4:54/km",
+      "fc_media": 140,
+      "fc_max": 161,
+      "desnivel": 2.7,
+      "load": 10,
+      "notas": ""
+    },
+    {
+      "id": "i207452039",
+      "fecha": "2026-11-04",
+      "hora": "21:20",
+      "tipo": "Run",
+      "nombre": "4x500m",
+      "dist_km": 2.67,
+      "tiempo_min": 13.1,
+      "ritmo": "4:53/km",
+      "fc_media": 153,
+      "fc_max": 164,
+      "desnivel": 1.3,
+      "load": 12,
+      "notas": ""
+    },
+    {
+      "id": "i207452089",
+      "fecha": "2026-11-04",
+      "hora": "21:36",
+      "tipo": "Run",
+      "nombre": "Enfriamiento",
+      "dist_km": 1.83,
+      "tiempo_min": 10.4,
+      "ritmo": "5:43/km",
+      "fc_media": 160,
+      "fc_max": 173,
+      "desnivel": 11.9,
+      "load": 11,
+      "notas": ""
+    },
+    {
+      "id": "i207452142",
+      "fecha": "2026-11-07",
+      "hora": "15:29",
+      "tipo": "Run",
+      "nombre": "Calentamiento",
+      "dist_km": 2.17,
+      "tiempo_min": 13.3,
+      "ritmo": "6:08/km",
+      "fc_media": 137,
+      "fc_max": 144,
+      "desnivel": 0,
+      "load": 8,
+      "notas": ""
+    },
+    {
+      "id": "i207452226",
+      "fecha": "2026-11-07",
+      "hora": "15:57",
+      "tipo": "Run",
+      "nombre": "5x100m + 3x200m",
+      "dist_km": 1.96,
+      "tiempo_min": 13.6,
+      "ritmo": "6:53/km",
+      "fc_media": 113,
+      "fc_max": 137,
+      "desnivel": 0,
+      "load": 4,
+      "notas": ""
+    },
+    {
+      "id": "i207452388",
+      "fecha": "2026-11-08",
+      "hora": "10:30",
+      "tipo": "Run",
+      "nombre": "10k \u00c1vila Monumental",
+      "dist_km": 9.96,
+      "tiempo_min": 38.5,
+      "ritmo": "3:51/km",
+      "fc_media": 175,
+      "fc_max": 190,
+      "desnivel": 15.5,
+      "load": 59,
+      "notas": ""
+    },
+    {
+      "id": "i207583883",
+      "fecha": "2026-11-08",
+      "hora": "19:44",
+      "tipo": "WeightTraining",
+      "nombre": "Fuerza Torso Empuje",
+      "dist_km": 0.0,
+      "tiempo_min": 147.8,
+      "ritmo": "-",
+      "fc_media": 79,
+      "fc_max": 121,
+      "desnivel": 0,
+      "load": 14,
+      "notas": "Olvide parar el reloj, estuve 50' aprox\n\nTORSO EMPUJE \n* PRESS BANCA PLANO MAQUINA 4x6\n8x30kg/lado\n8x35kg/lado\n6x40kg/lado\n6x40kg/lado\n* PRESS INCLINADO MANCUERNA 3x8\n8x14kg\n8x14kg\n7x16kg\n* PEC DEC / APERTURAS 3x8-10\n8x59kg\n8x59kg\n8x59kg\n* ELEVACIONES LATERALES 4x8-10\n8x8kg\n7x10kg\n8x8kg\n* TRICEPS POLEA 2x10/lado\n10x5kg/lado\n10x5kg/lado"
+    }
+  ],
+  "wellness": [
+    {
+      "fecha": "2026-08-15",
+      "ctl": 5.1,
+      "atl": 5.0,
+      "tsb": 0.1,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-16",
+      "ctl": 5.0,
+      "atl": 4.4,
+      "tsb": 0.6,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-17",
+      "ctl": 4.9,
+      "atl": 3.8,
+      "tsb": 1.1,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-18",
+      "ctl": 4.8,
+      "atl": 3.3,
+      "tsb": 1.5,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-19",
+      "ctl": 4.7,
+      "atl": 2.8,
+      "tsb": 1.8,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-20",
+      "ctl": 4.5,
+      "atl": 2.5,
+      "tsb": 2.1,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-21",
+      "ctl": 4.4,
+      "atl": 2.1,
+      "tsb": 2.3,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-22",
+      "ctl": 8.0,
+      "atl": 22.8,
+      "tsb": -14.7,
+      "rhr": 56,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-23",
+      "ctl": 7.8,
+      "atl": 19.7,
+      "tsb": -11.9,
+      "rhr": 41,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-24",
+      "ctl": 7.7,
+      "atl": 17.1,
+      "tsb": -9.4,
+      "rhr": 69,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-25",
+      "ctl": 7.5,
+      "atl": 14.8,
+      "tsb": -7.3,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-26",
+      "ctl": 7.3,
+      "atl": 12.8,
+      "tsb": -5.6,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-27",
+      "ctl": 7.1,
+      "atl": 11.1,
+      "tsb": -4.0,
+      "rhr": 65,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-28",
+      "ctl": 7.0,
+      "atl": 9.7,
+      "tsb": -2.7,
+      "rhr": 65,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-29",
+      "ctl": 10.0,
+      "atl": 26.3,
+      "tsb": -16.4,
+      "rhr": 57,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-30",
+      "ctl": 9.7,
+      "atl": 22.8,
+      "tsb": -13.1,
+      "rhr": 54,
+      "peso": null
+    },
+    {
+      "fecha": "2026-08-31",
+      "ctl": 9.5,
+      "atl": 19.8,
+      "tsb": -10.3,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-01",
+      "ctl": 9.3,
+      "atl": 17.2,
+      "tsb": -7.9,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-02",
+      "ctl": 9.1,
+      "atl": 14.9,
+      "tsb": -5.8,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-03",
+      "ctl": 8.9,
+      "atl": 12.9,
+      "tsb": -4.0,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-04",
+      "ctl": 8.6,
+      "atl": 11.2,
+      "tsb": -2.5,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-05",
+      "ctl": 8.4,
+      "atl": 9.7,
+      "tsb": -1.3,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-06",
+      "ctl": 8.2,
+      "atl": 8.4,
+      "tsb": -0.2,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-07",
+      "ctl": 8.0,
+      "atl": 7.3,
+      "tsb": 0.8,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-08",
+      "ctl": 7.9,
+      "atl": 6.3,
+      "tsb": 1.5,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-09",
+      "ctl": 7.7,
+      "atl": 5.5,
+      "tsb": 2.2,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-10",
+      "ctl": 7.5,
+      "atl": 4.7,
+      "tsb": 2.7,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-11",
+      "ctl": 7.3,
+      "atl": 4.1,
+      "tsb": 3.2,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-12",
+      "ctl": 7.1,
+      "atl": 3.6,
+      "tsb": 3.6,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-13",
+      "ctl": 7.0,
+      "atl": 3.1,
+      "tsb": 3.9,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-14",
+      "ctl": 6.8,
+      "atl": 2.7,
+      "tsb": 4.1,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-15",
+      "ctl": 6.7,
+      "atl": 2.3,
+      "tsb": 4.3,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-16",
+      "ctl": 6.5,
+      "atl": 2.0,
+      "tsb": 4.5,
+      "rhr": 59,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-17",
+      "ctl": 7.3,
+      "atl": 6.9,
+      "tsb": 0.3,
+      "rhr": 52,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-18",
+      "ctl": 7.1,
+      "atl": 6.0,
+      "tsb": 1.1,
+      "rhr": 76,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-19",
+      "ctl": 6.9,
+      "atl": 5.2,
+      "tsb": 1.7,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-20",
+      "ctl": 6.8,
+      "atl": 4.5,
+      "tsb": 2.2,
+      "rhr": 77,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-21",
+      "ctl": 6.6,
+      "atl": 3.9,
+      "tsb": 2.7,
+      "rhr": 59,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-22",
+      "ctl": 6.4,
+      "atl": 3.4,
+      "tsb": 3.0,
+      "rhr": 69,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-23",
+      "ctl": 6.3,
+      "atl": 2.9,
+      "tsb": 3.3,
+      "rhr": 63,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-24",
+      "ctl": 6.1,
+      "atl": 2.6,
+      "tsb": 3.6,
+      "rhr": 56,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-25",
+      "ctl": 6.0,
+      "atl": 2.2,
+      "tsb": 3.8,
+      "rhr": 57,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-26",
+      "ctl": 10.0,
+      "atl": 25.2,
+      "tsb": -15.2,
+      "rhr": 50,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-27",
+      "ctl": 9.7,
+      "atl": 21.9,
+      "tsb": -12.1,
+      "rhr": 52,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-28",
+      "ctl": 10.5,
+      "atl": 24.3,
+      "tsb": -13.8,
+      "rhr": 79,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-29",
+      "ctl": 10.2,
+      "atl": 21.0,
+      "tsb": -10.8,
+      "rhr": 60,
+      "peso": null
+    },
+    {
+      "fecha": "2026-09-30",
+      "ctl": 10.0,
+      "atl": 18.2,
+      "tsb": -8.3,
+      "rhr": 44,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-01",
+      "ctl": 10.7,
+      "atl": 21.1,
+      "tsb": -10.5,
+      "rhr": 49,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-02",
+      "ctl": 10.4,
+      "atl": 18.3,
+      "tsb": -7.9,
+      "rhr": 79,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-03",
+      "ctl": 10.2,
+      "atl": 15.9,
+      "tsb": -5.7,
+      "rhr": 81,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-04",
+      "ctl": 9.9,
+      "atl": 13.8,
+      "tsb": -3.8,
+      "rhr": 79,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-05",
+      "ctl": 9.7,
+      "atl": 11.9,
+      "tsb": -2.2,
+      "rhr": 56,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-06",
+      "ctl": 10.9,
+      "atl": 18.2,
+      "tsb": -7.3,
+      "rhr": 48,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-07",
+      "ctl": 10.6,
+      "atl": 15.8,
+      "tsb": -5.2,
+      "rhr": 84,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-08",
+      "ctl": 12.0,
+      "atl": 22.7,
+      "tsb": -10.8,
+      "rhr": 79,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-09",
+      "ctl": 11.7,
+      "atl": 19.7,
+      "tsb": -8.0,
+      "rhr": 87,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-10",
+      "ctl": 11.4,
+      "atl": 17.1,
+      "tsb": -5.7,
+      "rhr": 80,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-11",
+      "ctl": 11.1,
+      "atl": 14.8,
+      "tsb": -3.7,
+      "rhr": 84,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-12",
+      "ctl": 12.1,
+      "atl": 19.6,
+      "tsb": -7.6,
+      "rhr": 63,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-13",
+      "ctl": 11.8,
+      "atl": 17.0,
+      "tsb": -5.2,
+      "rhr": 65,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-14",
+      "ctl": 11.5,
+      "atl": 14.7,
+      "tsb": -3.2,
+      "rhr": 81,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-15",
+      "ctl": 11.8,
+      "atl": 15.7,
+      "tsb": -4.0,
+      "rhr": 52,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-16",
+      "ctl": 11.5,
+      "atl": 13.6,
+      "tsb": -2.1,
+      "rhr": 45,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-17",
+      "ctl": 11.2,
+      "atl": 11.8,
+      "tsb": -0.6,
+      "rhr": 41,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-18",
+      "ctl": 10.9,
+      "atl": 10.2,
+      "tsb": 0.7,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-19",
+      "ctl": 11.4,
+      "atl": 15.0,
+      "tsb": -3.6,
+      "rhr": 41,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-20",
+      "ctl": 12.6,
+      "atl": 21.1,
+      "tsb": -8.5,
+      "rhr": 45,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-21",
+      "ctl": 12.3,
+      "atl": 19.1,
+      "tsb": -6.8,
+      "rhr": 54,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-22",
+      "ctl": 12.7,
+      "atl": 20.4,
+      "tsb": -7.7,
+      "rhr": 56,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-23",
+      "ctl": 12.4,
+      "atl": 18.6,
+      "tsb": -6.3,
+      "rhr": 74,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-24",
+      "ctl": 12.1,
+      "atl": 16.2,
+      "tsb": -4.1,
+      "rhr": 62,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-25",
+      "ctl": 12.9,
+      "atl": 20.3,
+      "tsb": -7.3,
+      "rhr": 50,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-26",
+      "ctl": 12.6,
+      "atl": 17.6,
+      "tsb": -5.0,
+      "rhr": 39,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-27",
+      "ctl": 13.2,
+      "atl": 22.0,
+      "tsb": -8.8,
+      "rhr": 45,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-28",
+      "ctl": 14.1,
+      "atl": 26.3,
+      "tsb": -12.1,
+      "rhr": 58,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-29",
+      "ctl": 13.8,
+      "atl": 24.6,
+      "tsb": -10.8,
+      "rhr": 71,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-30",
+      "ctl": 13.5,
+      "atl": 21.8,
+      "tsb": -8.3,
+      "rhr": 74,
+      "peso": null
+    },
+    {
+      "fecha": "2026-10-31",
+      "ctl": 14.8,
+      "atl": 27.9,
+      "tsb": -13.1,
+      "rhr": 65,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-01",
+      "ctl": 15.6,
+      "atl": 30.7,
+      "tsb": -15.1,
+      "rhr": 67,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-02",
+      "ctl": 15.2,
+      "atl": 26.6,
+      "tsb": -11.4,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-03",
+      "ctl": 14.9,
+      "atl": 23.1,
+      "tsb": -8.2,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-04",
+      "ctl": 15.3,
+      "atl": 24.4,
+      "tsb": -9.1,
+      "rhr": 52,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-05",
+      "ctl": 14.9,
+      "atl": 21.2,
+      "tsb": -6.2,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-06",
+      "ctl": 14.6,
+      "atl": 18.3,
+      "tsb": -3.8,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-07",
+      "ctl": 14.5,
+      "atl": 17.5,
+      "tsb": -3.0,
+      "rhr": 60,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-08",
+      "ctl": 15.6,
+      "atl": 24.9,
+      "tsb": -9.3,
+      "rhr": 47,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-09",
+      "ctl": 15.2,
+      "atl": 21.6,
+      "tsb": -6.4,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-10",
+      "ctl": 14.8,
+      "atl": 18.7,
+      "tsb": -3.9,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-11",
+      "ctl": 14.5,
+      "atl": 16.2,
+      "tsb": -1.7,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-12",
+      "ctl": 14.1,
+      "atl": 14.1,
+      "tsb": 0.1,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-13",
+      "ctl": 13.8,
+      "atl": 12.2,
+      "tsb": 1.6,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-14",
+      "ctl": 13.5,
+      "atl": 10.6,
+      "tsb": 2.9,
+      "rhr": null,
+      "peso": null
+    },
+    {
+      "fecha": "2026-11-15",
+      "ctl": 13.2,
+      "atl": 9.2,
+      "tsb": 4.0,
+      "rhr": null,
+      "peso": null
+    }
+  ]
+}

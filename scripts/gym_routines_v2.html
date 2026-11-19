@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>AEGIS COACH · Cuaderno de Fuerza de Carlos</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&display=swap');
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+    
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #f8fafc;
+        color: #0f172a;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .page {
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+        padding: 10mm 12mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Top Header */
+    .header {
+        border-bottom: 2.5px solid #0f172a;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+    .header-left h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        color: #0f172a;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .header-left p {
+        font-size: 10px;
+        color: #475569;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-top: 1px;
+    }
+    
+    .badge {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        font-weight: 900;
+        padding: 4px 12px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: #0f172a;
+        color: #ffffff;
+    }
+    
+    /* 2 Columns x 3 Rows Grid */
+    .exercise-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 9px;
+        flex-grow: 1;
+    }
+    
+    .card {
+        background: #ffffff;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 8px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        position: relative;
+    }
+    
+    .card-top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 4px;
+    }
+    
+    .num-badge {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .name-container {
+        overflow: hidden;
+    }
+    
+    .ex-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        font-weight: 900;
+        color: #0f172a;
+        line-height: 1.15;
+        text-transform: uppercase;
+        letter-spacing: -0.2px;
+    }
+    
+    .ex-subname {
+        font-size: 8.5px;
+        color: #64748b;
+        font-weight: 600;
+    }
+    
+    /* Big Highlight for Series and Reps */
+    .highlight-banner {
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 3px 6px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .series-reps-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+    }
+    
+    .weight-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11.5px;
+        font-weight: 800;
+        color: #0f172a;
+        background: #e2e8f0;
+        padding: 1px 6px;
+        border-radius: 4px;
+    }
+    
+    /* Image Comparison (Phase 0 and Phase 1) */
+    .image-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 5px;
+        align-items: center;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+        height: 72px;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #f1f5f9;
+        border: 1px solid #cbd5e1;
+    }
+    
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .phase-label {
+        position: absolute;
+        bottom: 2px;
+        left: 3px;
+        background: rgba(15, 23, 42, 0.75);
+        color: #ffffff;
+        font-size: 7px;
+        font-weight: 800;
+        padding: 1px 4px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    
+    /* Bottom Info & Cues */
+    .card-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .pills-row {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+    }
+    
+    .pill {
+        font-size: 8px;
+        font-weight: 800;
+        padding: 1px 5px;
+        border-radius: 3px;
+        background: #f1f5f9;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+    }
+    
+    .cue-text {
+        font-size: 8px;
+        color: #475569;
+        line-height: 1.25;
+        margin-top: 1px;
+    }
+    
+    .cue-text strong {
+        color: #0f172a;
+    }
+    
+    /* Footer */
+    .footer {
+        border-top: 1.5px solid #0f172a;
+        padding-top: 5px;
+        margin-top: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9px;
+        font-weight: 700;
+        color: #475569;
+    }
+    
+    .footer strong {
+        color: #0f172a;
+    }
+</style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <h1><span style="color: #16a34a;">●</span> RUTINA 1 · PIERNA 1</h1>
+                <p>DOMINANCIA RODILLA · FUERZA NEURAL & CUÁDRICEPS</p>
+            </div>
+            <div class="badge" style="background: #16a34a;">
+                LUNES 18:00 · 45-50 MIN
+            </div>
+        </div>
+        
+        <div class="exercise-grid">
+    
+            <div class="card" style="border-top: 3.5px solid #16a34a;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #16a34a;">1</div>
+                    <div class="name-container">
+                        <div class="ex-name">SENTADILLA CON BARRA</div>
+                        <div class="ex-subname">Back Squat en Jaula</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <span class="series-reps-text" style="color: #16a34a;">4 SERIES × 4-6 REPS</span>
+                    <span class="weight-text">85 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Full_Squat/0.jpg" alt="SENTADILLA CON BARRA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Full_Squat/1.jpg" alt="SENTADILLA CON BARRA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 3 MIN</span>
+                        <span class="pill">RIR 1-2</span>
+                        <span class="pill">Tempo: 3-1-X-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Rompe el paralelo. Empuja con todo el pie sin meter rodillas.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #16a34a;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #16a34a;">2</div>
+                    <div class="name-container">
+                        <div class="ex-name">PRENSA DE PIERNAS 45°</div>
+                        <div class="ex-subname">Incline Leg Press</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <span class="series-reps-text" style="color: #16a34a;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">+40 KG / LADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Leg_Press/0.jpg" alt="PRENSA DE PIERNAS 45° Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Leg_Press/1.jpg" alt="PRENSA DE PIERNAS 45° Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2.5 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-0-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Pies a anchura de caderas. Cero despegue lumbar del respaldo.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #16a34a;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #16a34a;">3</div>
+                    <div class="name-container">
+                        <div class="ex-name">CURL FEMORAL TUMBADO</div>
+                        <div class="ex-subname">Lying Leg Curl</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <span class="series-reps-text" style="color: #16a34a;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">42 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Lying_Leg_Curls/0.jpg" alt="CURL FEMORAL TUMBADO Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Lying_Leg_Curls/1.jpg" alt="CURL FEMORAL TUMBADO Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-1-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Frena la bajada. Estimula sarcómeros en serie del isquio.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #16a34a;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #16a34a;">4</div>
+                    <div class="name-container">
+                        <div class="ex-name">EXTENSIÓN DE CUÁDRICEPS</div>
+                        <div class="ex-subname">Leg Extension en Máquina</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <span class="series-reps-text" style="color: #16a34a;">3 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">66 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Leg_Extensions/0.jpg" alt="EXTENSIÓN DE CUÁDRICEPS Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Leg_Extensions/1.jpg" alt="EXTENSIÓN DE CUÁDRICEPS Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Aislamiento del recto femoral sin fatiga en columna.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #16a34a;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #16a34a;">5</div>
+                    <div class="name-container">
+                        <div class="ex-name">GEMELOS DE PIE CON BARRA</div>
+                        <div class="ex-subname">Standing Calf Raise</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <span class="series-reps-text" style="color: #16a34a;">4 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">85 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Standing_Calf_Raises/0.jpg" alt="GEMELOS DE PIE CON BARRA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Standing_Calf_Raises/1.jpg" alt="GEMELOS DE PIE CON BARRA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-2-X-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> La pausa abajo anula el rebote elástico y carga el gastrocnemio.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #16a34a;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #16a34a;">6</div>
+                    <div class="name-container">
+                        <div class="ex-name">RUEDA ABDOMINAL (CORE)</div>
+                        <div class="ex-subname">Ab Wheel Rollout</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <span class="series-reps-text" style="color: #16a34a;">3 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">AUTOCARGA</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Ab_Rollout_-_On_Knees/0.jpg" alt="RUEDA ABDOMINAL (CORE) Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Ab_Rollout_-_On_Knees/1.jpg" alt="RUEDA ABDOMINAL (CORE) Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 60 SEG</span>
+                        <span class="pill">Estricto</span>
+                        <span class="pill">Tempo: 2-1-2-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Anti-extensión. Retroversión pélvica activa: bloquea la pelvis neutra.
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="footer">
+            <span>AEGIS COACH &bull; ATLETA: <strong>CARLOS GÓMEZ (63 KG)</strong></span>
+            <span>OBJETIVO: <strong>10K ÁVILA (8 NOV) &bull; SAN SILVESTRE (31 DIC)</strong></span>
+            <span>PROGRESIÓN: <strong>RIR 1-2 &bull; SUBIR +2.5 KG AL COMPLETAR</strong></span>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <h1><span style="color: #0284c7;">●</span> RUTINA 2 · TORSO TRACCIÓN</h1>
+                <p>DORSAL ANCHO · ESPALDA ALTA · BÍCEPS & DENSIDAD</p>
+            </div>
+            <div class="badge" style="background: #0284c7;">
+                MIÉRCOLES 17:30 · 50 MIN
+            </div>
+        </div>
+        
+        <div class="exercise-grid">
+    
+            <div class="card" style="border-top: 3.5px solid #0284c7;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #0284c7;">1</div>
+                    <div class="name-container">
+                        <div class="ex-name">JALÓN AGARRE CERRADO V</div>
+                        <div class="ex-subname">Close-Grip Lat Pulldown</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0f9ff; border-color: #bae6fd;">
+                    <span class="series-reps-text" style="color: #0284c7;">4 SERIES × 4-6 REPS</span>
+                    <span class="weight-text">PESADO (progresivo)</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Close-Grip_Front_Lat_Pulldown/0.jpg" alt="JALÓN AGARRE CERRADO V Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Close-Grip_Front_Lat_Pulldown/1.jpg" alt="JALÓN AGARRE CERRADO V Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2.5 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-0-X-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Codos pegados viajando a las costillas. Máxima carga en dorsal.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #0284c7;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #0284c7;">2</div>
+                    <div class="name-container">
+                        <div class="ex-name">REMO DORIAN UNILATERAL</div>
+                        <div class="ex-subname">One-Arm Row Máquina / Mancuerna</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0f9ff; border-color: #bae6fd;">
+                    <span class="series-reps-text" style="color: #0284c7;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">28 – 34 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/One-Arm_Dumbbell_Row/0.jpg" alt="REMO DORIAN UNILATERAL Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/One-Arm_Dumbbell_Row/1.jpg" alt="REMO DORIAN UNILATERAL Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Pecho firme. Conduce el codo directamente hacia el bolsillo trasero.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #0284c7;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #0284c7;">3</div>
+                    <div class="name-container">
+                        <div class="ex-name">REMO GIRONDA AMPLIO</div>
+                        <div class="ex-subname">Seated Cable Row Wide Grip</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0f9ff; border-color: #bae6fd;">
+                    <span class="series-reps-text" style="color: #0284c7;">3 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">MEDIO-PESADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Seated_Cable_Rows/0.jpg" alt="REMO GIRONDA AMPLIO Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Seated_Cable_Rows/1.jpg" alt="REMO GIRONDA AMPLIO Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 2-0-1-2</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Codos a 45°-60°. Junta escápulas para soporte postural de carrera.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #0284c7;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #0284c7;">4</div>
+                    <div class="name-container">
+                        <div class="ex-name">FACE PULL EN POLEA ALTA</div>
+                        <div class="ex-subname">Rope Face Pull a la Frente</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0f9ff; border-color: #bae6fd;">
+                    <span class="series-reps-text" style="color: #0284c7;">3 SERIES × 10-12 REPS</span>
+                    <span class="weight-text">MEDIO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Face_Pull/0.jpg" alt="FACE PULL EN POLEA ALTA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Face_Pull/1.jpg" alt="FACE PULL EN POLEA ALTA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 75 SEG</span>
+                        <span class="pill">RIR 2</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Manos a la altura de los ojos separando la cuerda. Salud de manguito.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #0284c7;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #0284c7;">5</div>
+                    <div class="name-container">
+                        <div class="ex-name">CURL INCLINADO 45°</div>
+                        <div class="ex-subname">Incline Dumbbell Bicep Curl</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0f9ff; border-color: #bae6fd;">
+                    <span class="series-reps-text" style="color: #0284c7;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">PESADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Alternate_Incline_Dumbbell_Curl/0.jpg" alt="CURL INCLINADO 45° Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Alternate_Incline_Dumbbell_Curl/1.jpg" alt="CURL INCLINADO 45° Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-0-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Brazos cuelgan atrás. Máxima tensión en la cabeza larga del bíceps.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #0284c7;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #0284c7;">6</div>
+                    <div class="name-container">
+                        <div class="ex-name">BÍCEPS EN MÁQUINA / SCOTT</div>
+                        <div class="ex-subname">Machine Preacher Curl</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #f0f9ff; border-color: #bae6fd;">
+                    <span class="series-reps-text" style="color: #0284c7;">2 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">MEDIO-ALTO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Machine_Preacher_Curls/0.jpg" alt="BÍCEPS EN MÁQUINA / SCOTT Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Machine_Preacher_Curls/1.jpg" alt="BÍCEPS EN MÁQUINA / SCOTT Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 75 SEG</span>
+                        <span class="pill">RIR 0-1</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Codos firmes en el apoyo. Contracción pico para densidad de brazo.
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="footer">
+            <span>AEGIS COACH &bull; ATLETA: <strong>CARLOS GÓMEZ (63 KG)</strong></span>
+            <span>OBJETIVO: <strong>10K ÁVILA (8 NOV) &bull; SAN SILVESTRE (31 DIC)</strong></span>
+            <span>PROGRESIÓN: <strong>RIR 1-2 &bull; SUBIR +2.5 KG AL COMPLETAR</strong></span>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <h1><span style="color: #d97706;">●</span> RUTINA 3 · PIERNA 2</h1>
+                <p>DOMINANCIA CADERA · CADENA POSTERIOR & BLINDAJE ISQUIOS</p>
+            </div>
+            <div class="badge" style="background: #d97706;">
+                VIERNES 17:30 · 50 MIN
+            </div>
+        </div>
+        
+        <div class="exercise-grid">
+    
+            <div class="card" style="border-top: 3.5px solid #d97706;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #d97706;">1</div>
+                    <div class="name-container">
+                        <div class="ex-name">HIP THRUST CON BARRA</div>
+                        <div class="ex-subname">Barbell Hip Thrust en Banco</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fffbeb; border-color: #fde68a;">
+                    <span class="series-reps-text" style="color: #d97706;">4 SERIES × 4-6 REPS</span>
+                    <span class="weight-text">120 – 130 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Hip_Thrust/0.jpg" alt="HIP THRUST CON BARRA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Hip_Thrust/1.jpg" alt="HIP THRUST CON BARRA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 3 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 2-1-X-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Empuje con talones. Extensión total de cadera apretando glúteos.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #d97706;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #d97706;">2</div>
+                    <div class="name-container">
+                        <div class="ex-name">PESO MUERTO RUMANO 1P</div>
+                        <div class="ex-subname">Single-Leg / Staggered RDL</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fffbeb; border-color: #fde68a;">
+                    <span class="series-reps-text" style="color: #d97706;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">20 – 22 KG / MANO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Romanian_Deadlift/0.jpg" alt="PESO MUERTO RUMANO 1P Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Romanian_Deadlift/1.jpg" alt="PESO MUERTO RUMANO 1P Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2 MIN</span>
+                        <span class="pill">RIR 1-2</span>
+                        <span class="pill">Tempo: 3-1-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> El ejercicio rey: bisagra de cadera con espalda neutra y tensión en isquio.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #d97706;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #d97706;">3</div>
+                    <div class="name-container">
+                        <div class="ex-name">PRENSA PIES ALTOS / ANCHOS</div>
+                        <div class="ex-subname">High Foot Stance Leg Press</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fffbeb; border-color: #fde68a;">
+                    <span class="series-reps-text" style="color: #d97706;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">+40-45 KG / LADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Narrow_Stance_Leg_Press/0.jpg" alt="PRENSA PIES ALTOS / ANCHOS Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Narrow_Stance_Leg_Press/1.jpg" alt="PRENSA PIES ALTOS / ANCHOS Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-0-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Pies arriba en la plancha para activar glúteos y aductores.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #d97706;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #d97706;">4</div>
+                    <div class="name-container">
+                        <div class="ex-name">CURL FEMORAL CONTROLADO</div>
+                        <div class="ex-subname">Lying Leg Curl (HSR)</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fffbeb; border-color: #fde68a;">
+                    <span class="series-reps-text" style="color: #d97706;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">42 KG</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Lying_Leg_Curls/0.jpg" alt="CURL FEMORAL CONTROLADO Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Lying_Leg_Curls/1.jpg" alt="CURL FEMORAL CONTROLADO Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-1-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Cero inercia o impulso de cadera. Carga excéntrica pura sin cizallamiento.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #d97706;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #d97706;">5</div>
+                    <div class="name-container">
+                        <div class="ex-name">SÓLEO SENTADO EN MÁQUINA</div>
+                        <div class="ex-subname">Seated Calf Raise</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fffbeb; border-color: #fde68a;">
+                    <span class="series-reps-text" style="color: #d97706;">3 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">PESADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Seated_Calf_Raise/0.jpg" alt="SÓLEO SENTADO EN MÁQUINA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Seated_Calf_Raise/1.jpg" alt="SÓLEO SENTADO EN MÁQUINA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-2-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Rodilla a 90° aísla el sóleo (absorbe 6-8x tu peso en cada apoyo al correr).
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #d97706;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #d97706;">6</div>
+                    <div class="name-container">
+                        <div class="ex-name">PALLOF PRESS + GRANJERO</div>
+                        <div class="ex-subname">Anti-rotación y Estabilidad</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fffbeb; border-color: #fde68a;">
+                    <span class="series-reps-text" style="color: #d97706;">3 SERIES × 10 R + 30M</span>
+                    <span class="weight-text">MEDIO-PESADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Pallof_Press/0.jpg" alt="PALLOF PRESS + GRANJERO Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Pallof_Press/1.jpg" alt="PALLOF PRESS + GRANJERO Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 60 SEG</span>
+                        <span class="pill">Estricto</span>
+                        <span class="pill">Tempo: Isométr</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Anti-rotación pura. Elimina el balanceo lateral de la pelvis en carrera.
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="footer">
+            <span>AEGIS COACH &bull; ATLETA: <strong>CARLOS GÓMEZ (63 KG)</strong></span>
+            <span>OBJETIVO: <strong>10K ÁVILA (8 NOV) &bull; SAN SILVESTRE (31 DIC)</strong></span>
+            <span>PROGRESIÓN: <strong>RIR 1-2 &bull; SUBIR +2.5 KG AL COMPLETAR</strong></span>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <h1><span style="color: #db2777;">●</span> RUTINA 4 · TORSO EMPUJE</h1>
+                <p>PECTORAL · HOMBRO LATERAL · TRÍCEPS & DEFINICIÓN</p>
+            </div>
+            <div class="badge" style="background: #db2777;">
+                SÁBADO MAÑANA · 50 MIN
+            </div>
+        </div>
+        
+        <div class="exercise-grid">
+    
+            <div class="card" style="border-top: 3.5px solid #db2777;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #db2777;">1</div>
+                    <div class="name-container">
+                        <div class="ex-name">PRESS DE BANCA PLANO</div>
+                        <div class="ex-subname">Barbell Bench Press</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fdf2f8; border-color: #fbcfe8;">
+                    <span class="series-reps-text" style="color: #db2777;">4 SERIES × 4-6 REPS</span>
+                    <span class="weight-text">PESADO (progresivo)</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Bench_Press_-_Medium_Grip/0.jpg" alt="PRESS DE BANCA PLANO Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Barbell_Bench_Press_-_Medium_Grip/1.jpg" alt="PRESS DE BANCA PLANO Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2.5 MIN</span>
+                        <span class="pill">RIR 1-2</span>
+                        <span class="pill">Tempo: 3-1-X-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Retracción escapular firme. Barra toca el pecho sin rebote y subida explosiva.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #db2777;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #db2777;">2</div>
+                    <div class="name-container">
+                        <div class="ex-name">PRESS INCLINADO MANCUERNA</div>
+                        <div class="ex-subname">Incline 30° Dumbbell Press</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fdf2f8; border-color: #fbcfe8;">
+                    <span class="series-reps-text" style="color: #db2777;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">PESADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Incline_Dumbbell_Press/0.jpg" alt="PRESS INCLINADO MANCUERNA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Incline_Dumbbell_Press/1.jpg" alt="PRESS INCLINADO MANCUERNA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 2 MIN</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-0-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Banco a 30° para enfatizar la porción clavicular y deltoides anterior.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #db2777;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #db2777;">3</div>
+                    <div class="name-container">
+                        <div class="ex-name">PEC DEC / APERTURAS</div>
+                        <div class="ex-subname">Machine Butterfly / Pec Deck</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fdf2f8; border-color: #fbcfe8;">
+                    <span class="series-reps-text" style="color: #db2777;">3 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">MEDIO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Butterfly/0.jpg" alt="PEC DEC / APERTURAS Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Butterfly/1.jpg" alt="PEC DEC / APERTURAS Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Junta los codos al frente y aprieta el pecho 1 segundo en máxima contracción.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #db2777;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #db2777;">4</div>
+                    <div class="name-container">
+                        <div class="ex-name">ELEVACIONES LATERALES</div>
+                        <div class="ex-subname">Side Lateral Raise Mancuerna/Polea</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fdf2f8; border-color: #fbcfe8;">
+                    <span class="series-reps-text" style="color: #db2777;">4 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">PESADO ESTRICTO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Side_Lateral_Raise/0.jpg" alt="ELEVACIONES LATERALES Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Side_Lateral_Raise/1.jpg" alt="ELEVACIONES LATERALES Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 75 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Codos ligeramente flexionados. Clave para la amplitud y corte del hombro.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #db2777;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #db2777;">5</div>
+                    <div class="name-container">
+                        <div class="ex-name">PRESS FRANCÉS BARRA Z</div>
+                        <div class="ex-subname">Lying Triceps Press en Banco</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fdf2f8; border-color: #fbcfe8;">
+                    <span class="series-reps-text" style="color: #db2777;">3 SERIES × 6-8 REPS</span>
+                    <span class="weight-text">MEDIO-PESADO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Lying_Triceps_Press/0.jpg" alt="PRESS FRANCÉS BARRA Z Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Lying_Triceps_Press/1.jpg" alt="PRESS FRANCÉS BARRA Z Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 90 SEG</span>
+                        <span class="pill">RIR 1</span>
+                        <span class="pill">Tempo: 3-0-1-0</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Codos fijos apuntando al techo. Estímulo directo a la cabeza larga del tríceps.
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card" style="border-top: 3.5px solid #db2777;">
+                <div class="card-top">
+                    <div class="num-badge" style="background: #db2777;">6</div>
+                    <div class="name-container">
+                        <div class="ex-name">TRÍCEPS POLEA CON CUERDA</div>
+                        <div class="ex-subname">Triceps Pushdown con Cuerda</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-banner" style="background: #fdf2f8; border-color: #fbcfe8;">
+                    <span class="series-reps-text" style="color: #db2777;">3 SERIES × 8-10 REPS</span>
+                    <span class="weight-text">MEDIO-ALTO</span>
+                </div>
+                
+                <div class="image-row">
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Triceps_Pushdown_-_Rope_Attachment/0.jpg" alt="TRÍCEPS POLEA CON CUERDA Inicio">
+                        <span class="phase-label">Inicio</span>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="file:///c:/Users/carlo/OneDrive/Documentos/Proyectos/aegis-coach/data/gym_images/Triceps_Pushdown_-_Rope_Attachment/1.jpg" alt="TRÍCEPS POLEA CON CUERDA Final">
+                        <span class="phase-label">Final</span>
+                    </div>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="pills-row">
+                        <span class="pill" style="background: #e2e8f0; color: #0f172a; font-weight: 800;">Descanso: 75 SEG</span>
+                        <span class="pill">RIR 0-1</span>
+                        <span class="pill">Tempo: 2-0-1-1</span>
+                    </div>
+                    <div class="cue-text">
+                        <strong>Clave:</strong> Abre la cuerda al final del recorrido para acortar las cabezas lateral y medial.
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="footer">
+            <span>AEGIS COACH &bull; ATLETA: <strong>CARLOS GÓMEZ (63 KG)</strong></span>
+            <span>OBJETIVO: <strong>10K ÁVILA (8 NOV) &bull; SAN SILVESTRE (31 DIC)</strong></span>
+            <span>PROGRESIÓN: <strong>RIR 1-2 &bull; SUBIR +2.5 KG AL COMPLETAR</strong></span>
+        </div>
+    </div>
+    
+</body>
+</html>

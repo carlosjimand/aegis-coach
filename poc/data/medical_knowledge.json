@@ -1,0 +1,310 @@
+[
+  {
+    "chunk_id": "chunk_hamstring_001",
+    "title": "Askling H-Protocol for Acute Proximal Hamstring Strain",
+    "content": "The Askling H-Protocol (The Extender, The Diver, The Glider) focuses on eccentric lengthening of the hamstring at elongated muscle-tendon lengths. Indicated in subacute to remodeling phases (VAS <= 3/10 during daily locomotion). The Extender emphasizes controlled isometric knee extensions in 90 degrees hip flexion (2x12 twice daily). The Diver trains dynamic hip hinge with trunk stabilization and knee flexion (3x6 every consecutive day). The Glider emphasizes eccentric backward sliding from upright position (3x4 every third day). Contraindicated in acute phase 1 with active hematoma, high resting pain (VAS > 4/10), or during maximal sprinting.",
+    "category": "REHABILITATION",
+    "discipline": "TRACK_800M",
+    "target_anatomy": ["hamstring", "hamstring_proximal", "biceps_femoris", "semitendinosus", "semimembranosus"],
+    "contraindications": ["acute_complete_avulsion", "acute_tendon_rupture", "acute_hematoma_phase1"],
+    "rehab_phase": "SUBACUTE",
+    "evidence_level": "RCT",
+    "citations": [
+      {
+        "authors": "Askling CM, Tengvar M, Thorstensson A",
+        "year": "2013",
+        "title": "Acute hamstring injuries in Swedish elite football: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
+        "journal": "Br J Sports Med, 47(15):953-959"
+      }
+    ],
+    "metadata": {
+      "exercise_names": ["The Extender", "The Diver", "The Glider", "Isometric Hamstring Bridge"],
+      "recommended_frequency": "Every 24-48h based on 24h pain monitoring test",
+      "pain_rule": "VAS <= 3/10 allowed if pain resolves within 24h"
+    }
+  },
+  {
+    "chunk_id": "chunk_hamstring_002",
+    "title": "Heavy Slow Resistance (HSR) and Isometric Progression for Proximal Hamstring Tendinopathy",
+    "content": "Proximal Hamstring Tendinopathy (PHT) requires progressive tensile loading without excessive compressive impingement against the ischial tuberosity in deep hip flexion. Phase 1 (Acute/Irritable): Isometric prone knee flexion holds at 30-45 degrees knee flexion (5 sets of 45 seconds at 70% MVC) to induce cortical inhibition and immediate analgesic relief without tendon compression. Phase 2 (Subacute/HSR): Single-leg Romanian deadlifts, high-bench hip thrusts, and seated leg curls with 3-second concentric and 3-second eccentric tempo at 70-80% 1RM (3-4 sets of 6-8 reps, 3x/week). Deep end-range stretching of the hamstring in forward bending is strictly contraindicated.",
+    "category": "REHABILITATION",
+    "discipline": "TRAIL_RUNNING",
+    "target_anatomy": ["hamstring", "hamstring_proximal", "ischial_tuberosity", "gluteus_maximus"],
+    "contraindications": ["complete_avulsion", "deep_end_range_hamstring_stretch"],
+    "rehab_phase": "SUBACUTE",
+    "evidence_level": "SYSTEMATIC_REVIEW",
+    "citations": [
+      {
+        "authors": "Macdonald B, McAleer S, Kelly S, Chakraverty R, Johnston M, Pollock N",
+        "year": "2019",
+        "title": "Hamstring rehabilitation in elite track and field athletes: applying the British Athletics Muscle Injury Classification in clinical practice",
+        "journal": "Br J Sports Med, 53(23):1464-1473"
+      }
+    ],
+    "metadata": {
+      "exercise_names": ["Prone Isometric Knee Flexion 30deg", "High-Bench Hip Thrust", "Submaximal Single-Leg RDL"],
+      "compression_warning": "Avoid hip flexion > 60 degrees in initial loading to prevent ischial tuberosity compression."
+    }
+  },
+  {
+    "chunk_id": "chunk_hamstring_003",
+    "title": "Return-to-Sprinting Progression for Fast-Twitch Middle-Distance Runners",
+    "content": "Following proximal hamstring injury, return to high-speed running must follow a graduated velocity and acceleration continuum. Stage 1: Flat continuous aerobic tempo runs (Zone 2, < 70% max speed, cadence 175-180 spm). Stage 2: Submaximal straight-line build-up strides (60-80m accelerating to 75-80% velocity, zero explosive block starts, flat surface). Stage 3: Flying 30m sprints at 85-90% velocity with 40m gradual acceleration and 40m smooth deceleration. Stage 4: Maximal 100% velocity and resisted/incline sprints. Explosive hill sprints (> 8% grade at 100% effort) impose extreme eccentric elongation moments under peak contraction and are strictly contraindicated until Stage 4 is achieved pain-free.",
+    "category": "PERIODIZATION",
+    "discipline": "TRACK_800M",
+    "target_anatomy": ["hamstring", "biceps_femoris_long_head", "semitendinosus", "hip_extensors"],
+    "contraindications": ["explosive_block_starts", "hill_sprint_100pct", "uncontrolled_deceleration", "maximal_sprint", "cuestas_a_tope", "100% sprint"],
+    "rehab_phase": "RETURN_TO_SPORT",
+    "evidence_level": "EXPERT_CONSENSUS",
+    "citations": [
+      {
+        "authors": "Bourne MN, Timmins RG, Opar DA, et al.",
+        "year": "2018",
+        "title": "An Evidence-Based Framework for Strengthening Exercises to Prevent Hamstring Injury",
+        "journal": "Sports Med, 48(2):251-267"
+      }
+    ],
+    "metadata": {
+      "target_cadence": "175-185 spm to reduce stride over-reaching and peak hamstring stretch",
+      "progression_milestone": "Full painless 0-10 VAS on Askling H-test and > 90% limb symmetry on NordBord/dynamometer"
+    }
+  },
+  {
+    "chunk_id": "chunk_achilles_001",
+    "title": "Alfredson & Silbernagel Combined Loading for Midportion Achilles Tendinopathy",
+    "content": "Midportion Achilles tendinopathy responds favorably to high-load eccentric and heavy slow resistance (HSR) protocols. The Alfredson protocol prescribes 3x15 eccentric heel drops with knee straight (gastrocnemius focus) and knee bent (soleus focus), twice daily for 12 weeks. The Silbernagel progression integrates concentric-eccentric loading with progressive plyometrics (quick hops and skipping) in later phases. In acute flare-ups, replace ballistic jumping and steep uphill mountain running with flat surfaces and 45-second isometric calf holds. Heel lifts (10-12mm) can temporarily offload the tendon during everyday walking.",
+    "category": "REHABILITATION",
+    "discipline": "TRAIL_RUNNING",
+    "target_anatomy": ["achilles_tendon", "gastrocnemius", "soleus", "plantar_flexors"],
+    "contraindications": ["complete_achilles_tear", "acute_tendon_rupture"],
+    "rehab_phase": "SUBACUTE",
+    "evidence_level": "SYSTEMATIC_REVIEW",
+    "citations": [
+      {
+        "authors": "Alfredson H, Pietilä T, Jonsson P, Lorentzon R",
+        "year": "1998",
+        "title": "Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis",
+        "journal": "Am J Sports Med, 26(3):360-366"
+      },
+      {
+        "authors": "Silbernagel KG, Thomeé R, Eriksson BI, Karlsson J",
+        "year": "2007",
+        "title": "Continued sports activity, using a pain-monitoring model, during eccentric training in patients with Achilles tendinopathy",
+        "journal": "Am J Sports Med, 35(6):897-906"
+      }
+    ],
+    "metadata": {
+      "exercise_names": ["Eccentric Heel Drop Straight Leg", "Eccentric Heel Drop Bent Knee", "Isometric Standing Calf Raise Hold"],
+      "pain_tolerance": "VAS <= 5/10 during exercise acceptable if settled by next morning"
+    }
+  },
+  {
+    "chunk_id": "chunk_patellar_001",
+    "title": "Spanish Squats & Isometric Knee Extension for Patellar Tendinopathy (Jumper's Knee)",
+    "content": "Patellar tendinopathy requires targeted load management to reduce anterior knee pain at the inferior pole of the patella. Isometric Spanish Squats (rigid band looped behind the knees, torso upright, shins perpendicular to floor, knees flexed 60-70 degrees) for 5 sets of 45 seconds at 70% MVC provide potent analgesia and reduce quadriceps cortical inhibition for 45-60 minutes. Phase 2 integrates Heavy Slow Resistance (HSR) leg press and Spanish squats with 3s concentric / 3s eccentric tempo (4x6-8 reps at 80% 1RM, 3x/week). Deep downhill mountain running (> 15% negative grade) and deep plyometric rebound jumping are strictly contraindicated during active flare-ups.",
+    "category": "REHABILITATION",
+    "discipline": "TRAIL_RUNNING",
+    "target_anatomy": ["patellar_tendon", "quadriceps", "rectus_femoris", "vastus_medialis"],
+    "contraindications": ["complete_patellar_rupture", "acute_bony_avulsion"],
+    "rehab_phase": "ACUTE",
+    "evidence_level": "RCT",
+    "citations": [
+      {
+        "authors": "Rio E, Kidgell D, Purdam C, et al.",
+        "year": "2015",
+        "title": "Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy",
+        "journal": "Br J Sports Med, 49(19):1277-1283"
+      },
+      {
+        "authors": "Malliaras P, Cook J, Purdam C, Rio E",
+        "year": "2015",
+        "title": "Patellar Tendinopathy: Clinical Diagnosis, Load Management, and Advice for Challenging Case Presentations",
+        "journal": "J Orthop Sports Phys Ther, 45(11):887-898"
+      }
+    ],
+    "metadata": {
+      "exercise_names": ["Spanish Squat Isometric Hold", "Leg Press Heavy Slow Resistance", "Single-Leg Decline Board Squat"],
+      "pre_run_warmup": "Perform 5x45s Spanish Squats 20 minutes prior to running for analgesic window"
+    }
+  },
+  {
+    "chunk_id": "chunk_lumbar_001",
+    "title": "McGill Big 3 & Spine-Sparing Neutral Biomechanics for Lumbar Disc Herniation",
+    "content": "Lumbar disc protrusions (L4-L5, L5-S1) are aggravated by repeated spinal flexion, axial compressive shock, and rotational shear moments under load. Stuart McGill's 'Big 3' stabilization exercises (Modified Curl-Up with hands supporting lumbar lordosis, Side Bridge/Plank, and Quadruped Bird-Dog with neutral spine) build muscular endurance in the abdominal brace (transversus abdominis, quadratus lumborum, multifidus) with minimal spinal load. For strength training, substitute conventional barbell deadlifts and high-bar back squats with high-handle Trap Bar deadlifts, barbell hip thrusts on flat bench, and goblet squats to maintain upright neutral torso. Maximal 1RM testing, spinal flexion stretches (toes touch), and high-impact box jump rebounds are strictly contraindicated.",
+    "category": "BIOMECHANICS",
+    "discipline": "STRENGTH_CROSSFIT",
+    "target_anatomy": ["lumbar_spine", "intervertebral_discs_L4_L5_S1", "erector_spinae", "quadratus_lumborum", "core_stabilizers"],
+    "contraindications": ["acute_cauda_equina", "spinal_fracture", "progressive_neurological_deficit"],
+    "rehab_phase": "SUBACUTE",
+    "evidence_level": "CLINICAL_GUIDELINE",
+    "citations": [
+      {
+        "authors": "McGill SM",
+        "year": "2010",
+        "title": "Core Training: Evidence Translating to Better Performance and Injury Prevention",
+        "journal": "Strength and Conditioning Journal, 32(3):33-46"
+      },
+      {
+        "authors": "Adams MA, Dolan P",
+        "year": "2012",
+        "title": "Intervertebral disc degeneration: pathomechanics and the role of the mechanical environment",
+        "journal": "J Anat, 221(6):481-494"
+      }
+    ],
+    "metadata": {
+      "exercise_names": ["McGill Modified Curl-Up", "McGill Side Plank", "McGill Bird-Dog", "High-Handle Trap Bar Deadlift", "Barbell Hip Thrust"],
+      "biomechanical_rule": "Maintain strict neutral spine lordosis; brace abdominal wall 360 degrees without drawing in belly button."
+    }
+  },
+  {
+    "chunk_id": "chunk_nutrition_001",
+    "title": "Evidence-Based Carbohydrate Loading & Low-FODMAP Protocol for Marathoners",
+    "content": "Pre-competition carbohydrate loading maximizes muscle glycogen stores from ~100-120 mmol/kg to > 200 mmol/kg ww. Protocol: 8-10 grams of carbohydrate per kg of body mass per day for 48 to 72 hours prior to the race (e.g., 512g/day for a 64kg runner). For athletes with chronic exercise-induced gastrointestinal distress (EIGS) or irritable bowel tendencies, adhere strictly to a Low-FODMAP carbohydrate strategy: white polished rice, boiled potatoes, sourdough white wheat bread, rolled white oats, ripe bananas, maltodextrin powder, and maple syrup. Avoid high-fructose corn syrup, apples/pears (excess fructose), lactose (dairy), onions/garlic (fructans), and excess insoluble fiber. Race-morning meal (3-4h pre-race): 1.5-2.5g CHO/kg low fat/low fiber. Intra-race fueling: 60-90g CHO/hour using a 1:0.8 to 2:1 glucose-to-fructose dual-transport ratio.",
+    "category": "NUTRITION",
+    "discipline": "MARATHON",
+    "target_anatomy": ["gastrointestinal_tract", "skeletal_muscle_glycogen", "hepatic_glycogen"],
+    "contraindications": ["high_fiber_pre_race_loading", "high_fodmap_legumes", "untested_race_day_gels", "excess_fructose_monosaccharide"],
+    "rehab_phase": "MAINTENANCE",
+    "evidence_level": "SYSTEMATIC_REVIEW",
+    "citations": [
+      {
+        "authors": "Burke LM, Jeukendrup AE, Jones AM, Mooses M",
+        "year": "2019",
+        "title": "Contemporary Nutrition Strategies to Optimize Performance in Distance Runners and Race Walkers",
+        "journal": "Int J Sport Nutr Exerc Metab, 29(2):117-129"
+      },
+      {
+        "authors": "Jeukendrup AE",
+        "year": "2014",
+        "title": "A Step Towards Personalized Sports Nutrition: Carbohydrate Intake During Exercise",
+        "journal": "Sports Med, 44(Suppl 1):S25-S33"
+      }
+    ],
+    "metadata": {
+      "carb_intake_target": "8-10g CHO/kg/day for 48-72h",
+      "intra_race_target": "60-90g CHO/hr (dual-source glucose:fructose)",
+      "hydration_sodium": "500-800mg sodium per liter of fluid"
+    }
+  },
+  {
+    "chunk_id": "chunk_altitude_001",
+    "title": "Altitude Acclimatization, Hydration & Physiological Dampening for Mountain Trail Running",
+    "content": "Ascending to altitudes above 2000-3000m reduces ambient partial pressure of oxygen (PO2), triggering hyperventilation, increased respiratory water loss, elevated resting heart rate, and reduction in VO2max (~1% loss per 100m above 1500m). Acclimatization guidelines: Increase baseline hydration by +20% to +30% (+500-1000ml fluid/day with electrolytes) due to cold dry air hyperpnea. Periodization adjustment: Dampen planned target pace by 10-20% and use Heart Rate / RPE as the primary governing metric rather than flat GPS pace. Monitor serum ferritin (> 50 mcg/L recommended for optimal erythropoietic adaptation). Avoid rapid ascent above 500m sleeping altitude per 24 hours to prevent Acute Mountain Sickness (AMS).",
+    "category": "PHYSIOLOGY",
+    "discipline": "TRAIL_RUNNING",
+    "target_anatomy": ["pulmonary_system", "erythrocytes", "cardiovascular_system"],
+    "contraindications": ["ignoring_ams_headache_ataxia", "anaerobic_glycolytic_all_out_efforts_day1_altitude", "dehydration_restriction"],
+    "rehab_phase": "MAINTENANCE",
+    "evidence_level": "CLINICAL_GUIDELINE",
+    "citations": [
+      {
+        "authors": "Saunders PU, Garvican-Lewis LA, Chapman RF, Gore CJ",
+        "year": "2019",
+        "title": "Special Environments: Altitude and Hypoxia",
+        "journal": "Handbook of Sports Medicine and Science: Running, Wiley-Blackwell, pp. 110-125"
+      }
+    ],
+    "metadata": {
+      "hydration_increase": "+20-30% daily volume with sodium/potassium",
+      "pacing_rule": "RPE / Heart Rate Zone 2 ceiling overrides target speed"
+    }
+  },
+  {
+    "chunk_id": "chunk_pap_001",
+    "title": "Post-Activation Potentiation (PAP) Protocols for 800m Track & Sprint Performance",
+    "content": "Post-Activation Potentiation (PAP) exploits the transient enhancement of neuromuscular contractile force following a conditioning contraction with near-maximal load, primarily through myosin regulatory light chain phosphorylation and increased motor unit recruitment. For fast-twitch middle-distance runners (800m specialists): Conditioning stimulus consists of 3 sets of 3 reps of Heavy Barbell Back Squats or Hex Bar Deadlifts at 85% 1RM, or 3 maximal countermovement jumps with 10% body weight vest. The optimal transition window (coexistence of potentiation after fatigue dissipates) is 8 to 12 minutes prior to the sprint time-trial or high-intensity interval session. Contraindicated when athlete presents acute lower limb tendon or muscular strain.",
+    "category": "PERIODIZATION",
+    "discipline": "TRACK_800M",
+    "target_anatomy": ["quadriceps", "gluteal_complex", "hamstring", "cns_neuromuscular"],
+    "contraindications": ["acute_muscle_strain", "maximal_sprint", "hamstring_strain", "cuestas_a_tope", "100% sprint", "conventional_deadlift_1rm"],
+    "rehab_phase": "MAINTENANCE",
+    "evidence_level": "RCT",
+    "citations": [
+      {
+        "authors": "Tillin NA, Bishop D",
+        "year": "2009",
+        "title": "Factors modulating post-activation potentiation and its effect on performance of switch-type actions",
+        "journal": "Sports Med, 39(2):147-166"
+      },
+      {
+        "authors": "Sale DG",
+        "year": "2002",
+        "title": "Postactivation potentiation: role in human performance",
+        "journal": "Exerc Sport Sci Rev, 30(3):138-143"
+      }
+    ],
+    "metadata": {
+      "conditioning_stimulus": "3x3 Heavy Hex Bar / Squat at 85% 1RM",
+      "optimal_rest_interval": "8 to 12 minutes rest prior to track run"
+    }
+  },
+  {
+    "chunk_id": "chunk_reds_001",
+    "title": "Relative Energy Deficiency in Sport (RED-S) & Caloric Availability Minimums",
+    "content": "Relative Energy Deficiency in Sport (RED-S) results from an insufficient caloric intake relative to exercise energy expenditure. Low Energy Availability (LEA is defined as EA < 30 kcal/kg Fat-Free Mass / day). Clinical consequences include hypothalamic hypogonadism, amenorrhea, low bone mineral density, elevated bone stress injury risk (sacral/femoral neck stress fractures), severe metabolic rate suppression, and chronic immune impairment. Prescribing severe hypocaloric diets (< 1500 kcal/day for active endurance athletes or < 30 kcal/kg FFM/day) is strictly contraindicated. Any athlete presenting with multi-month fatigue, recurrent bone stress injuries, or disordered eating patterns requires immediate interdisciplinary sports dietitian and physician consultation.",
+    "category": "SAFETY_TRIAGE",
+    "discipline": "GENERAL_ENDURANCE",
+    "target_anatomy": ["endocrine_system", "skeletal_bone_density", "metabolic_system"],
+    "contraindications": ["severe_hypocaloric_restriction", "excessive_fasted_endurance_training", "ignoring_bone_stress_pain"],
+    "rehab_phase": "MAINTENANCE",
+    "evidence_level": "CLINICAL_GUIDELINE",
+    "citations": [
+      {
+        "authors": "Mountjoy M, Sundgot-Borgen JK, Burke LM, et al.",
+        "year": "2018",
+        "title": "IOC consensus statement on relative energy deficiency in sport (RED-S): 2018 update",
+        "journal": "Br J Sports Med, 52(11):687-697"
+      }
+    ],
+    "metadata": {
+      "minimum_energy_availability": ">= 45 kcal/kg Fat-Free Mass/day for optimal physiological function",
+      "danger_threshold": "< 30 kcal/kg FFM/day"
+    }
+  },
+  {
+    "chunk_id": "chunk_cardio_redflag_001",
+    "title": "Acute Cardiovascular and Medical Red Flags in Athletic Training",
+    "content": "Immediate training cessation and urgent medical evaluation are mandatory when an athlete reports any of the following acute cardiovascular red flags: 1) Angina pectoris or chest tightness/pressure during exertion; 2) Unexplained syncope, pre-syncope, or sudden loss of consciousness during or immediately following exercise; 3) Disproportionate exertional dyspnea (shortness of breath) or acute resting tachycardia/palpitations; 4) Inability to bear weight, accompanied by a sudden audible pop or snap in a joint or muscle belly with rapid hematoma/swelling. AI coaching algorithms must immediately lock out all training prescription, output an emergency disclaimer, and direct the athlete to seek emergency medical attention.",
+    "category": "SAFETY_TRIAGE",
+    "discipline": "GENERAL_ENDURANCE",
+    "target_anatomy": ["myocardium", "coronary_arteries", "cardiovascular_system", "acute_musculoskeletal_rupture"],
+    "contraindications": ["continuing_exercise_with_chest_pain", "delayed_medical_referral_post_syncope"],
+    "rehab_phase": "ACUTE",
+    "evidence_level": "CLINICAL_GUIDELINE",
+    "citations": [
+      {
+        "authors": "Baggish AL, Battle RW, Beckerman JG, et al.",
+        "year": "2020",
+        "title": "Sports Cardiology: Core Curriculum and Clinical Practice Guidelines",
+        "journal": "J Am Coll Cardiol, 76(24):2876-2895"
+      }
+    ],
+    "metadata": {
+      "emergency_action": "Lock out workout generation, display emergency 112/911 medical prompt",
+      "zero_tolerance": true
+    }
+  },
+  {
+    "chunk_id": "chunk_downhill_001",
+    "title": "Downhill Mountain Running Eccentric Damage & DOMS Mitigation",
+    "content": "Downhill running produces intense eccentric quadriceps and patellar tendon loading, inducing mechanical micro-damage to the sarcomere Z-lines and profound delayed-onset muscle soreness (DOMS). To prevent excessive muscle breakdown: 1) Implement the Repeated Bout Effect (RBE) with low-volume downhill strides (2-3 x 100m at -5% slope) 10-14 days prior to target mountain events; 2) Increase step cadence by 5-10% to reduce foot impact distance and knee flexion excursion upon ground contact; 3) Post-workout recovery protocol includes immediate cold water immersion (11-15 degrees C for 11-15 min) or active low-cadence cycling (Z1, < 120 bpm) to facilitate lactate clearance and reduce secondary inflammation without impairing long-term myofibrillar hypertrophy.",
+    "category": "BIOMECHANICS",
+    "discipline": "TRAIL_RUNNING",
+    "target_anatomy": ["quadriceps", "vastus_lateralis", "rectus_femoris", "patellar_tendon"],
+    "contraindications": ["unaccustomed_steep_downhill_volume_spike", "maximal_plyometrics_with_severe_doms"],
+    "rehab_phase": "MAINTENANCE",
+    "evidence_level": "RCT",
+    "citations": [
+      {
+        "authors": "Eston RG, Mickleborough J, Baltzopoulos V",
+        "year": "1995",
+        "title": "Eccentric activation and muscle damage: biomechanical and physiological implications during downhill running",
+        "journal": "J Sports Sci, 13(3):209-217"
+      }
+    ],
+    "metadata": {
+      "cadence_adaptation": "+5-10% cadence on technical descents",
+      "rbe_timeline": "Single low-volume exposure provides protective adaptation for up to 6 weeks"
+    }
+  }
+]

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05161A"/>
+      <stop offset="100%" stop-color="#072E33"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F969C"/>
+      <stop offset="100%" stop-color="#0C7075"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8D3B8"/>
+      <stop offset="100%" stop-color="#E8B490"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DE9E78"/>
+      <stop offset="100%" stop-color="#C6835F"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="barChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TARJETA BASE -->
+  <rect width="800" height="380" rx="18" fill="url(#bgGrad)" stroke="#294D61" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- SUELO Y CUADRÍCULA SUTIL -->
+  <line x1="30" y1="330" x2="770" y2="330" stroke="#294D61" stroke-width="2" stroke-dasharray="6 4" stroke-opacity="0.4"/>
+  <rect x="30" y="331" width="740" height="1" fill="#0F969C" fill-opacity="0.2"/>
+
+  <!-- DIVISOR CENTRAL CON CHEVRON -->
+  <line x1="400" y1="45" x2="400" y2="330" stroke="#294D61" stroke-width="1" stroke-dasharray="4 6" stroke-opacity="0.3"/>
+  <g transform="translate(400, 185)">
+    <circle cx="0" cy="0" r="17" fill="#05161A" stroke="#0F969C" stroke-width="1.8" filter="url(#glow)"/>
+    <path d="M-6 0 H6 M2 -4 L6 0 L2 4" stroke="#0F969C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- BADGES SUPERIORES -->
+  <g transform="translate(35, 24)">
+    <rect width="145" height="26" rx="6" fill="#05161A" stroke="#294D61" stroke-width="1.2"/>
+    <text x="72" y="17" fill="#6DA5C0" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 1 · BARRA EN ESTERNÓN</text>
+  </g>
+  <g transform="translate(425, 24)">
+    <rect width="160" height="26" rx="6" fill="#0C7075" fill-opacity="0.25" stroke="#0F969C" stroke-width="1.2"/>
+    <circle cx="15" cy="13" r="3.5" fill="#0F969C" filter="url(#glow)"/>
+    <text x="90" y="17" fill="#0F969C" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 2 · BLOQUEO VERTICAL ARRIBA</text>
+  </g>
+
+  <!-- PIE DE TARJETA CON DIANA MUSCULAR -->
+  <g transform="translate(400, 360)">
+    <rect x="-210" y="-14" width="420" height="24" rx="12" fill="#05161A" fill-opacity="0.8" stroke="#294D61" stroke-width="1"/>
+    <circle cx="-190" cy="-2" r="3" fill="#0F969C" filter="url(#glow)"/>
+    <text x="0" y="2" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+      PRESS DE BANCA PLANO CON BARRA &bull; FOCO: <tspan fill="#0F969C" font-weight="700">PECTORAL MAYOR &amp; TRÍCEPS (EMPUJE EXPLOSIVO)</tspan>
+    </text>
+  </g>
+
+  <!-- CONTENIDO FASE 1 -->
+  <g id="phase1-group">
+    
+    <!-- Banco Plano Horizontal -->
+    <rect x="75" y="240" width="130" height="15" rx="3" fill="#0B1519" stroke="#294D61" stroke-width="1.2"/>
+    <rect x="90" y="255" width="8" height="75" fill="#1E293B"/>
+    <rect x="180" y="255" width="8" height="75" fill="#1E293B"/>
+    <line x1="85" y1="160" x2="85" y2="255" stroke="#334155" stroke-width="4"/>
+    
+    <!-- Atleta Tumbado en el Banco (Fase 1: BARRA EN EL PECHO) -->
+    <circle cx="95" cy="235" r="11" fill="#F5CBA7"/>
+    <path d="M 105 228 L 175 228 L 175 242 L 105 242 Z" fill="#0F969C"/>
+    
+    <!-- Piernas plantadas -->
+    <path d="M 170 235 L 185 270 L 185 328 L 175 328 L 175 275 L 165 240 Z" fill="#F5CBA7"/>
+    <rect x="175" y="325" width="22" height="6" rx="2" fill="#1E293B"/>
+    
+    <!-- Brazos con Codos a 90° Abajo -->
+    <path d="M 135 235 L 135 250 L 135 205" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <circle cx="135" cy="205" r="4.5" fill="#DE9E78"/>
+    
+    <!-- Barra Olímpica y Disco 20kg en el Pecho -->
+    <rect x="70" y="202" width="130" height="5" rx="2" fill="#CBD5E1"/>
+    <circle cx="185" cy="204" r="26" fill="#1E293B" stroke="#0F969C" stroke-width="2.5"/>
+    <circle cx="185" cy="204" r="12" fill="#1E293B"/>
+    
+  </g>
+
+  <!-- CONTENIDO FASE 2 -->
+  <g id="phase2-group">
+    
+    <!-- Banco Plano Horizontal -->
+    <rect x="475" y="240" width="130" height="15" rx="3" fill="#0B1519" stroke="#294D61" stroke-width="1.2"/>
+    <rect x="490" y="255" width="8" height="75" fill="#1E293B"/>
+    <rect x="580" y="255" width="8" height="75" fill="#1E293B"/>
+    <line x1="485" y1="160" x2="485" y2="255" stroke="#334155" stroke-width="4"/>
+    
+    <!-- Atleta Tumbado en el Banco (Fase 2: Bloqueo Vertical) -->
+    <circle cx="495" cy="235" r="11" fill="#F5CBA7"/>
+    <path d="M 505 228 L 575 228 L 575 242 L 505 242 Z" fill="#0F969C"/>
+    
+    <!-- FOCO NEUROMUSCULAR: PECTORAL MAYOR & TRÍCEPS EN BLOQUEO -->
+    <ellipse cx="535" cy="230" rx="24" ry="12" fill="#0F969C" fill-opacity="0.5" filter="url(#glow)"/>
+    <path d="M 525 228 C 535 224 545 224 550 230" stroke="#6DA5C0" stroke-width="2.5" fill="none"/>
+    
+    <!-- Piernas plantadas -->
+    <path d="M 570 235 L 585 270 L 585 328 L 575 328 L 575 275 L 565 240 Z" fill="#F5CBA7"/>
+    <rect x="575" y="325" width="22" height="6" rx="2" fill="#1E293B"/>
+    
+    <!-- Brazos TOTALMENTE EXTENDIDOS ARRIBA EN BLOQUEO -->
+    <line x1="535" y1="230" x2="535" y2="155" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="535" cy="155" r="4.5" fill="#DE9E78"/>
+    
+    <!-- Barra Olímpica Elevada Arriba -->
+    <rect x="470" y="152" width="130" height="5" rx="2" fill="#CBD5E1"/>
+    <circle cx="585" cy="154" r="26" fill="#1E293B" stroke="#0F969C" stroke-width="2.5" filter="url(#glow)"/>
+    <circle cx="585" cy="154" r="12" fill="#1E293B"/>
+    
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="c3_blueArc" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#7B88FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="c3_pinkArc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5E80"/>
+      <stop offset="50%" stop-color="#E11D48"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+    <linearGradient id="c3_spine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FF5E80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Continuous Biomechanical Arc (Foot-strike to Apex) -->
+  <path d="M 28 84
+           C 16 73, 12 55, 17 38
+           C 22 23, 35 14, 49 11
+           C 51 10, 52 12, 51 14
+           C 39 19, 29 29, 25 43
+           C 21 57, 26 71, 35 80
+           C 42 87, 49 89, 52 90
+           C 50 91, 46 91, 43 90
+           C 37 89, 32 87, 28 84
+           Z" 
+        fill="url(#c3_blueArc)"/>
+
+  <!-- Right Continuous Kinetic Shield Arc (Apex to Push-off) -->
+  <path d="M 51 11
+           C 65 14, 78 23, 83 38
+           C 88 55, 84 73, 72 84
+           C 65 89, 58 91, 52 91
+           C 54 88, 59 84, 63 80
+           C 73 70, 77 56, 74 43
+           C 70 29, 60 19, 49 14
+           C 48 12, 49 10, 51 11
+           Z" 
+        fill="url(#c3_pinkArc)"/>
+
+  <!-- Central Dynamic 'A' Chevron (Forward Heart & Biomechanical Core) -->
+  <path d="M 50 26
+           C 51 26, 58 43, 62 55
+           C 63 58, 60 60, 56 59
+           L 52 58
+           C 51 61, 49 61, 48 58
+           L 44 59
+           C 40 60, 37 58, 38 55
+           C 42 43, 49 26, 50 26
+           Z" 
+        fill="url(#c3_spine)"/>
+
+  <!-- Kinetic Stabilizer Wing -->
+  <path d="M 30 63
+           C 42 59, 58 59, 70 63
+           C 60 67, 40 67, 30 63
+           Z" 
+        fill="#FFFFFF" 
+        opacity="0.9"/>
+</svg>

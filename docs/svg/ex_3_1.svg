@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05161A"/>
+      <stop offset="100%" stop-color="#072E33"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F969C"/>
+      <stop offset="100%" stop-color="#0C7075"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8D3B8"/>
+      <stop offset="100%" stop-color="#E8B490"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DE9E78"/>
+      <stop offset="100%" stop-color="#C6835F"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="barChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TARJETA BASE -->
+  <rect width="800" height="380" rx="18" fill="url(#bgGrad)" stroke="#294D61" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- SUELO Y CUADRÍCULA SUTIL -->
+  <line x1="30" y1="330" x2="770" y2="330" stroke="#294D61" stroke-width="2" stroke-dasharray="6 4" stroke-opacity="0.4"/>
+  <rect x="30" y="331" width="740" height="1" fill="#0F969C" fill-opacity="0.2"/>
+
+  <!-- DIVISOR CENTRAL CON CHEVRON -->
+  <line x1="400" y1="45" x2="400" y2="330" stroke="#294D61" stroke-width="1" stroke-dasharray="4 6" stroke-opacity="0.3"/>
+  <g transform="translate(400, 185)">
+    <circle cx="0" cy="0" r="17" fill="#05161A" stroke="#0F969C" stroke-width="1.8" filter="url(#glow)"/>
+    <path d="M-6 0 H6 M2 -4 L6 0 L2 4" stroke="#0F969C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- BADGES SUPERIORES -->
+  <g transform="translate(35, 24)">
+    <rect width="145" height="26" rx="6" fill="#05161A" stroke="#294D61" stroke-width="1.2"/>
+    <text x="72" y="17" fill="#6DA5C0" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 1 · DESCENSO PÉLVICO</text>
+  </g>
+  <g transform="translate(425, 24)">
+    <rect width="160" height="26" rx="6" fill="#0C7075" fill-opacity="0.25" stroke="#0F969C" stroke-width="1.2"/>
+    <circle cx="15" cy="13" r="3.5" fill="#0F969C" filter="url(#glow)"/>
+    <text x="90" y="17" fill="#0F969C" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 2 · EXTENSIÓN 180° BLOQUEO</text>
+  </g>
+
+  <!-- PIE DE TARJETA CON DIANA MUSCULAR -->
+  <g transform="translate(400, 360)">
+    <rect x="-210" y="-14" width="420" height="24" rx="12" fill="#05161A" fill-opacity="0.8" stroke="#294D61" stroke-width="1"/>
+    <circle cx="-190" cy="-2" r="3" fill="#0F969C" filter="url(#glow)"/>
+    <text x="0" y="2" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+      HIP THRUST CON BARRA EN BANCO &bull; FOCO: <tspan fill="#0F969C" font-weight="700">GLÚTEO MAYOR (BLOQUEO HORIZONTAL 1s)</tspan>
+    </text>
+  </g>
+
+  <!-- CONTENIDO FASE 1 -->
+  <g id="phase1-group">
+    
+    <!-- Banco Plano Horizontal -->
+    <rect x="70" y="220" width="55" height="85" rx="5" fill="#0B1519" stroke="#294D61" stroke-width="1.5"/>
+    <rect x="82" y="305" width="8" height="25" fill="#1E293B"/>
+    
+    <!-- Torso Inclinado Hacia Abajo Sólido (Fase 1) -->
+    <path d="M 115 210 Q 140 240 168 275 L 150 285 Q 120 245 105 220 Z" fill="#0F969C"/>
+    <circle cx="96" cy="180" r="12" fill="#F5CBA7"/>
+    <path d="M 90 170 C 100 167 108 174 108 184 C 108 192 100 195 92 193 Z" fill="#1C1917"/>
+    
+    <!-- Shorts Oscuros -->
+    <path d="M 148 265 L 180 262 L 185 285 L 150 292 Z" fill="#05161A" stroke="#294D61" stroke-width="1"/>
+    
+    <!-- Muslo y Pantorrilla Flexionados -->
+    <path d="M 178 268 Q 210 238 238 245 Q 248 285 250 320 L 238 320 Q 236 285 226 250 Q 200 245 174 272 Z" fill="#F5CBA7"/>
+    <rect x="235" y="322" width="28" height="8" rx="2" fill="#1E293B"/>
+    
+    <!-- Barra Olímpica y Disco 20kg en Pelvis -->
+    <rect x="164" y="215" width="6" height="100" rx="2" fill="#CBD5E1"/>
+    <circle cx="168" cy="265" r="28" fill="#1E293B" stroke="#0F969C" stroke-width="2.5"/>
+    <circle cx="168" cy="265" r="18" fill="#05161A"/>
+    <circle cx="168" cy="265" r="10" fill="#1E293B"/>
+    <text x="168" y="252" fill="#6DA5C0" font-family="monospace" font-size="6" font-weight="700" text-anchor="middle">20 KG</text>
+    
+  </g>
+
+  <!-- CONTENIDO FASE 2 -->
+  <g id="phase2-group">
+    
+    <!-- Banco Plano Horizontal -->
+    <rect x="445" y="220" width="55" height="85" rx="5" fill="#0B1519" stroke="#294D61" stroke-width="1.5"/>
+    <rect x="457" y="305" width="8" height="25" fill="#1E293B"/>
+    
+    <!-- Torso y Muslo en LÍNEA HORIZONTAL TOTAL A 180° SÓLIDO (Fase 2) -->
+    <path d="M 485 204 L 575 204 L 570 226 L 482 224 Z" fill="#0F969C"/>
+    <circle cx="452" cy="184" r="12" fill="#F5CBA7"/>
+    <path d="M 446 174 C 456 171 464 178 464 188 C 464 196 456 200 448 198 Z" fill="#1C1917"/>
+    
+    <!-- FOCO NEUROMUSCULAR: GLÚTEO MAYOR EN BLOQUEO HORIZONTAL -->
+    <ellipse cx="568" cy="214" rx="26" ry="18" fill="#0F969C" fill-opacity="0.5" filter="url(#glow)"/>
+    <path d="M 552 214 Q 570 204 584 214" stroke="#6DA5C0" stroke-width="2.5" fill="none"/>
+    
+    <!-- Muslo Horizontal y Tibia Estrictamente Vertical a 90° -->
+    <path d="M 570 205 L 655 205 L 655 322 L 642 322 L 642 220 L 570 220 Z" fill="#F5CBA7"/>
+    <rect x="640" y="322" width="28" height="8" rx="2" fill="#1E293B"/>
+    
+    <!-- Barra Olímpica Elevada en Bloqueo con Resplandor -->
+    <rect x="565" y="155" width="6" height="100" rx="2" fill="#CBD5E1"/>
+    <circle cx="568" cy="208" r="28" fill="#1E293B" stroke="#0F969C" stroke-width="2.5" filter="url(#glow)"/>
+    <circle cx="568" cy="208" r="18" fill="#05161A"/>
+    <circle cx="568" cy="208" r="10" fill="#1E293B"/>
+    <text x="568" y="195" fill="#0F969C" font-family="monospace" font-size="6" font-weight="700" text-anchor="middle">20 KG</text>
+    
+  </g>
+</svg>

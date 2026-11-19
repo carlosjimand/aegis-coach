@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#05161A"/>
+      <stop offset="100%" stop-color="#072E33"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F969C"/>
+      <stop offset="100%" stop-color="#0C7075"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8D3B8"/>
+      <stop offset="100%" stop-color="#E8B490"/>
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DE9E78"/>
+      <stop offset="100%" stop-color="#C6835F"/>
+    </linearGradient>
+    <linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="barChrome" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- TARJETA BASE -->
+  <rect width="800" height="380" rx="18" fill="url(#bgGrad)" stroke="#294D61" stroke-width="1.5" stroke-opacity="0.45"/>
+
+  <!-- SUELO Y CUADRÍCULA SUTIL -->
+  <line x1="30" y1="330" x2="770" y2="330" stroke="#294D61" stroke-width="2" stroke-dasharray="6 4" stroke-opacity="0.4"/>
+  <rect x="30" y="331" width="740" height="1" fill="#0F969C" fill-opacity="0.2"/>
+
+  <!-- DIVISOR CENTRAL CON CHEVRON -->
+  <line x1="400" y1="45" x2="400" y2="330" stroke="#294D61" stroke-width="1" stroke-dasharray="4 6" stroke-opacity="0.3"/>
+  <g transform="translate(400, 185)">
+    <circle cx="0" cy="0" r="17" fill="#05161A" stroke="#0F969C" stroke-width="1.8" filter="url(#glow)"/>
+    <path d="M-6 0 H6 M2 -4 L6 0 L2 4" stroke="#0F969C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- BADGES SUPERIORES -->
+  <g transform="translate(35, 24)">
+    <rect width="145" height="26" rx="6" fill="#05161A" stroke="#294D61" stroke-width="1.2"/>
+    <text x="72" y="17" fill="#6DA5C0" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 1 · ESTIRAMIENTO SUPERIOR</text>
+  </g>
+  <g transform="translate(425, 24)">
+    <rect width="160" height="26" rx="6" fill="#0C7075" fill-opacity="0.25" stroke="#0F969C" stroke-width="1.2"/>
+    <circle cx="15" cy="13" r="3.5" fill="#0F969C" filter="url(#glow)"/>
+    <text x="90" y="17" fill="#0F969C" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">FASE 2 · COMPRESIÓN AL PECHO</text>
+  </g>
+
+  <!-- PIE DE TARJETA CON DIANA MUSCULAR -->
+  <g transform="translate(400, 360)">
+    <rect x="-210" y="-14" width="420" height="24" rx="12" fill="#05161A" fill-opacity="0.8" stroke="#294D61" stroke-width="1"/>
+    <circle cx="-190" cy="-2" r="3" fill="#0F969C" filter="url(#glow)"/>
+    <text x="0" y="2" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" text-anchor="middle">
+      JALÓN AL PECHO AGARRE CERRADO V &bull; FOCO: <tspan fill="#0F969C" font-weight="700">DORSAL ANCHO &amp; REDONDO MAYOR (TRACCIÓN VERTICAL)</tspan>
+    </text>
+  </g>
+
+  <!-- CONTENIDO FASE 1 -->
+  <g id="phase1-group">
+    
+    <!-- Torre de Polea Alta y Asiento -->
+    <line x1="200" y1="40" x2="200" y2="80" stroke="#475569" stroke-width="3"/>
+    <circle cx="200" cy="40" r="10" fill="#1E293B" stroke="#0F969C" stroke-width="1.5"/>
+    <rect x="140" y="240" width="60" height="12" rx="3" fill="#0B1519" stroke="#294D61" stroke-width="1.2"/>
+    <rect x="175" y="210" width="25" height="10" rx="3" fill="#1E293B"/>
+    
+    <!-- Cable de Acero y Asa en V -->
+    <line x1="200" y1="45" x2="200" y2="95" stroke="#6DA5C0" stroke-width="2.5"/>
+    <path d="M 193 95 L 200 102 L 207 95" stroke="#E2E8F0" stroke-width="3" fill="none"/>
+    
+    <!-- Atleta Sentado Erguido con BRAZOS TOTALMENTE ESTIRADOS ARRIBA (Fase 1) -->
+    <circle cx="165" cy="148" r="11" fill="#F5CBA7"/>
+    <path d="M 160 140 C 168 138, 175 144, 175 152 C 175 158, 168 162, 161 160 Z" fill="#1C1917"/>
+    <rect x="162" y="158" width="6" height="12" fill="#F5CBA7"/>
+    
+    <!-- Torso Sólido Teal -->
+    <path d="M 155 170 L 175 170 L 175 240 L 155 240 Z" fill="#0F969C"/>
+    <rect x="153" y="238" width="24" height="20" rx="2" fill="#05161A"/>
+    
+    <!-- Brazos extendidos hacia arriba en V -->
+    <line x1="165" y1="172" x2="198" y2="102" stroke="#F5CBA7" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="198" cy="102" r="4.5" fill="#DE9E78"/>
+    
+    <!-- Piernas bajo la rodillera y pie plantado -->
+    <path d="M 165 240 L 205 240 L 205 325 L 195 325 L 195 250 L 165 250 Z" fill="#F5CBA7"/>
+    <rect x="195" y="322" width="22" height="8" rx="2" fill="#1E293B"/>
+    
+  </g>
+
+  <!-- CONTENIDO FASE 2 -->
+  <g id="phase2-group">
+    
+    <!-- Torre de Polea Alta -->
+    <line x1="600" y1="40" x2="600" y2="80" stroke="#475569" stroke-width="3"/>
+    <circle cx="600" cy="40" r="10" fill="#1E293B" stroke="#0F969C" stroke-width="1.5"/>
+    <rect x="540" y="240" width="60" height="12" rx="3" fill="#0B1519" stroke="#294D61" stroke-width="1.2"/>
+    <rect x="575" y="210" width="25" height="10" rx="3" fill="#1E293B"/>
+    
+    <!-- Cable bajado al pecho -->
+    <line x1="600" y1="45" x2="590" y2="175" stroke="#6DA5C0" stroke-width="2.5"/>
+    
+    <!-- Atleta Sentado con ASA EN V BAJADA AL PECHO (Fase 2) -->
+    <circle cx="578" cy="150" r="11" fill="#F5CBA7"/>
+    <path d="M 573 142 C 581 140, 588 146, 588 154 C 588 160, 581 164, 574 162 Z" fill="#1C1917"/>
+    <rect x="575" y="160" width="6" height="12" fill="#F5CBA7"/>
+    
+    <!-- Torso Inclinado 15° Sólido -->
+    <path d="M 568 172 L 588 172 L 570 240 L 550 240 Z" fill="#0F969C"/>
+    <rect x="548" y="238" width="24" height="20" rx="2" fill="#05161A"/>
+    
+    <!-- FOCO NEUROMUSCULAR: DORSAL ANCHO COMPRIMIDO -->
+    <ellipse cx="568" cy="190" rx="16" ry="24" fill="#0F969C" fill-opacity="0.5" filter="url(#glow)"/>
+    <path d="M 565 180 C 572 188, 572 200, 566 208" stroke="#6DA5C0" stroke-width="2.5" fill="none"/>
+    
+    <!-- Brazos con Codos Pegados Tirando Abajo -->
+    <line x1="580" y1="175" x2="562" y2="210" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round"/>
+    <line x1="562" y1="210" x2="588" y2="175" stroke="#F5CBA7" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 584 172 L 590 178 L 596 172" stroke="#E2E8F0" stroke-width="3" fill="none"/>
+    <circle cx="590" cy="176" r="4.5" fill="#DE9E78"/>
+    
+    <!-- Piernas -->
+    <path d="M 560 240 L 605 240 L 605 325 L 595 325 L 595 250 L 560 250 Z" fill="#F5CBA7"/>
+    <rect x="595" y="322" width="22" height="8" rx="2" fill="#1E293B"/>
+    
+  </g>
+</svg>

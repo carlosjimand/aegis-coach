@@ -1,0 +1,23 @@
+# Dependencies & Secrets (NUNCA SUBIR A GIT)
+node_modules/
+.dev.vars
+cloudflare/.dev.vars
+.env
+.wrangler/
+cloudflare/.wrangler/
+
+# Python cache & tests
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS Temp Files
+Thumbs.db
+.DS_Store
+
+# Debug screenshots at root (los assets de producción en cloudflare/public_exercises sí se trackean)
+desktop_production_check.png
+mobile_production_check.png
+test_hip_thrust*.png
+test_solid_calf.png
+test_squat.png

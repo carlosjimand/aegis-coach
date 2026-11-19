@@ -1,0 +1,6 @@
+ATHLETE_ID="i690671"
+INTERVALS_API_KEY="your_intervals_api_key_here"
+TELEGRAM_BOT_TOKEN="your_telegram_bot_token_here"
+TELEGRAM_CHAT_ID="your_telegram_chat_id_here"
+AEGIS_SECRET_KEY="your_aegis_secret_key_here"
+TELEGRAM_WEBHOOK_SECRET="your_telegram_webhook_secret_here"

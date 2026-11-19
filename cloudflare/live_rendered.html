@@ -1,0 +1,1272 @@
+<!DOCTYPE html><html lang="es" class="h-full"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Aegis Coach — Carlos Jiménez</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF5E80' stroke-width='2.5'%3E%3Cpath d='M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E">
+  
+  <!-- Tipografía: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            app: {
+              bg: '#141522',
+              card: '#1D1E2C',
+              subcard: '#242638',
+              border: '#2D2F45'
+            },
+            neon: {
+              pink: '#FF5E80',
+              blue: '#7B88FF',
+              green: '#20D994'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #141522;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .luxury-card {
+      background-color: #1D1E2C;
+      border: 1px solid #2D2F45;
+      border-radius: 24px;
+      transition: all 0.2s ease;
+    }
+    .luxury-card:hover {
+      border-color: rgba(123, 136, 255, 0.35);
+    }
+    .luxury-subcard {
+      background-color: #242638;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 18px;
+    }
+    .glow-pink {
+      box-shadow: 0 8px 24px -6px rgba(255, 94, 128, 0.35);
+    }
+    .glow-blue {
+      box-shadow: 0 8px 24px -6px rgba(123, 136, 255, 0.35);
+    }
+    .bg-gradient-hero {
+      background: linear-gradient(135deg, #7B88FF 0%, #A08BFE 40%, #FF5E80 100%);
+    }
+    .active-nav-link {
+      color: #FF5E80 !important;
+      position: relative;
+    }
+    .active-nav-link::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 24px;
+      background: #FF5E80;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 0 12px #FF5E80;
+    }
+    .gauge-circle-bg {
+      stroke: #2D2F45;
+      stroke-width: 5;
+      fill: none;
+    }
+    .gauge-circle-val {
+      stroke-width: 5;
+      stroke-linecap: round;
+      fill: none;
+      transition: stroke-dasharray 0.8s ease;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Plus Jakarta Sans", sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"JetBrains Mono", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.bottom-3{bottom:0.75rem}.left-4{left:1rem}.right-4{right:1rem}.top-0{top:0px}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.z-40{z-index:40}.mx-auto{margin-left:auto;margin-right:auto}.my-auto{margin-top:auto;margin-bottom:auto}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-16{height:4rem}.h-2\.5{height:0.625rem}.h-3{height:0.75rem}.h-3\.5{height:0.875rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-9{height:2.25rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-24{width:6rem}.w-3{width:0.75rem}.w-3\.5{width:0.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-9{width:2.25rem}.w-full{width:100%}.max-w-\[1600px\]{max-width:1600px}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-rotate-90{--tw-rotate:-90deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-t-4{border-top-width:4px}.border-\[\#20D994\]\/30{border-color:rgb(32 217 148 / 0.3)}.border-\[\#2D2F45\]{--tw-border-opacity:1;border-color:rgb(45 47 69 / var(--tw-border-opacity, 1))}.border-\[\#2D2F45\]\/60{border-color:rgb(45 47 69 / 0.6)}.border-\[\#7B88FF\]\/30{border-color:rgb(123 136 255 / 0.3)}.border-\[\#7B88FF\]\/40{border-color:rgb(123 136 255 / 0.4)}.border-\[\#FF5E80\]{--tw-border-opacity:1;border-color:rgb(255 94 128 / var(--tw-border-opacity, 1))}.border-\[\#FF5E80\]\/30{border-color:rgb(255 94 128 / 0.3)}.border-\[\#FF5E80\]\/50{border-color:rgb(255 94 128 / 0.5)}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.border-t-\[\#20D994\]{--tw-border-opacity:1;border-top-color:rgb(32 217 148 / var(--tw-border-opacity, 1))}.border-t-\[\#7B88FF\]{--tw-border-opacity:1;border-top-color:rgb(123 136 255 / var(--tw-border-opacity, 1))}.border-t-\[\#FF5E80\]{--tw-border-opacity:1;border-top-color:rgb(255 94 128 / var(--tw-border-opacity, 1))}.bg-\[\#13141F\]{--tw-bg-opacity:1;background-color:rgb(19 20 31 / var(--tw-bg-opacity, 1))}.bg-\[\#141522\]{--tw-bg-opacity:1;background-color:rgb(20 21 34 / var(--tw-bg-opacity, 1))}.bg-\[\#141522\]\/90{background-color:rgb(20 21 34 / 0.9)}.bg-\[\#1D1E2C\]{--tw-bg-opacity:1;background-color:rgb(29 30 44 / var(--tw-bg-opacity, 1))}.bg-\[\#1D1E2C\]\/95{background-color:rgb(29 30 44 / 0.95)}.bg-\[\#20D994\]\/15{background-color:rgb(32 217 148 / 0.15)}.bg-\[\#20D994\]\/20{background-color:rgb(32 217 148 / 0.2)}.bg-\[\#20D994\]\/5{background-color:rgb(32 217 148 / 0.05)}.bg-\[\#242638\]{--tw-bg-opacity:1;background-color:rgb(36 38 56 / var(--tw-bg-opacity, 1))}.bg-\[\#242638\]\/40{background-color:rgb(36 38 56 / 0.4)}.bg-\[\#7B88FF\]{--tw-bg-opacity:1;background-color:rgb(123 136 255 / var(--tw-bg-opacity, 1))}.bg-\[\#7B88FF\]\/15{background-color:rgb(123 136 255 / 0.15)}.bg-\[\#FF5E80\]{--tw-bg-opacity:1;background-color:rgb(255 94 128 / var(--tw-bg-opacity, 1))}.bg-\[\#FF5E80\]\/10{background-color:rgb(255 94 128 / 0.1)}.bg-\[\#FF5E80\]\/15{background-color:rgb(255 94 128 / 0.15)}.bg-\[\#FF5E80\]\/20{background-color:rgb(255 94 128 / 0.2)}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--tw-gradient-stops))}.from-\[\#6C5DD3\]{--tw-gradient-from:#6C5DD3 var(--tw-gradient-from-position);--tw-gradient-to:rgb(108 93 211 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#7B88FF\]{--tw-gradient-from:#7B88FF var(--tw-gradient-from-position);--tw-gradient-to:rgb(123 136 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#FF5E80\]{--tw-gradient-from:#FF5E80 var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 94 128 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-\[\#7B88FF\]{--tw-gradient-to:#7B88FF var(--tw-gradient-to-position)}.to-\[\#FF4B72\]{--tw-gradient-to:#FF4B72 var(--tw-gradient-to-position)}.to-\[\#FF5E80\]{--tw-gradient-to:#FF5E80 var(--tw-gradient-to-position)}.stroke-\[2\]{stroke-width:2}.p-1\.5{padding:0.375rem}.p-2\.5{padding:0.625rem}.p-3\.5{padding:0.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-2{padding-bottom:0.5rem}.pb-24{padding-bottom:6rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:"JetBrains Mono", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-\[\#141522\]{--tw-text-opacity:1;color:rgb(20 21 34 / var(--tw-text-opacity, 1))}.text-\[\#20D994\]{--tw-text-opacity:1;color:rgb(32 217 148 / var(--tw-text-opacity, 1))}.text-\[\#7B88FF\]{--tw-text-opacity:1;color:rgb(123 136 255 / var(--tw-text-opacity, 1))}.text-\[\#8E8FA3\]{--tw-text-opacity:1;color:rgb(142 143 163 / var(--tw-text-opacity, 1))}.text-\[\#9D9EA7\]{--tw-text-opacity:1;color:rgb(157 158 167 / var(--tw-text-opacity, 1))}.text-\[\#C471ED\]{--tw-text-opacity:1;color:rgb(196 113 237 / var(--tw-text-opacity, 1))}.text-\[\#FF5E80\]{--tw-text-opacity:1;color:rgb(255 94 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-\[\#FF5E80\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 94 128 / var(--tw-bg-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-\[\#FF5E80\]::selection{--tw-bg-opacity:1;background-color:rgb(255 94 128 / var(--tw-bg-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-\[\#7B88FF\]:hover{--tw-border-opacity:1;border-color:rgb(123 136 255 / var(--tw-border-opacity, 1))}.hover\:border-\[\#FF5E80\]:hover{--tw-border-opacity:1;border-color:rgb(255 94 128 / var(--tw-border-opacity, 1))}.hover\:bg-\[\#7B88FF\]\/10:hover{background-color:rgb(123 136 255 / 0.1)}.hover\:bg-white\/90:hover{background-color:rgb(255 255 255 / 0.9)}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-\[0\.98\]:active{--tw-scale-x:0.98;--tw-scale-y:0.98;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:h-72{height:18rem}.sm\:w-auto{width:auto}.sm\:grid-cols-8{grid-template-columns:repeat(8, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:p-10{padding:2.5rem}.lg\:px-10{padding-left:2.5rem;padding-right:2.5rem}.lg\:py-6{padding-top:1.5rem;padding-bottom:1.5rem}.lg\:pb-8{padding-bottom:2rem}.lg\:pl-24{padding-left:6rem}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style></head>
+
+<body class="min-h-screen bg-[#141522] text-white flex flex-col antialiased selection:bg-[#FF5E80] selection:text-white pb-24 lg:pb-8">
+
+  <div class="flex-1 flex w-full max-w-[1600px] mx-auto">
+
+    <!-- SIDEBAR VERTICAL (Desktop: >= 1024px) -->
+    <aside class="hidden lg:flex flex-col items-center justify-between w-24 py-8 bg-[#13141F] border-r border-[#2D2F45] fixed h-full z-30">
+      <div class="flex flex-col items-center gap-10 w-full">
+        <!-- Brand Shield Monogram -->
+        <div onclick="switchTab('dashboard')" class="cursor-pointer group flex flex-col items-center gap-1">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#7B88FF] to-[#FF5E80] flex items-center justify-center glow-pink group-hover:scale-105 transition">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </div>
+          <span class="text-[9px] font-black tracking-widest text-[#8E8FA3] uppercase">AEGIS</span>
+        </div>
+
+        <nav class="flex flex-col gap-6 w-full">
+          <button onclick="switchTab('dashboard')" id="nav-desktop-dashboard" class="relative w-full py-3 flex items-center justify-center text-[#FF5E80] active-nav-link transition-colors" title="Dashboard">
+            <i data-lucide="layout-grid" class="w-6 h-6 stroke-[2]"></i>
+          </button>
+          <button onclick="switchTab('workouts')" id="nav-desktop-workouts" class="relative w-full py-3 flex items-center justify-center text-[#8E8FA3] hover:text-white transition-colors" title="Entrenos">
+            <i data-lucide="calendar" class="w-6 h-6 stroke-[2]"></i>
+          </button>
+          <button onclick="switchTab('gym')" id="nav-desktop-gym" class="relative w-full py-3 flex items-center justify-center text-[#8E8FA3] hover:text-white transition-colors" title="Gimnasio">
+            <i data-lucide="dumbbell" class="w-6 h-6 stroke-[2]"></i>
+          </button>
+          <button onclick="switchTab('goals')" id="nav-desktop-goals" class="relative w-full py-3 flex items-center justify-center text-[#8E8FA3] hover:text-white transition-colors" title="Objetivos">
+            <i data-lucide="target" class="w-6 h-6 stroke-[2]"></i>
+          </button>
+        </nav>
+      </div>
+
+      <a href="https://t.me/aegis_coach_chatbot" target="_blank" title="Abrir Bot de Telegram" class="w-11 h-11 rounded-xl bg-[#1D1E2C] border border-[#2D2F45] flex items-center justify-center text-[#7B88FF] hover:border-[#7B88FF] hover:scale-105 transition">
+        <i data-lucide="send" class="w-5 h-5"></i>
+      </a>
+    </aside>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="flex-1 flex flex-col lg:pl-24 w-full">
+
+      <!-- HEADER LIMPIO & LOGO ELEGANTE (Sin buscador, sin círculo CJ confuso) -->
+      <header class="w-full px-5 lg:px-10 py-5 lg:py-6 flex items-center justify-between border-b border-[#2D2F45]/60 bg-[#141522]/90 backdrop-blur sticky top-0 z-20">
+        <div class="flex items-center gap-3.5">
+          <!-- Logo Monograma -->
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#7B88FF] to-[#FF5E80] flex items-center justify-center glow-pink shrink-0">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-lg lg:text-xl font-black tracking-tight text-white">AEGIS COACH</span>
+              <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#7B88FF]/15 text-[#7B88FF] border border-[#7B88FF]/30">PRO</span>
+            </div>
+            <p class="text-xs text-[#8E8FA3] font-medium">Carlos Jiménez • 63 kg • Fisiología &amp; Fuerza</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="https://t.me/aegis_coach_chatbot" target="_blank" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#1D1E2C] border border-[#7B88FF]/40 text-[#7B88FF] text-xs font-bold hover:bg-[#7B88FF]/10 transition shadow-sm">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>Bot Telegram</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- BARRA DE PESTAÑAS MÓVIL -->
+      <div class="lg:hidden px-5 pt-4 pb-2 flex gap-2 overflow-x-auto no-scrollbar">
+        <button onclick="switchTab('dashboard')" id="nav-mobile-dashboard" class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-[#FF5E80] text-white glow-pink">
+          Dashboard
+        </button>
+        <button onclick="switchTab('workouts')" id="nav-mobile-workouts" class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-[#1D1E2C] text-[#8E8FA3] border border-[#2D2F45]">
+          Entrenos (14D)
+        </button>
+        <button onclick="switchTab('gym')" id="nav-mobile-gym" class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-[#1D1E2C] text-[#8E8FA3] border border-[#2D2F45]">
+          Gimnasio &amp; Series
+        </button>
+        <button onclick="switchTab('goals')" id="nav-mobile-goals" class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-[#1D1E2C] text-[#8E8FA3] border border-[#2D2F45]">
+          Objetivos &amp; Ritmos
+        </button>
+      </div>
+
+      <!-- CONTENIDO -->
+      <div class="p-5 lg:p-10 flex-1">
+
+        <!-- ========================================== -->
+        <!-- PESTAÑA 1: DASHBOARD DE LUJO               -->
+        <!-- ========================================== -->
+        <section id="tab-dashboard" class="space-y-6">
+
+          <!-- 3 GAUGES CIRCULARES -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Card 1 -->
+            <div class="luxury-card p-6 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-[#8E8FA3]">Volumen Semanal (Run)</p>
+                <h3 class="text-2xl lg:text-3xl font-black text-white mt-1">27.0 <span class="text-sm font-semibold text-[#8E8FA3]">km</span></h3>
+                <p class="text-[11px] text-[#20D994] font-medium mt-1.5 flex items-center gap-1">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+                  <span>90% del objetivo (30 km)</span>
+                </p>
+              </div>
+              <div class="relative w-18 h-18 flex items-center justify-center">
+                <svg class="w-18 h-18 -rotate-90" viewBox="0 0 64 64">
+                  <circle cx="32" cy="32" r="26" class="gauge-circle-bg"></circle>
+                  <circle cx="32" cy="32" r="26" class="gauge-circle-val" stroke="#FF5E80" stroke-dasharray="163.36" stroke-dashoffset="16.3"></circle>
+                </svg>
+                <span class="absolute text-xs font-extrabold text-white">90%</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="luxury-card p-6 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-[#8E8FA3]">Sesiones de Fuerza</p>
+                <h3 class="text-2xl lg:text-3xl font-black text-white mt-1">4 <span class="text-sm font-semibold text-[#8E8FA3]">sesiones</span></h3>
+                <p class="text-[11px] text-[#7B88FF] font-medium mt-1.5 flex items-center gap-1">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                  <span>100% cumplido (4 de 4)</span>
+                </p>
+              </div>
+              <div class="relative w-18 h-18 flex items-center justify-center">
+                <svg class="w-18 h-18 -rotate-90" viewBox="0 0 64 64">
+                  <circle cx="32" cy="32" r="26" class="gauge-circle-bg"></circle>
+                  <circle cx="32" cy="32" r="26" class="gauge-circle-val" stroke="#7B88FF" stroke-dasharray="163.36" stroke-dashoffset="0"></circle>
+                </svg>
+                <span class="absolute text-xs font-extrabold text-white">100%</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="luxury-card p-6 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-[#8E8FA3]">Estado Forma (TSB / CTL)</p>
+                <h3 class="text-2xl lg:text-3xl font-black text-white mt-1">TSB -9.5 <span class="text-sm font-semibold text-[#8E8FA3]">/ 16.1</span></h3>
+                <p class="text-[11px] text-[#C471ED] font-medium mt-1.5 flex items-center gap-1">
+                  <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+                  <span>Fatiga asimilable (ATL 25.7)</span>
+                </p>
+              </div>
+              <div class="relative w-18 h-18 flex items-center justify-center">
+                <svg class="w-18 h-18 -rotate-90" viewBox="0 0 64 64">
+                  <circle cx="32" cy="32" r="26" class="gauge-circle-bg"></circle>
+                  <circle cx="32" cy="32" r="26" class="gauge-circle-val" stroke="#C471ED" stroke-dasharray="163.36" stroke-dashoffset="40.8"></circle>
+                </svg>
+                <span class="absolute text-xs font-extrabold text-white">75%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GRÁFICO ESPLÍN SEMANAL + SESIÓN DE HOY -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Gráfico de Volumen Semanal -->
+            <div class="lg:col-span-2 luxury-card p-6 flex flex-col justify-between">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+                <div>
+                  <h3 class="text-lg font-extrabold text-white">Evolución de Volumen Semanal (KM)</h3>
+                  <p class="text-xs text-[#8E8FA3] mt-0.5">Kilómetros reales rodados semana a semana • Tendencia de carga</p>
+                </div>
+
+                <div class="flex items-center gap-4 text-xs font-semibold">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-[#FF5E80] glow-pink"></span>
+                    <span class="text-white">Run (km)</span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 rounded-full bg-[#7B88FF] glow-blue"></span>
+                    <span class="text-[#8E8FA3]">Gym (sesiones)</span>
+                  </div>
+                  <span class="px-3 py-1 rounded-xl bg-[#242638] border border-[#2D2F45] text-[11px] text-[#8E8FA3]">
+                    8 Semanas
+                  </span>
+                </div>
+              </div>
+
+              <div class="w-full h-64 sm:h-72 relative">
+                <canvas id="weeklySplineChart"></canvas>
+              </div>
+
+              <!-- Desglose numérico por semana -->
+              <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 pt-4 mt-4 border-t border-[#2D2F45]/60 text-center">
+                <div class="p-1.5 rounded-xl bg-[#242638]/40">
+                  <div class="text-[10px] text-[#8E8FA3]">28 Sep</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">13.4k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#242638]/40">
+                  <div class="text-[10px] text-[#8E8FA3]">05 Oct</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">19.2k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#242638]/40">
+                  <div class="text-[10px] text-[#8E8FA3]">12 Oct</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">16.5k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#242638]/40">
+                  <div class="text-[10px] text-[#8E8FA3]">19 Oct</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">25.4k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#242638]/40">
+                  <div class="text-[10px] text-[#8E8FA3]">26 Oct</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">29.2k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#242638]/40 border border-[#7B88FF]/30">
+                  <div class="text-[10px] text-[#7B88FF] font-bold">10K Ávila</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">21.6k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#242638]/40 border border-[#FF5E80]/30">
+                  <div class="text-[10px] text-[#FF5E80] font-bold">6x800m</div>
+                  <div class="text-xs font-black text-white mt-0.5 font-mono">27.0k</div>
+                </div>
+                <div class="p-1.5 rounded-xl bg-[#FF5E80]/10 border border-[#FF5E80]/50">
+                  <div class="text-[10px] text-[#FF5E80] font-black">Esta Sem</div>
+                  <div class="text-xs font-black text-[#FF5E80] mt-0.5 font-mono">~30k</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta Glowing Sesión de Hoy -->
+            <div class="space-y-6">
+              <div class="rounded-3xl p-6 bg-gradient-hero text-white shadow-xl glow-pink flex flex-col justify-between h-56 relative overflow-hidden">
+                <div class="flex items-center justify-between relative z-10">
+                  <span class="text-xs uppercase font-extrabold tracking-wider bg-black/20 px-3 py-1 rounded-full backdrop-blur">
+                    SESIÓN DE HOY • LUNES 16 NOV
+                  </span>
+                  <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                </div>
+
+                <div class="my-auto relative z-10">
+                  <div class="text-2xl font-black tracking-tight leading-tight">
+                    35' Rodaje Regenerativo
+                  </div>
+                  <div class="text-xs text-white/90 font-mono mt-1 font-semibold">
+                    Ritmo 4:55 - 5:10/km • Z1 (&lt;145 ppm)
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-3 border-t border-white/20 relative z-10">
+                  <div class="text-xs font-bold text-white/90">
+                    + Rutina 2: Torso Tracción
+                  </div>
+                  <button onclick="switchTab('workouts')" class="px-3 py-1.5 rounded-xl bg-white text-[#141522] text-xs font-black hover:bg-white/90 transition flex items-center gap-1">
+                    <span>Ver</span> →
+                  </button>
+                </div>
+              </div>
+
+              <!-- Listado de Últimas Sesiones Clave -->
+              <div class="luxury-card p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <h4 class="text-sm font-extrabold text-white">Últimas Sesiones Clave</h4>
+                  <span class="text-[11px] text-[#8E8FA3]">Intervals.icu</span>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#242638] border border-[#2D2F45]">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-[#FF5E80]/15 text-[#FF5E80] flex items-center justify-center font-bold">
+                        <i data-lucide="flame" class="w-4 h-4"></i>
+                      </div>
+                      <div>
+                        <div class="text-xs font-bold text-white">6x800m Parque del Soto</div>
+                        <div class="text-[10px] text-[#8E8FA3]">14 Nov • Clavos 6mm • 90" rec</div>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-xs font-black text-white font-mono">3:00.0 avg</div>
+                      <div class="text-[10px] text-[#FF5E80]">3:45/km real</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#242638] border border-[#2D2F45]">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-[#7B88FF]/15 text-[#7B88FF] flex items-center justify-center font-bold">
+                        <i data-lucide="dumbbell" class="w-4 h-4"></i>
+                      </div>
+                      <div>
+                        <div class="text-xs font-bold text-white">Rutina 3 • Pierna 2</div>
+                        <div class="text-[10px] text-[#8E8FA3]">13 Nov • RDL Unilateral</div>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-xs font-black text-white font-mono">140 kg</div>
+                      <div class="text-[10px] text-[#7B88FF]">Hip Thrust</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#242638] border border-[#2D2F45]">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-xl bg-[#20D994]/15 text-[#20D994] flex items-center justify-center font-bold">
+                        <i data-lucide="trophy" class="w-4 h-4"></i>
+                      </div>
+                      <div>
+                        <div class="text-xs font-bold text-white">10K Ávila Monumental</div>
+                        <div class="text-[10px] text-[#8E8FA3]">08 Nov • 1.070m altitud</div>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <div class="text-xs font-black text-white font-mono">38:26</div>
+                      <div class="text-[10px] text-[#20D994]">3:50/km</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- FILA INFERIOR: PRÓXIMOS RETOS -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="luxury-card p-6 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg bg-[#FF5E80]/15 text-[#FF5E80] border border-[#FF5E80]/30">
+                    PRÓXIMA COMPETICIÓN • 28 NOV
+                  </span>
+                  <h4 class="text-xl font-extrabold text-white mt-2">Cross Popular Parque del Soto</h4>
+                  <p class="text-xs text-[#8E8FA3] mt-0.5">5.0 km hierba / tierra • 1.060m altitud • Clavos 6 mm</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-black text-[#FF5E80] font-mono">12 Días</div>
+                  <div class="text-xs text-[#8E8FA3]">1.7 semanas</div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="flex justify-between text-xs font-semibold mb-1.5">
+                  <span class="text-[#8E8FA3]">Ritmo Objetivo: sub 3:35/km (~17:45)</span>
+                  <span class="text-[#FF5E80]">78% Afinamiento</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-[#242638] overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-[#7B88FF] to-[#FF5E80] glow-pink" style="width: 78%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="luxury-card p-6 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-extrabold px-2.5 py-1 rounded-lg bg-[#7B88FF]/15 text-[#7B88FF] border border-[#7B88FF]/30">
+                    OBJETIVO FIN DE AÑO • 31 DIC
+                  </span>
+                  <h4 class="text-xl font-extrabold text-white mt-2">San Silvestre (6.5 km)</h4>
+                  <p class="text-xs text-[#8E8FA3] mt-0.5">Asfalto urbano • Ritmo objetivo: sub 3:35/km (sub 23:15)</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-black text-[#7B88FF] font-mono">46 Días</div>
+                  <div class="text-xs text-[#8E8FA3]">6.5 semanas</div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="flex justify-between text-xs font-semibold mb-1.5">
+                  <span class="text-[#8E8FA3]">Base de Ritmo 10K: 3:50/km consolidada</span>
+                  <span class="text-[#7B88FF]">Fase de Carga</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full bg-[#242638] overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-[#6C5DD3] to-[#7B88FF] glow-blue" style="width: 55%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PESTAÑA 2: ENTRENOS (CALENDARIO 14 DÍAS)   -->
+        <!-- ========================================== -->
+        <section id="tab-workouts" class="space-y-4 hidden">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-2">
+            <div>
+              <h2 class="text-xl font-extrabold text-white">Microciclo Bi-Semanal (14 Días)</h2>
+              <p class="text-xs text-[#8E8FA3]">Toca cualquier día para desplegar o colapsar el detalle técnico y directrices</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs px-3 py-1.5 rounded-xl bg-[#242638] border border-[#2D2F45] text-[#8E8FA3]">
+                Hoy: <strong class="text-white">2026-11-16</strong>
+              </span>
+            </div>
+          </div>
+
+          <div id="workout-days-accordion" class="space-y-3"></div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PESTAÑA 3: GIMNASIO & REGISTRO DE SERIES   -->
+        <!-- ========================================== -->
+        <section id="tab-gym" class="space-y-6 hidden">
+
+          <!-- Selector de las 4 Rutinas Oficiales -->
+          <div class="luxury-card p-5">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+              <div>
+                <span class="text-[10px] uppercase font-extrabold px-2 py-0.5 rounded bg-[#FF5E80]/20 text-[#FF5E80]">
+                  RUTINAS OFICIALES MAESTRAS (PDF PÁGS 1-4)
+                </span>
+                <h3 class="text-lg font-extrabold text-white mt-1">Selecciona la Rutina de Gimnasio</h3>
+                <p class="text-xs text-[#8E8FA3]">Sobrecarga progresiva: registra tus kilos y repeticiones serie a serie</p>
+              </div>
+              <div class="text-xs text-[#20D994] font-semibold flex items-center gap-1">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <span>Sobrecarga: +2.5 kg al completar reps</span>
+              </div>
+            </div>
+
+            <!-- Botones de las 4 Rutinas -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <button onclick="selectGymRoutine(1)" id="gym-chip-1" class="p-3.5 rounded-2xl text-left border transition flex flex-col justify-between bg-[#242638] border-[#2D2F45] text-[#8E8FA3] hover:border-[#FF5E80]">
+                <span class="text-[10px] uppercase font-bold text-[#8E8FA3]">LUNES 18:00</span>
+                <span class="text-xs font-extrabold text-white mt-1">Pierna 1</span>
+                <span class="text-[10px] text-[#8E8FA3] mt-0.5">Cuádriceps &amp; VMO</span>
+              </button>
+
+              <button onclick="selectGymRoutine(2)" id="gym-chip-2" class="p-3.5 rounded-2xl text-left border transition flex flex-col justify-between bg-[#242638] border-[#2D2F45] text-[#8E8FA3] hover:border-[#FF5E80]">
+                <span class="text-[10px] uppercase font-bold text-[#8E8FA3]">MIÉRCOLES 17:30</span>
+                <span class="text-xs font-extrabold text-white mt-1">Torso Tracción</span>
+                <span class="text-[10px] text-[#8E8FA3] mt-0.5">Dorsal, Remo &amp; Bíceps</span>
+              </button>
+
+              <button onclick="selectGymRoutine(3)" id="gym-chip-3" class="p-3.5 rounded-2xl text-left border transition flex flex-col justify-between bg-[#FF5E80] text-white border-[#FF5E80] font-semibold glow-pink">
+                <span class="text-[10px] uppercase font-extrabold text-white/80">JUEVES/VIERNES</span>
+                <span class="text-xs font-extrabold text-white mt-1">Pierna 2 (Hoy)</span>
+                <span class="text-[10px] text-white/80 mt-0.5">Hip Thrust &amp; Isquios</span>
+              </button>
+
+              <button onclick="selectGymRoutine(4)" id="gym-chip-4" class="p-3.5 rounded-2xl text-left border transition flex flex-col justify-between bg-[#242638] border-[#2D2F45] text-[#8E8FA3] hover:border-[#FF5E80]">
+                <span class="text-[10px] uppercase font-bold text-[#8E8FA3]">SÁBADO 11:00</span>
+                <span class="text-xs font-extrabold text-white mt-1">Torso Empuje</span>
+                <span class="text-[10px] text-[#8E8FA3] mt-0.5">Pectoral &amp; Deltoides</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Blindaje Rodilla Izquierda (Activo) -->
+          <div class="luxury-card p-5 border border-[#20D994]/30 bg-[#20D994]/5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-[#20D994]/20 text-[#20D994] flex items-center justify-center shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-extrabold text-white">Blindaje VMO &amp; Rodilla Izquierda (Activo)</h4>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-[#20D994]/20 text-[#20D994]">0/10 Dolor</span>
+              </div>
+              <p class="text-xs text-[#8E8FA3] mt-1 leading-relaxed">
+                <strong>Spanish Squat Isométrica con Banda:</strong> 4 series × 35-40s de retención a 70°-80° de flexión. Tibias verticales. Recluta masivamente el vasto medial sin compresión patelofemoral.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contenedor de Ejercicios con Tarjetas Vectoriales y Registro Serie a Serie -->
+          <div id="gym-exercises-container" class="space-y-6"></div>
+
+          <!-- Resumen Markdown para Garmin / Intervals -->
+          <div class="luxury-card p-6 space-y-4">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <h4 class="text-base font-extrabold text-white flex items-center gap-2">
+                  <i data-lucide="file-text" class="w-5 h-5 text-[#FF5E80]"></i>
+                  <span>Resumen Markdown para Notas de Garmin &amp; Coach</span>
+                </h4>
+                <p class="text-xs text-[#8E8FA3] mt-0.5">Generado en tiempo real con las series y kilos anotados hoy.</p>
+              </div>
+              <button onclick="copyGymSessionToClipboard()" id="copy-gym-btn" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-[#FF5E80] to-[#FF4B72] text-white font-extrabold text-xs glow-pink hover:scale-[1.02] active:scale-[0.98] transition flex items-center justify-center gap-2">
+                <i data-lucide="clipboard-copy" class="w-4 h-4"></i>
+                <span id="copy-btn-text">Copiar para Notas de Garmin</span>
+              </button>
+            </div>
+
+            <!-- Previsualización Markdown -->
+            <div class="relative">
+              <textarea id="markdown-summary-preview" readonly="" class="w-full h-40 bg-[#141522] border border-[#2D2F45] rounded-2xl p-4 font-mono text-xs text-[#9D9EA7] resize-none focus:outline-none"></textarea>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PESTAÑA 4: OBJETIVOS & RITMOS              -->
+        <!-- ========================================== -->
+        <section id="tab-goals" class="space-y-6 hidden">
+          <div class="luxury-card p-6">
+            <h3 class="text-lg font-extrabold text-white">Matriz de Objetivos &amp; Ritmos de Carrera</h3>
+            <p class="text-xs text-[#8E8FA3] mt-1">Calibrado con tus datos de 10K Ávila (38:26 @ 3:50/km) y perfil anaeróbico</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div class="luxury-subcard p-5 border-t-4 border-t-[#FF5E80]">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-[10px] font-bold text-[#FF5E80] uppercase">28 Noviembre</span>
+                  <span class="text-xs font-black font-mono text-white">5.0 km</span>
+                </div>
+                <h4 class="text-base font-extrabold text-white">Cross Parque del Soto</h4>
+                <div class="mt-4 space-y-1.5 text-xs">
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Ritmo Objetivo:</span>
+                    <strong class="text-white font-mono">3:35 - 3:40/km</strong>
+                  </div>
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Tiempo Meta:</span>
+                    <strong class="text-[#FF5E80] font-mono">17:45 - 18:00</strong>
+                  </div>
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Superficie:</span>
+                    <span class="text-white">Hierba/Tierra (Clavos 6mm)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="luxury-subcard p-5 border-t-4 border-t-[#7B88FF]">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-[10px] font-bold text-[#7B88FF] uppercase">31 Diciembre</span>
+                  <span class="text-xs font-black font-mono text-white">6.5 km</span>
+                </div>
+                <h4 class="text-base font-extrabold text-white">San Silvestre</h4>
+                <div class="mt-4 space-y-1.5 text-xs">
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Ritmo Objetivo:</span>
+                    <strong class="text-white font-mono">sub 3:35/km</strong>
+                  </div>
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Tiempo Meta:</span>
+                    <strong class="text-[#7B88FF] font-mono">sub 23:15</strong>
+                  </div>
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Superficie:</span>
+                    <span class="text-white">Asfalto Urbano</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="luxury-subcard p-5 border-t-4 border-t-[#20D994]">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-[10px] font-bold text-[#20D994] uppercase">08 Noviembre</span>
+                  <span class="text-xs font-black font-mono text-white">10.0 km</span>
+                </div>
+                <h4 class="text-base font-extrabold text-white">10K Ávila Monumental</h4>
+                <div class="mt-4 space-y-1.5 text-xs">
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Marca Oficial:</span>
+                    <strong class="text-[#20D994] font-mono">38:26 (3:50/km)</strong>
+                  </div>
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Altitud:</span>
+                    <span class="text-white">1.070 m (D+ 95m)</span>
+                  </div>
+                  <div class="flex justify-between text-[#8E8FA3]">
+                    <span>Equivalente Nivel Mar:</span>
+                    <strong class="text-white font-mono">~37:10 (3:43/km)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Directrices Tácticas del Coach -->
+          <div class="luxury-card p-6">
+            <h4 class="text-sm font-extrabold text-white flex items-center gap-2">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-[#FF5E80]"></i>
+              <span>Directrices de Rendimiento &amp; Biomecánica</span>
+            </h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-xs">
+              <div class="luxury-subcard p-4">
+                <strong class="text-white block mb-1">🚫 Veto de Pista de 200m sin Peralte:</strong>
+                <p class="text-[#8E8FA3] leading-relaxed">
+                  Series a 3:30/km en 200m planos implican 20 curvas cerradas de radio &lt;25m. La fuerza centrífuga genera cizallamiento severo sobre la cintilla iliotibial y rodilla izquierda (post-derrame). Todas las series de VO2max se hacen en asfalto recto y llano.
+                </p>
+              </div>
+
+              <div class="luxury-subcard p-4">
+                <strong class="text-white block mb-1">👟 Rotación de Zapatillas Estratégica:</strong>
+                <p class="text-[#8E8FA3] leading-relaxed">
+                  • <strong>Novablast 5:</strong> Rodajes Z1/Z2 regenerativos (cero estrés articular).<br>
+                  • <strong>Nike Streakfly 2:</strong> Series de 1.000m en asfalto llano.<br>
+                  • <strong>Clavos 6 mm:</strong> Cross del Soto en hierba/tierra compacta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- NAVEGACIÓN INFERIOR FLOTANTE MÓVIL -->
+  <nav class="lg:hidden fixed bottom-3 left-4 right-4 h-16 bg-[#1D1E2C]/95 backdrop-blur-md border border-[#2D2F45] rounded-2xl flex items-center justify-around z-40 px-2 shadow-2xl">
+    <button onclick="switchTab('dashboard')" id="dock-btn-dashboard" class="flex flex-col items-center justify-center text-[#FF5E80] flex-1 py-1">
+      <i data-lucide="layout-grid" class="w-5 h-5 stroke-[2]"></i>
+      <span class="text-[10px] font-bold mt-1">Dashboard</span>
+    </button>
+    <button onclick="switchTab('workouts')" id="dock-btn-workouts" class="flex flex-col items-center justify-center text-[#8E8FA3] flex-1 py-1">
+      <i data-lucide="calendar" class="w-5 h-5 stroke-[2]"></i>
+      <span class="text-[10px] font-bold mt-1">Entrenos</span>
+    </button>
+    <button onclick="switchTab('gym')" id="dock-btn-gym" class="flex flex-col items-center justify-center text-[#8E8FA3] flex-1 py-1">
+      <i data-lucide="dumbbell" class="w-5 h-5 stroke-[2]"></i>
+      <span class="text-[10px] font-bold mt-1">Gimnasio</span>
+    </button>
+    <button onclick="switchTab('goals')" id="dock-btn-goals" class="flex flex-col items-center justify-center text-[#8E8FA3] flex-1 py-1">
+      <i data-lucide="target" class="w-5 h-5 stroke-[2]"></i>
+      <span class="text-[10px] font-bold mt-1">Objetivos</span>
+    </button>
+  </nav>
+
+  <!-- JAVASCRIPT DEL CLIENTE -->
+  <script>
+    const daysData = [{"date":"2026-11-16","day_name":"Lunes","display_date":"16 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":false,"session_type":"Rodaje Regenerativo Z1-Z2","title":"Rodaje de Drenaje & Soltura Post-Fin de Semana","duration_min":35,"target_distance_km":7,"target_pace":"4:55 - 5:10/km","hr_zone":"Z1 (<145 ppm)","warmup":"Movilidad articular de cadera y tobillo (5 min)","main_work":"35 min continuos suaves en asfalto/tierra plana. Oxigenar piernas sin impacto articular duro tras el paintball y la fiesta.","cooldown":"Caminar 3 min + estiramientos suaves de isquios y gemelos","shoes_recommended":"Asics Novablast 5"},"gym":{"is_rest":false,"routine_id":2,"routine_name":"Rutina 2 · Torso Tracción & Densidad (Pág 2 PDF)","highlight_exercises":[{"name":"Jalón Agarre Cerrado V","load":"4 series x 4-6 reps @ 54 - 59 kg","rir":"RIR 1"},{"name":"Remo Dorian Unilateral","load":"3 series x 6-8 reps @ 28 - 30 kg","rir":"RIR 1"},{"name":"Remo Gironda Amplio","load":"3 series x 8-10 reps @ 36 kg","rir":"RIR 1"},{"name":"Face Pull en Polea Alta","load":"3 series x 10-12 reps @ 23 - 27 kg","rir":"RIR 2"},{"name":"Curl Bíceps Mancuernas Inclinado","load":"3 series x 8-10 reps @ 12 kg/mano","rir":"RIR 1"},{"name":"Rueda Abdominal","load":"3 series x 8-10 reps","rir":"RIR 1"}],"knee_vmo_protocol":null}},{"date":"2026-11-17","day_name":"Martes","display_date":"17 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":true,"session_type":"Día de Trabajo en Madrid","title":"Descanso Total de Carrera (Viaje Laboral)","duration_min":0,"target_distance_km":0,"target_pace":"N/A","hr_zone":"Reposo","warmup":"Descanso de impacto","main_work":"Día laboral en Madrid. Llegada a Ávila sobre las 19:30-20:00. Cero carrera para absorber el viaje y llegar fresco al VO2max del miércoles.","cooldown":"Descanso y buena hidratación","shoes_recommended":"Calzado casual cómodo"},"gym":{"is_rest":false,"routine_id":4,"routine_name":"Rutina 4 · Torso Empuje en Ávila (Noche - 35 min)","highlight_exercises":[{"name":"Press de Banca Plano Máquina","load":"3 series x 6 reps @ 30 kg/lado","rir":"RIR 1-2"},{"name":"Press Inclinado con Mancuernas (30°)","load":"3 series x 8 reps @ 16 kg/mano","rir":"RIR 1"},{"name":"Pec Deck / Aperturas","load":"3 series x 8 reps @ 59 - 66 kg","rir":"RIR 1"},{"name":"Tríceps Polea con Cuerda","load":"3 series x 10 reps @ Nivel medio","rir":"RIR 0-1"}],"knee_vmo_protocol":null}},{"date":"2026-11-18","day_name":"Miércoles","display_date":"18 Nov","is_key_session":true,"manual_status":"auto","running":{"is_rest":false,"session_type":"Series VO2max en Terreno Firme","title":"SESIÓN CLAVE PRE-MILÁN: 4 x 1.000m @ 3:30-3:32/km","duration_min":50,"target_distance_km":9.5,"target_pace":"3:30 - 3:32 por 1.000m (Recuperación: 2' estático o trote)","hr_zone":"Z4 / Z5 (174 - 186 ppm)","warmup":"15 min trote progresivo Z1->Z2 + movilidad + 4 rectas vivas","main_work":"4 x 1.000m en pista de atletismo o asfalto llano y limpio. Objetivo: clavar el ritmo objetivo en suelo firme sin derrapes de barro. Recuperación: 2 min para permitir aclaramiento parcial de lactato.","cooldown":"10 min trote suave de vuelta a la calma","shoes_recommended":"Nike Streakfly 2"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso de Fuerza (Máxima Asimilación de VO2max)","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-19","day_name":"Jueves","display_date":"19 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":false,"session_type":"Rodaje Regenerativo Z1 + Rectas","title":"Rodaje Suave Pre-Viaje (30') + 4 Progresiones","duration_min":30,"target_distance_km":6,"target_pace":"5:00 - 5:15/km (Rectas sueltas)","hr_zone":"Z1 (<140 ppm)","warmup":"Movilidad dinámica","main_work":"30 min muy fáciles para soltar piernas antes del viaje + 4 rectas de 80m sueltas sin fatiga.","cooldown":"Estiramientos suaves de gemelos y sóleo","shoes_recommended":"Asics Novablast 5"},"gym":{"is_rest":false,"routine_id":3,"routine_name":"Rutina 3 · Pierna 2 Controlada (Pág 3 PDF - 40 min)","highlight_exercises":[{"name":"Hip Thrust con Barra en Banco","load":"3 series x 6 reps @ 130 - 140 kg (control estricto, sin récord)","rir":"RIR 2"},{"name":"Peso Muerto Rumano Unilateral","load":"3 series x 6 reps @ 20 - 22 kg/mano","rir":"RIR 2"},{"name":"Sóleo Sentado en Máquina","load":"3 series x 8 reps @ 35 - 40 kg (pausa 2s)","rir":"RIR 1"}],"knee_vmo_protocol":"Spanish Squat isométrica con banda: 3 series x 35s"}},{"date":"2026-11-20","day_name":"Viernes","display_date":"20 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":true,"session_type":"Viaje a Milán (Vuelo)","title":"Desplazamiento a Italia & Descanso de Entrenamiento","duration_min":0,"target_distance_km":0,"target_pace":"N/A","hr_zone":"Reposo","warmup":"Movilidad de tobillo durante el viaje","main_work":"Vuelo y llegada a Milán. Cero impacto de carrera. Disfrutar del viaje y caminar.","cooldown":"Hidratación","shoes_recommended":"Calzado casual cómodo"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso de Fuerza (Viaje)","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-21","day_name":"Sábado","display_date":"21 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":true,"session_type":"Turismo Activo en Milán","title":"Volumen Aeróbico Z1 Pasivo (Paseos)","duration_min":0,"target_distance_km":0,"target_pace":"N/A","hr_zone":"Caminata Z1 (<100 ppm)","warmup":"Paseo continuo por la ciudad","main_work":"Caminar 15.000 - 20.000 pasos. Excelente estímulo de capilarización y flujo sanguíneo sin impacto lesivo.","cooldown":"Pies en alto al final del día en el hotel","shoes_recommended":"Calzado cómodo de caminar"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso Gimnasio","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-22","day_name":"Domingo","display_date":"22 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":true,"session_type":"Turismo Activo en Milán","title":"Caminata & Asimilación Pre-Retorno","duration_min":0,"target_distance_km":0,"target_pace":"N/A","hr_zone":"Caminata Z1","warmup":"Movilidad articular en el hotel (5 min)","main_work":"Turismo activo a pie por Milán. Mantener la movilidad de tobillos y gemelos.","cooldown":"Descanso y cena","shoes_recommended":"Calzado cómodo de caminar"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso Gimnasio","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-23","day_name":"Lunes","display_date":"23 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":true,"session_type":"Regreso de Milán (Vuelo)","title":"Descanso Total & Retorno a Ávila","duration_min":0,"target_distance_km":0,"target_pace":"N/A","hr_zone":"Reposo","warmup":"Estiramientos suaves en casa","main_work":"Vuelo y regreso de Milán. Descanso para disipar la fatiga de las caminatas y recuperar el sueño.","cooldown":"Dormir bien e hidratarse","shoes_recommended":"Calzado casual cómodo"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso Gimnasio (Asimilación Viaje)","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-24","day_name":"Martes","display_date":"24 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":false,"session_type":"Reactivación Aeróbica Suave Z1","title":"Rodaje de Reactivación Post-Milán (30-35') + 4 Rectas","duration_min":35,"target_distance_km":6.5,"target_pace":"5:05 - 5:15/km","hr_zone":"Z1 (<142 ppm)","warmup":"Movilidad articular completa (tobillos y caderas)","main_work":"30 min de trote regenerativo en tierra/asfalto plano + 4 rectas progresivas suaves de 80m en hierba para reconectar los receptores propioceptivos del pie.","cooldown":"Caminar 2 min + soltar piernas","shoes_recommended":"Asics Novablast 5"},"gym":{"is_rest":false,"routine_id":2,"routine_name":"Rutina 2 · Torso Tracción Express Mantenimiento (25 min)","highlight_exercises":[{"name":"Jalón Agarre Cerrado V","load":"3 series x 6 reps @ 50 kg (ligero, RIR 3)","rir":"RIR 3"},{"name":"Remo Dorian Unilateral","load":"2 series x 8 reps @ 24 kg","rir":"RIR 3"},{"name":"Face Pull en Polea Alta","load":"3 series x 12 reps @ 20 kg","rir":"RIR 3"}],"knee_vmo_protocol":"Activación isométrica suave de vasto medial: 2 series x 30s"}},{"date":"2026-11-25","day_name":"Miércoles","display_date":"25 Nov","is_key_session":true,"manual_status":"auto","running":{"is_rest":false,"session_type":"Afinamiento Neuromuscular Pre-Cross","title":"AFINAMIENTO CLAVE PRE-CROSS: 3 x 500m @ Ritmo Cross","duration_min":40,"target_distance_km":6.5,"target_pace":"1:45 - 1:47 por 500m (3:30 - 3:35/km) | Rec: 2'30\" amplia","hr_zone":"Z4 / Ritmo Competición (sin fatiga residual)","warmup":"15 min trote suave Z1 progresivo + ejercicios de técnica (skipping, zarpazo de tobillo) + 3 progresiones","main_work":"3 x 500m clavando exactamente el ritmo de salida del cross (1:45-1:47). Recuperación amplia (2'30\" caminando y trote muy lento). Cero fatiga glucolítica: buscamos reclutamiento de fibras rápidas y confianza mecánica sin acumular lactato.","cooldown":"8 min de trote muy suave de desasimilación","shoes_recommended":"Zapatillas de clavos de cross (o Nike Streakfly 2)"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso de Fuerza (Enfoque en Competición)","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-26","day_name":"Jueves","display_date":"26 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":true,"session_type":"Descanso Total Pre-Competición","title":"Descanso Completo & Carga de Glucógeno","duration_min":0,"target_distance_km":0,"target_pace":"N/A","hr_zone":"Reposo","warmup":"Movilidad de tobillo opcional","main_work":"Cero impacto. Nutrición limpia con carbohidratos complejos (arroz, patata cocida, avena, pasta) + hidratación abundante con sales.","cooldown":"Dormir 8 horas mínimo","shoes_recommended":"Calzado casual cómodo"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso Absoluto de Fuerza","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-27","day_name":"Viernes","display_date":"27 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":false,"session_type":"Activación Pre-Carrera (24h)","title":"Activación Pre-Cross (15') + 4 Progresiones Vivas","duration_min":25,"target_distance_km":4,"target_pace":"5:10/km trote + 4 rectas a ritmo de salida","hr_zone":"Z1 (<135 ppm)","warmup":"Movilidad dinámica de cadera y aductores","main_work":"15 min muy suaves en hierba + 4 aceleraciones vivas de 60-80m con clavos puestos para chequear agarre del terreno y reactividad muscular.","cooldown":"Soltar piernas. Revisar llave de clavos y apretar clavos de 6mm/9mm.","shoes_recommended":"Clavos de cross (New Balance o Nike)"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso de Gimnasio","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-28","day_name":"Sábado","display_date":"28 Nov","is_key_session":true,"manual_status":"auto","running":{"is_rest":false,"session_type":"COMPETICIÓN: CROSS POPULAR PARQUE DEL SOTO","title":"¡DÍA D! CROSS POPULAR PARQUE DEL SOTO (5.000m)","duration_min":60,"target_distance_km":8.5,"target_pace":"Km 1 @ 3:40/km -> Km 2-4 @ 3:35/km -> Km 5 @ sub 3:30/km","hr_zone":"Z5 / VO2max de Competición","warmup":"15 min trote progresivo + movilidad dinámica + 3 rectas de aceleración 20 min antes del pistoletazo.","main_work":"5.000m oficiales en el circuito del Parque del Soto. Táctica: no suicidarse en los primeros 1.000m (3:40-3:42). Imponer ritmo de crucero en las zonas de curva y tierra (3:35). Desatar el cambio de mediofondista en el último km (sub 3:30/km). Objetivo de marca: 17:55 - 18:15.","cooldown":"10 min de trote muy suave descalzo sobre el césped para descongestionar fascia y sóleos.","shoes_recommended":"Zapatillas de clavos (6mm seco / 9mm húmedo o barro)"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso de Fuerza (¡Celebración de Carrera!)","highlight_exercises":[],"knee_vmo_protocol":null}},{"date":"2026-11-29","day_name":"Domingo","display_date":"29 Nov","is_key_session":false,"manual_status":"auto","running":{"is_rest":false,"session_type":"Regeneración Post-Competición Z1","title":"Rodaje Regenerativo de Descarga Post-Cross","duration_min":35,"target_distance_km":6.5,"target_pace":"5:15 - 5:30/km","hr_zone":"Z1 (<138 ppm)","warmup":"Movilidad articular muy suave","main_work":"30-35 min de trote muy regenerativo en asfalto plano para barrer metabolitos y descargar la fascia. Si hay dolor o sobrecarga en sóleos por los clavos, sustituir por paseo suave.","cooldown":"Estiramientos suaves y ducha de contrastes","shoes_recommended":"Asics Novablast 5"},"gym":{"is_rest":true,"routine_id":null,"routine_name":"Descanso Gimnasio (Foam Roller y Movilidad)","highlight_exercises":[],"knee_vmo_protocol":null}}];
+    const weeklyData = [{"week_start":"2026-09-28","week_end":"2026-10-04","label":"28 Sep","run_km":13.4,"runs":2,"pace_avg":"4:50/km","gym_sessions":0,"ctl":9.9,"atl":13.8,"tsb":-3.8},{"week_start":"2026-10-05","week_end":"2026-10-11","label":"05 Oct","run_km":19.2,"runs":2,"pace_avg":"4:39/km","gym_sessions":0,"ctl":11.1,"atl":14.8,"tsb":-3.7},{"week_start":"2026-10-12","week_end":"2026-10-18","label":"12 Oct","run_km":16.5,"runs":3,"pace_avg":"5:29/km","gym_sessions":0,"ctl":10.9,"atl":10.2,"tsb":0.7},{"week_start":"2026-10-19","week_end":"2026-10-25","label":"19 Oct","run_km":25.4,"runs":5,"pace_avg":"4:54/km","gym_sessions":3,"ctl":12.9,"atl":20.3,"tsb":-7.3},{"week_start":"2026-10-26","week_end":"2026-11-01","label":"26 Oct","run_km":29.2,"runs":6,"pace_avg":"4:42/km","gym_sessions":3,"ctl":15.6,"atl":30.7,"tsb":-15.1},{"week_start":"2026-11-02","week_end":"2026-11-08","label":"02 Nov","run_km":21.6,"runs":6,"pace_avg":"4:47/km","gym_sessions":1,"ctl":15.6,"atl":24.9,"tsb":-9.3},{"week_start":"2026-11-09","week_end":"2026-11-15","label":"09 Nov","run_km":27,"runs":5,"pace_avg":"5:03/km","gym_sessions":4,"ctl":16.1,"atl":25.7,"tsb":-9.5},{"week_start":"2026-11-16","week_end":"2026-11-22","label":"16 Nov (Hoy)","run_km":30,"runs":4,"pace_avg":"4:45/km","gym_sessions":3,"ctl":16.5,"atl":26,"tsb":-9.5,"is_projected":true},{"week_start":"2026-11-23","week_end":"2026-11-29","label":"23 Nov (Cross)","run_km":20,"runs":4,"pace_avg":"4:15/km","gym_sessions":2,"ctl":17,"atl":18,"tsb":-1,"is_projected":true}];
+    const todayISO = "2026-11-16";
+
+    const gymRoutinesData = {
+      1: {
+        title: "Rutina 1 · Pierna 1 (Dominancia Rodilla & Cuádriceps)",
+        day: "Lunes 18:00 • 45-50 min • RIR 1-2",
+        exercises: [
+          { num: 1, name: "Sentadilla con Barra / Box Squat", vector: "/img/vector_ex_1_1.png", muscle: "Cuádriceps", target_sets: 4, target_reps: "4-6", target_weight: "65-70 kg", rir: "RIR 1-2", cue: "Rompe el paralelo al cajón. Empuja con todo el pie sin valgo de rodilla." },
+          { num: 2, name: "Prensa de Piernas 45°", vector: "/img/vector_ex_1_2.png", muscle: "Cuádriceps & Aductores", target_sets: 3, target_reps: "6-8", target_weight: "+40 kg/lado", rir: "RIR 1", cue: "Pies anchura caderas. Cero despegue lumbar del respaldo." },
+          { num: 3, name: "Extensión de Cuádriceps", vector: "/img/vector_ex_1_3.png", muscle: "Recto Femoral", target_sets: 3, target_reps: "8-10", target_weight: "66 kg", rir: "RIR 1", cue: "Aislamiento puro del recto femoral sin fatiga en columna." },
+          { num: 4, name: "Gemelos de Pie con Barra", vector: "/img/vector_ex_1_4.png", muscle: "Gastrocnemio", target_sets: 4, target_reps: "6-8", target_weight: "85 kg", rir: "RIR 1", cue: "Pausa de 2s abajo para anular rebote tendinoso." },
+          { num: 5, name: "Spanish Squat Isométrica con Banda", vector: "/img/vector_ex_1_5.png", muscle: "Vasto Medial (VMO)", target_sets: 4, target_reps: "35-40s", target_weight: "Banda Pesada", rir: "RIR 0", cue: "Tibias verticales a 70°-80°. Reclutamiento máximo del vasto medial." },
+          { num: 6, name: "Rueda Abdominal (Core)", vector: "/img/vector_ex_1_6.png", muscle: "Core & Abdomen", target_sets: 3, target_reps: "8-10", target_weight: "Autocarga", rir: "RIR 1", cue: "Retroversión pélvica activa en todo el recorrido." }
+        ]
+      },
+      2: {
+        title: "Rutina 2 · Torso Tracción (Dorsal, Espalda Alta & Bíceps)",
+        day: "Miércoles 17:30 • 50 min • RIR 1",
+        exercises: [
+          { num: 1, name: "Jalón Agarre Cerrado V", vector: "/img/vector_ex_2_1.png", muscle: "Dorsal Ancho", target_sets: 4, target_reps: "4-6", target_weight: "54-59 kg", rir: "RIR 1", cue: "Codos hacia abajo y adentro apretando el dorsal." },
+          { num: 2, name: "Remo Dorian Unilateral", vector: "/img/vector_ex_2_2.png", muscle: "Dorsal & Espalda Media", target_sets: 3, target_reps: "6-8", target_weight: "28-30 kg", rir: "RIR 1", cue: "Tracción hacia el bolsillo trasero, codo pegado al costado." },
+          { num: 3, name: "Remo Gironda con Agarre Amplio", vector: "/img/vector_ex_2_3.png", muscle: "Espalda Alta", target_sets: 3, target_reps: "8-10", target_weight: "36 kg", rir: "RIR 1", cue: "Retracción escapular máxima en el punto de contracción." },
+          { num: 4, name: "Face Pull en Polea Alta", vector: "/img/vector_ex_2_4.png", muscle: "Deltoides Posterior", target_sets: 3, target_reps: "10-12", target_weight: "23-27 kg", rir: "RIR 2", cue: "Cuerda a la frente con rotación externa de hombro." },
+          { num: 5, name: "Curl Bíceps Mancuernas Inclinado", vector: "/img/vector_ex_2_5.png", muscle: "Bíceps", target_sets: 3, target_reps: "8-10", target_weight: "12 kg/mano", rir: "RIR 1", cue: "Estiramiento máximo con los codos perpendiculares al suelo." },
+          { num: 6, name: "Curl en Banco Scott / Predicador", vector: "/img/vector_ex_2_6.png", muscle: "Braquial & Bíceps", target_sets: 3, target_reps: "8-10", target_weight: "25 kg", rir: "RIR 1", cue: "Aislamiento estricto sin balanceo del torso." }
+        ]
+      },
+      3: {
+        title: "Rutina 3 · Pierna 2 (Cadena Posterior & Blindaje Isquios)",
+        day: "Jueves/Viernes 17:30 • 50 min • RIR 1",
+        exercises: [
+          { num: 1, name: "Hip Thrust con Barra", vector: "/img/vector_ex_3_1.png", muscle: "Glúteo Mayor", target_sets: 4, target_reps: "4-6", target_weight: "130-140 kg", rir: "RIR 1", cue: "Parada de 1s arriba con retroversión pélvica y mentón pegado." },
+          { num: 2, name: "Peso Muerto Rumano Unilateral", vector: "/img/vector_ex_3_2.png", muscle: "Isquiotibiales", target_sets: 3, target_reps: "6-8", target_weight: "20-24 kg/mano", rir: "RIR 1-2", cue: "Bisagra de cadera pura con espalda neutra y tensión excéntrica." },
+          { num: 3, name: "Prensa Pies Altos y Anchos", vector: "/img/vector_ex_3_3.png", muscle: "Glúteos & Aductores", target_sets: 3, target_reps: "6-8", target_weight: "+40-45 kg/lado", rir: "RIR 1", cue: "Empuje de talones reduciendo el estrés en el tendón rotuliano." },
+          { num: 4, name: "Sóleo Sentado en Máquina", vector: "/img/vector_ex_3_4.png", muscle: "Sóleo", target_sets: 4, target_reps: "8-10", target_weight: "40 kg", rir: "RIR 1", cue: "El sóleo absorbe hasta 8x el peso corporal en cada zancada." },
+          { num: 5, name: "Curl Femoral Tumbado", vector: "/img/vector_ex_3_5.png", muscle: "Isquiotibiales", target_sets: 3, target_reps: "6-8", target_weight: "42 kg", rir: "RIR 1", cue: "Frena la fase excéntrica en 3s para blindar la unión miotendinosa." },
+          { num: 6, name: "Elevaciones de Piernas Colgado", vector: "/img/vector_ex_3_6.png", muscle: "Core & Abdomen", target_sets: 3, target_reps: "10-12", target_weight: "Autocarga", rir: "RIR 1", cue: "Sube las piernas en L a 90° flexionando la pelvis sin balanceo." }
+        ]
+      },
+      4: {
+        title: "Rutina 4 · Torso Empuje (Pectoral, Hombro & Tríceps)",
+        day: "Sábado 11:00 • 50 min • RIR 1-2",
+        exercises: [
+          { num: 1, name: "Press de Banca Plano", vector: "/img/vector_ex_4_1.png", muscle: "Pectoral Mayor", target_sets: 4, target_reps: "4-6", target_weight: "60-65 kg", rir: "RIR 1-2", cue: "Escápulas retraídas, barra al esternón y empuje firme." },
+          { num: 2, name: "Press Inclinado con Mancuernas 30°", vector: "/img/vector_ex_4_2.png", muscle: "Pectoral Superior", target_sets: 3, target_reps: "6-8", target_weight: "22 kg/mano", rir: "RIR 1", cue: "Banca a 30° para activación máxima de la porción clavicular." },
+          { num: 3, name: "Pec Deck / Contractor", vector: "/img/vector_ex_4_3.png", muscle: "Pectoral (Aislamiento)", target_sets: 3, target_reps: "8-10", target_weight: "50 kg", rir: "RIR 1", cue: "Cierre al esternón con compresión isométrica de 1s." },
+          { num: 4, name: "Elevaciones Laterales con Mancuernas", vector: "/img/vector_ex_4_4.png", muscle: "Deltoides Lateral", target_sets: 4, target_reps: "10-12", target_weight: "10 kg/mano", rir: "RIR 1", cue: "Eleva en el plano escapular liderando con los codos." },
+          { num: 5, name: "Tríceps en Polea con Cuerda", vector: "/img/vector_ex_4_5.png", muscle: "Tríceps", target_sets: 3, target_reps: "8-10", target_weight: "25 kg", rir: "RIR 1", cue: "Abre la cuerda al final bloqueando el tríceps abajo." },
+          { num: 6, name: "Plancha Frontal Core Estricta", vector: "/img/vector_ex_4_6.png", muscle: "Core & Abdomen", target_sets: 3, target_reps: "40-45s", target_weight: "Autocarga", rir: "RIR 0", cue: "Tensión de glúteos y abdomen como una tabla de piedra." }
+        ]
+      }
+    };
+
+    function handleImgError(img) {
+      img.onerror = null;
+      img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%231D1E2C"/><text x="50%" y="50%" fill="%238E8FA3" font-family="sans-serif" font-size="14" text-anchor="middle" dominant-baseline="middle">Ilustración Vectorial</text></svg>';
+    }
+
+    function switchTab(tabId) {
+      const tabs = ['dashboard', 'workouts', 'gym', 'goals'];
+      tabs.forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        if (el) el.classList.toggle('hidden', t !== tabId);
+
+        const deskBtn = document.getElementById('nav-desktop-' + t);
+        if (deskBtn) {
+          deskBtn.classList.toggle('active-nav-link', t === tabId);
+          deskBtn.classList.toggle('text-[#FF5E80]', t === tabId);
+          deskBtn.classList.toggle('text-[#8E8FA3]', t !== tabId);
+        }
+
+        const mobBtn = document.getElementById('nav-mobile-' + t);
+        if (mobBtn) {
+          mobBtn.className = t === tabId 
+            ? "px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-[#FF5E80] text-white glow-pink"
+            : "px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-[#1D1E2C] text-[#8E8FA3] border border-[#2D2F45]";
+        }
+
+        const dockBtn = document.getElementById('dock-btn-' + t);
+        if (dockBtn) {
+          dockBtn.classList.toggle('text-[#FF5E80]', t === tabId);
+          dockBtn.classList.toggle('text-[#8E8FA3]', t !== tabId);
+        }
+      });
+
+      if (tabId === 'gym') {
+        selectGymRoutine(3);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToGymRoutine(routineId) {
+      switchTab('gym');
+      selectGymRoutine(routineId);
+    }
+
+    function toggleDayAccordion(idx) {
+      const body = document.getElementById('day-body-' + idx);
+      const icon = document.getElementById('day-icon-' + idx);
+      if (!body) return;
+      const isHidden = body.classList.contains('hidden');
+      body.classList.toggle('hidden', !isHidden);
+      if (icon) {
+        icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // Estado del Logger Serie a Serie en Memoria
+    let currentGymState = {};
+
+    function selectGymRoutine(routineId) {
+      for (let i = 1; i <= 4; i++) {
+        const btn = document.getElementById('gym-chip-' + i);
+        if (!btn) continue;
+        if (i === routineId) {
+          btn.className = "p-3.5 rounded-2xl text-left border transition flex flex-col justify-between bg-[#FF5E80] text-white border-[#FF5E80] font-semibold glow-pink";
+          btn.querySelectorAll('span')[0].className = "text-[10px] uppercase font-extrabold text-white/80";
+          btn.querySelectorAll('span')[1].className = "text-xs font-extrabold text-white mt-1";
+          btn.querySelectorAll('span')[2].className = "text-[10px] text-white/80 mt-0.5";
+        } else {
+          btn.className = "p-3.5 rounded-2xl text-left border transition flex flex-col justify-between bg-[#242638] border-[#2D2F45] text-[#8E8FA3] hover:border-[#FF5E80]";
+          btn.querySelectorAll('span')[0].className = "text-[10px] uppercase font-bold text-[#8E8FA3]";
+          btn.querySelectorAll('span')[1].className = "text-xs font-extrabold text-white mt-1";
+          btn.querySelectorAll('span')[2].className = "text-[10px] text-[#8E8FA3] mt-0.5";
+        }
+      }
+
+      const routine = gymRoutinesData[routineId];
+      if (!routine) return;
+
+      // Cargar estado guardado o inicializar con valores objetivo
+      const savedKey = 'aegis_workout_v2_' + todayISO + '_r' + routineId;
+      const raw = localStorage.getItem(savedKey);
+      if (raw) {
+        try { currentGymState = JSON.parse(raw); } catch(e) { currentGymState = {}; }
+      } else {
+        currentGymState = {};
+      }
+
+      const container = document.getElementById('gym-exercises-container');
+      let html = '<div class="luxury-card p-4 sm:p-5 flex items-center justify-between border-b border-[#2D2F45]">' +
+        '<div>' +
+          '<h3 class="text-base font-extrabold text-white">' + routine.title + '</h3>' +
+          '<p class="text-xs text-[#FF5E80] font-medium mt-0.5">' + routine.day + '</p>' +
+        '</div>' +
+        '<span class="text-xs font-extrabold px-3 py-1 rounded-xl bg-[#242638] text-[#8E8FA3] border border-[#2D2F45]">' +
+          routine.exercises.length + ' Ejercicios' +
+        '</span>' +
+      '</div>';
+
+      routine.exercises.forEach(function(ex) {
+        if (!currentGymState[ex.num]) {
+          currentGymState[ex.num] = {
+            sets: [],
+            notes: ''
+          };
+          for (let s = 1; s <= ex.target_sets; s++) {
+            currentGymState[ex.num].sets.push({
+              set_num: s,
+              weight: ex.target_weight.split(' ')[0].replace('kg', ''),
+              reps: ex.target_reps.split('-')[0],
+              completed: true
+            });
+          }
+        }
+
+        html += '<div class="luxury-card overflow-hidden shadow-xl" id="ex-card-' + ex.num + '">' +
+          '<!-- Tarjeta Vectorial Dual -->' +
+          '<div class="relative w-full bg-[#141522] border-b border-[#2D2F45] flex items-center justify-center p-2">' +
+            '<img src="' + ex.vector + '" alt="' + ex.name + '" class="w-full max-h-56 sm:max-h-64 object-contain rounded-xl" loading="lazy" onerror="handleImgError(this)">' +
+            '<span class="absolute top-4 left-4 px-3 py-1 rounded-lg bg-[#141522]/90 border border-[#2D2F45] text-[10px] font-extrabold text-[#7B88FF] uppercase tracking-wider backdrop-blur">' +
+              ex.muscle +
+            '</span>' +
+          '</div>' +
+
+          '<div class="p-5 space-y-4">' +
+            '<!-- Cabecera limpia -->' +
+            '<div class="flex items-center justify-between gap-2">' +
+              '<div>' +
+                '<h4 class="text-base font-extrabold text-white">' + ex.name + '</h4>' +
+                '<p class="text-xs text-[#8E8FA3] mt-0.5 font-medium">Objetivo: <strong class="text-white">' + ex.target_sets + ' series × ' + ex.target_reps + ' reps</strong> @ <strong class="text-[#FF5E80] font-mono">' + ex.target_weight + '</strong> (' + ex.rir + ')</p>' +
+              '</div>' +
+            '</div>' +
+
+            '<!-- Tabla de Series -->' +
+            '<div class="overflow-x-auto">' +
+              '<div class="min-w-[320px] space-y-2" id="sets-container-' + ex.num + '">' +
+                renderExerciseSetsHtml(routineId, ex.num) +
+              '</div>' +
+            '</div>' +
+
+            '<!-- Botón Añadir Serie -->' +
+            '<div class="flex items-center justify-between pt-1">' +
+              '<button onclick="addSetRow(' + routineId + ', ' + ex.num + ')" class="px-3 py-1.5 rounded-xl bg-[#242638] border border-[#2D2F45] text-[#8E8FA3] hover:text-white text-xs font-bold transition flex items-center gap-1.5">' +
+                '<i data-lucide="plus" class="w-3.5 h-3.5 text-[#FF5E80]"></i> Añadir Serie' +
+              '</button>' +
+              '<div class="text-[11px] text-[#8E8FA3] italic">' + ex.cue + '</div>' +
+            '</div>' +
+
+            '<!-- Notas del Ejercicio -->' +
+            '<div>' +
+              '<input type="text" id="ex-notes-' + ex.num + '" value="' + (currentGymState[ex.num].notes || '') + '" oninput="updateExerciseNotes(' + routineId + ', ' + ex.num + ', this.value)" placeholder="Sensaciones, RIR o apuntes del ejercicio..." class="w-full bg-[#141522] border border-[#2D2F45] rounded-xl px-3.5 py-2 text-xs text-white placeholder-[#5D5F76] focus:outline-none focus:border-[#FF5E80] transition">' +
+            '</div>' +
+
+          '</div>' +
+        '</div>';
+      });
+
+      container.innerHTML = html;
+      updateMarkdownPreview(routineId);
+      lucide.createIcons();
+    }
+
+    function renderExerciseSetsHtml(routineId, exNum) {
+      const exState = currentGymState[exNum];
+      if (!exState || !exState.sets) return '';
+
+      let out = '<div class="grid grid-cols-12 gap-2 text-[10px] text-[#8E8FA3] font-bold uppercase tracking-wider px-2 pb-1 border-b border-[#2D2F45]/60">' +
+        '<div class="col-span-2">Serie</div>' +
+        '<div class="col-span-4">Carga (kg)</div>' +
+        '<div class="col-span-4">Reps</div>' +
+        '<div class="col-span-2 text-center">Acción</div>' +
+      '</div>';
+
+      exState.sets.forEach((s, idx) => {
+        out += '<div class="grid grid-cols-12 gap-2 items-center p-2 rounded-xl bg-[#141522] border border-[#2D2F45] text-xs font-mono">' +
+          '<div class="col-span-2 font-bold text-[#8E8FA3] flex items-center gap-1">' +
+            '<span class="w-5 h-5 rounded-lg bg-[#242638] text-white flex items-center justify-center text-[10px]">' + s.set_num + '</span>' +
+          '</div>' +
+          '<div class="col-span-4">' +
+            '<input type="text" value="' + (s.weight || '') + '" oninput="updateSetData(' + routineId + ', ' + exNum + ', ' + idx + ', 'weight', this.value)" placeholder="kg" class="w-full bg-[#1D1E2C] border border-[#2D2F45] rounded-lg px-2.5 py-1 text-white font-bold text-xs focus:outline-none focus:border-[#FF5E80] transition">' +
+          '</div>' +
+          '<div class="col-span-4">' +
+            '<input type="text" value="' + (s.reps || '') + '" oninput="updateSetData(' + routineId + ', ' + exNum + ', ' + idx + ', 'reps', this.value)" placeholder="reps" class="w-full bg-[#1D1E2C] border border-[#2D2F45] rounded-lg px-2.5 py-1 text-white font-bold text-xs focus:outline-none focus:border-[#FF5E80] transition">' +
+          '</div>' +
+          '<div class="col-span-2 flex items-center justify-center gap-1">' +
+            (exState.sets.length > 1 ? '<button onclick="removeSetRow(' + routineId + ', ' + exNum + ', ' + idx + ')" class="w-6 h-6 rounded-lg bg-[#242638] hover:bg-rose-500/20 text-[#8E8FA3] hover:text-[#FF5E80] flex items-center justify-center transition" title="Eliminar serie">&times;</button>' : '<span class="text-[#20D994] font-bold text-xs">✓</span>') +
+          '</div>' +
+        '</div>';
+      });
+
+      return out;
+    }
+
+    function addSetRow(routineId, exNum) {
+      if (!currentGymState[exNum]) return;
+      const nextNum = currentGymState[exNum].sets.length + 1;
+      const lastWeight = nextNum > 1 ? currentGymState[exNum].sets[nextNum - 2].weight : '';
+      const lastReps = nextNum > 1 ? currentGymState[exNum].sets[nextNum - 2].reps : '';
+      currentGymState[exNum].sets.push({
+        set_num: nextNum,
+        weight: lastWeight,
+        reps: lastReps,
+        completed: true
+      });
+      persistGymState(routineId);
+      document.getElementById('sets-container-' + exNum).innerHTML = renderExerciseSetsHtml(routineId, exNum);
+      updateMarkdownPreview(routineId);
+      lucide.createIcons();
+    }
+
+    function removeSetRow(routineId, exNum, idx) {
+      if (!currentGymState[exNum] || currentGymState[exNum].sets.length <= 1) return;
+      currentGymState[exNum].sets.splice(idx, 1);
+      currentGymState[exNum].sets.forEach((s, i) => s.set_num = i + 1);
+      persistGymState(routineId);
+      document.getElementById('sets-container-' + exNum).innerHTML = renderExerciseSetsHtml(routineId, exNum);
+      updateMarkdownPreview(routineId);
+      lucide.createIcons();
+    }
+
+    function updateSetData(routineId, exNum, idx, field, val) {
+      if (!currentGymState[exNum] || !currentGymState[exNum].sets[idx]) return;
+      currentGymState[exNum].sets[idx][field] = val;
+      persistGymState(routineId);
+      updateMarkdownPreview(routineId);
+    }
+
+    function updateExerciseNotes(routineId, exNum, val) {
+      if (!currentGymState[exNum]) return;
+      currentGymState[exNum].notes = val;
+      persistGymState(routineId);
+      updateMarkdownPreview(routineId);
+    }
+
+    function persistGymState(routineId) {
+      const savedKey = 'aegis_workout_v2_' + todayISO + '_r' + routineId;
+      localStorage.setItem(savedKey, JSON.stringify(currentGymState));
+
+      // Guardar también en backend KV de forma asíncrona
+      fetch('/api/save_gym_session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          date: todayISO,
+          routine_id: routineId,
+          routine_name: gymRoutinesData[routineId].title,
+          state: currentGymState
+        })
+      }).catch(e => console.log('KV sync error (offline fallback active)'));
+    }
+
+    function generateMarkdownText(routineId) {
+      const routine = gymRoutinesData[routineId];
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+      
+      const lines = [];
+      lines.push('🏋️ AEGIS COACH — ' + routine.title.toUpperCase() + ' (' + dateStr + ')');
+      lines.push('Atleta: Carlos Jiménez Andrino');
+      lines.push('----------------------------------------');
+
+      routine.exercises.forEach(function(ex) {
+        const state = currentGymState[ex.num];
+        if (!state || !state.sets || state.sets.length === 0) return;
+        
+        // Compactar series: ej. "1x6@130kg, 2x6@135kg, 1x5@140kg"
+        const setStrings = state.sets.map(s => {
+          const w = (s.weight || '0').replace('kg', '');
+          const r = s.reps || '0';
+          return r + 'r@' + w + 'kg';
+        });
+        const notesStr = state.notes ? (' — ' + state.notes) : '';
+        lines.push('• ' + ex.name + ': ' + setStrings.join(', ') + notesStr);
+      });
+
+      lines.push('----------------------------------------');
+      lines.push('Blindaje Rodilla Izquierda: 0/10 Dolor (VMO activo)');
+      return lines.join(String.fromCharCode(10));
+    }
+
+    function updateMarkdownPreview(routineId) {
+      const textarea = document.getElementById('markdown-summary-preview');
+      if (textarea) {
+        textarea.value = generateMarkdownText(routineId);
+      }
+    }
+
+    function copyGymSessionToClipboard() {
+      let routineId = 3;
+      for (let i = 1; i <= 4; i++) {
+        const b = document.getElementById('gym-chip-' + i);
+        if (b && b.classList.contains('bg-[#FF5E80]')) {
+          routineId = i;
+          break;
+        }
+      }
+
+      const textToCopy = generateMarkdownText(routineId);
+      navigator.clipboard.writeText(textToCopy).then(function() {
+        const btnText = document.getElementById('copy-btn-text');
+        const btn = document.getElementById('copy-gym-btn');
+        if (btnText && btn) {
+          const original = btnText.innerText;
+          btnText.innerText = '¡Copiado para Garmin!';
+          btn.classList.add('bg-[#20D994]');
+          setTimeout(function() {
+            btnText.innerText = original;
+            btn.classList.remove('bg-[#20D994]');
+          }, 2500);
+        }
+      });
+    }
+
+    function renderWorkoutsAccordion() {
+      const container = document.getElementById('workout-days-accordion');
+      if (!container) return;
+
+      let html = '';
+      daysData.forEach(function(day, idx) {
+        const isToday = day.date === todayISO;
+        const isPast = day.date < todayISO;
+        const isKey = day.is_key_session;
+
+        let badgeHtml = '';
+        if (isToday) {
+          badgeHtml = '<span class="px-2.5 py-1 rounded-xl bg-[#FF5E80] text-white text-[10px] font-black uppercase tracking-wider glow-pink">HOY</span>';
+        } else if (isPast) {
+          badgeHtml = '<span class="px-2 py-0.5 rounded-lg bg-[#20D994]/20 text-[#20D994] border border-[#20D994]/30 text-[10px] font-bold">OK</span>';
+        } else if (isKey) {
+          badgeHtml = '<span class="px-2 py-0.5 rounded-lg bg-[#FF5E80]/20 text-[#FF5E80] border border-[#FF5E80]/30 text-[10px] font-bold">CLAVE</span>';
+        } else {
+          badgeHtml = '<span class="px-2 py-0.5 rounded-lg bg-[#242638] text-[#8E8FA3] text-[10px] font-bold">PEND</span>';
+        }
+
+        const borderClass = isToday ? 'border-[#FF5E80] glow-pink' : 'border-[#2D2F45]';
+        const startOpen = isToday || (!daysData.some(d => d.date === todayISO) && idx === 0);
+
+        html += '<div class="luxury-card ' + borderClass + ' overflow-hidden transition-all">' +
+          '<div onclick="toggleDayAccordion(' + idx + ')" class="p-4 sm:p-5 flex items-center justify-between cursor-pointer hover:bg-[#242638]/40 transition select-none">' +
+            '<div class="flex items-center gap-3">' +
+              badgeHtml +
+              '<div>' +
+                '<div class="text-sm sm:text-base font-extrabold text-white">' + day.day_name + ' ' + day.display_date + '</div>' +
+                '<div class="text-xs text-[#8E8FA3] mt-0.5 truncate max-w-[200px] sm:max-w-md">' +
+                  (day.running.is_rest ? 'Descanso carrera' : day.running.title) + ' &bull; ' +
+                  (day.gym.is_rest ? 'Descanso fuerza' : day.gym.routine_name.split('·')[0]) +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="flex items-center gap-2">' +
+              '<i data-lucide="chevron-down" id="day-icon-' + idx + '" class="w-5 h-5 text-[#8E8FA3] transition-transform duration-200" style="transform: ' + (startOpen ? 'rotate(180deg)' : 'rotate(0deg)') + '"></i>' +
+            '</div>' +
+          '</div>' +
+
+          '<div id="day-body-' + idx + '" class="' + (startOpen ? '' : 'hidden') + ' px-4 pb-5 sm:px-5 sm:pb-6 pt-2 border-t border-[#2D2F45]/60 space-y-4">' +
+            (day.running.is_rest ? 
+              '<div class="p-3.5 rounded-2xl bg-[#242638] text-xs text-[#8E8FA3]">🏃 Descanso de carrera</div>' :
+              '<div class="luxury-subcard p-4 space-y-3">' +
+                '<div class="flex items-center justify-between">' +
+                  '<span class="text-xs font-extrabold text-[#FF5E80] flex items-center gap-1.5">' +
+                    '<i data-lucide="footprints" class="w-4 h-4"></i> ' + day.running.title +
+                  '</span>' +
+                  '<span class="text-xs font-mono font-black text-white">' + day.running.duration_min + ' min &bull; ' + day.running.target_distance_km + ' km</span>' +
+                '</div>' +
+                '<p class="text-xs text-white/90 leading-relaxed">' + day.running.main_work + '</p>' +
+                '<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs pt-1">' +
+                  '<div class="p-2 rounded-xl bg-[#141522]"><span class="text-[#8E8FA3] block text-[10px]">RITMO:</span><strong class="text-white font-mono">' + day.running.target_pace + '</strong></div>' +
+                  '<div class="p-2 rounded-xl bg-[#141522]"><span class="text-[#8E8FA3] block text-[10px]">ZONA FC:</span><strong class="text-[#FF5E80] font-mono">' + day.running.hr_zone + '</strong></div>' +
+                  '<div class="p-2 rounded-xl bg-[#141522] col-span-2 sm:col-span-1"><span class="text-[#8E8FA3] block text-[10px]">ZAPATILLA:</span><strong class="text-white">' + day.running.shoes_recommended + '</strong></div>' +
+                '</div>' +
+              '</div>'
+            ) +
+
+            (day.gym.is_rest ? 
+              '<div class="p-3.5 rounded-2xl bg-[#242638] text-xs text-[#8E8FA3]">🏋️ Descanso de gimnasio</div>' :
+              '<div class="luxury-subcard p-4 space-y-3">' +
+                '<div class="flex items-center justify-between">' +
+                  '<span class="text-xs font-extrabold text-[#7B88FF] flex items-center gap-1.5">' +
+                    '<i data-lucide="dumbbell" class="w-4 h-4"></i> ' + day.gym.routine_name +
+                  '</span>' +
+                  '<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-[#7B88FF]/20 text-[#7B88FF]">RUTINA ' + day.gym.routine_id + '</span>' +
+                '</div>' +
+                '<div class="space-y-1.5">' +
+                  day.gym.highlight_exercises.map(function(ex) {
+                    return '<div class="flex items-center justify-between p-2 rounded-xl bg-[#141522] text-xs">' +
+                      '<span class="text-white font-medium">' + ex.name + '</span>' +
+                      '<span class="font-mono text-[#7B88FF] font-bold">' + ex.load + ' (' + ex.rir + ')</span>' +
+                    '</div>';
+                  }).join('') +
+                '</div>' +
+                '<button onclick="goToGymRoutine(' + day.gym.routine_id + ')" class="w-full py-2.5 rounded-xl bg-[#7B88FF]/15 border border-[#7B88FF]/30 text-[#7B88FF] text-xs font-extrabold hover:bg-[#7B88FF]/25 transition flex items-center justify-center gap-1.5">' +
+                  '<i data-lucide="external-link" class="w-3.5 h-3.5"></i> Abrir Rutina ' + day.gym.routine_id + ' & Registrar Series' +
+                '</button>' +
+              '</div>'
+            ) +
+          '</div>' +
+        '</div>';
+      });
+
+      container.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lucide.createIcons();
+      renderWorkoutsAccordion();
+      selectGymRoutine(3);
+
+      const ctxSpline = document.getElementById('weeklySplineChart')?.getContext('2d');
+      if (ctxSpline) {
+        const gradientPink = ctxSpline.createLinearGradient(0, 0, 0, 260);
+        gradientPink.addColorStop(0, 'rgba(255, 94, 128, 0.45)');
+        gradientPink.addColorStop(0.6, 'rgba(255, 94, 128, 0.1)');
+        gradientPink.addColorStop(1, 'rgba(255, 94, 128, 0.0)');
+
+        const gradientBlue = ctxSpline.createLinearGradient(0, 0, 0, 260);
+        gradientBlue.addColorStop(0, 'rgba(123, 136, 255, 0.35)');
+        gradientBlue.addColorStop(0.6, 'rgba(123, 136, 255, 0.08)');
+        gradientBlue.addColorStop(1, 'rgba(123, 136, 255, 0.0)');
+
+        const labels = weeklyData.map(w => w.label);
+        const kmValues = weeklyData.map(w => w.run_km);
+        const gymValues = weeklyData.map(w => w.gym_sessions);
+
+        new Chart(ctxSpline, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Volumen Run (km)',
+                data: kmValues,
+                borderColor: '#FF5E80',
+                borderWidth: 3.5,
+                backgroundColor: gradientPink,
+                fill: true,
+                tension: 0.4,
+                cubicInterpolationMode: 'monotone',
+                pointBackgroundColor: '#FF5E80',
+                pointBorderColor: '#141522',
+                pointBorderWidth: 2,
+                pointRadius: 4,
+                pointHoverRadius: 7,
+                yAxisID: 'y'
+              },
+              {
+                label: 'Sesiones Gym',
+                data: gymValues,
+                borderColor: '#7B88FF',
+                borderWidth: 2.5,
+                backgroundColor: gradientBlue,
+                fill: true,
+                tension: 0.4,
+                cubicInterpolationMode: 'monotone',
+                pointBackgroundColor: '#7B88FF',
+                pointBorderColor: '#141522',
+                pointBorderWidth: 2,
+                pointRadius: 3,
+                pointHoverRadius: 6,
+                yAxisID: 'y1'
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#1D1E2C',
+                titleColor: '#FFFFFF',
+                bodyColor: '#9D9EA7',
+                borderColor: '#2D2F45',
+                borderWidth: 1,
+                padding: 12,
+                cornerRadius: 14
+              }
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: { color: '#8E8FA3', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } }
+              },
+              y: {
+                type: 'linear',
+                display: true,
+                position: 'left',
+                grid: { color: 'rgba(255, 255, 255, 0.04)' },
+                ticks: {
+                  color: '#FF5E80',
+                  font: { family: 'JetBrains Mono', size: 11 },
+                  callback: function(v) { return v + ' km'; }
+                }
+              },
+              y1: {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                min: 0,
+                max: 6,
+                grid: { drawOnChartArea: false }
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body></html>
